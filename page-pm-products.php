@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: un-products 
+Template Name: pm-products 
 */
 ?>
 <?php get_header(); ?>
@@ -32,15 +32,15 @@ Template Name: un-products
 </div>
 </section>
 
-<section id="sub-menu" class="unit">
+<section id="sub-menu" class="atch">
 <div class="content clearfix">
-<div id="sub_title" class="no-pc strong_f">ユニットハウス</div>
+<div id="sub_title" class="no-pc strong_f">アタッチメント</div>
 <nav>
 <ul id="sub_menu" class="clearfix">
 <li id="back" class="no-sp"><a href="index" class="disp_f">ホームに戻る</a></li>
-<li class="text_c"><a href="un-search" class="disp_f">商品検索</a></li>
-<li class="text_c"><a href="un-guide-top" class="disp_f">ご利用ガイド</a></li>
-<li class="text_c"><a href="un-info-top" class="disp_f">ご案内</a></li>
+<li class="text_c"><a href="pm-search" class="disp_f">商品検索</a></li>
+<li class="text_c"><a href="/" class="disp_f">ご利用ガイド</a></li>
+<li class="text_c"><a href="/" class="disp_f">ご案内</a></li>
 <li class="text_c"><a href="/" class="disp_f">お問い合わせ</a></li>
 </ul>
 </nav>
@@ -56,23 +56,23 @@ Template Name: un-products
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="unitproducts" itemprop="url">
-<span itemprop="title">ユニットハウス</span>
+<a href="pmproducts" itemprop="url">
+<span itemprop="title">アタッチメント</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
 <a href="un-products" itemprop="url">
-<span itemprop="title">4坪エアコンハウス</span>
+<span itemprop="title">マグネット小割機（発電式）</span>
 </a>
 </li>
 </ul>
 </div>
 </section>
 
-<section id="product-detail" class="unit_detail">
+<section id="product-detail" class="atch_detail">
 <div id="product-title" class="content">
-<h1 class="txt">4坪エアコンハウス<div id="icons"><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span></div></h1>
-<p>エアコン付きで快適！滅多に出ない美品です！</p>
+<h1 class="txt">マグネット小割機（発電式）<div id="icons"><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span></div></h1>
+<p>破砕力も磁力もダントツのパワーでガラ付鉄筋もしっかりキャッチ＆回収！</p>
 </div>
 <div id="product-border" class="border"></div>
 <div class="content flex clearfix">
@@ -86,23 +86,23 @@ Template Name: un-products
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">用途</dt>
-<dd class="product_detail_content">事務所,倉庫</dd>
-<dt class="product_detail_title box">寸法</dt>
-<dd class="product_detail_content">6,010×2,300×2,650</dd>
-<dt class="product_detail_title box">面積</dt>
-<dd class="product_detail_content">4坪</dd>
+<dd class="product_detail_content">小割機</dd>
+<dt class="product_detail_title box">メーカー</dt>
+<dd class="product_detail_content">株式会社タグチ工業</dd>
+<dt class="product_detail_title box">メーカー形式</dt>
+<dd class="product_detail_content">MC-201DM7</dd>
 </dl>
 </div>
 </div>
 <div class="content">
 
 <div class="slider responsive">
-<div><a data-fancybox="gallery" href="/images/products/1/1.jpg" data-caption="画像1。ここに各画像のキャプションを入力します"><img src="/images/products/1/1.jpg"></a></div>
-<div><a data-fancybox="gallery" href="/images/products/1/2.jpg" data-caption="画像2。ここに各画像のキャプションを入力します"><img src="/images/products/1/2.jpg"></a></div>
-<div><a data-fancybox="gallery" href="/images/products/1/3.jpg" data-caption="画像3。ここに各画像のキャプションを入力します"><img src="/images/products/1/3.jpg"></a></div>
-<div><a data-fancybox="gallery" href="/images/products/1/4.jpg" data-caption="画像4。ここに各画像のキャプションを入力します"><img src="/images/products/1/4.jpg"></a></div>
-<div><a data-fancybox="gallery" href="/images/products/1/5.jpg" data-caption="画像5。ここに各画像のキャプションを入力します"><img src="/images/products/1/5.jpg"></a></div>
-<div><a data-fancybox="gallery" href="/images/products/1/6.jpg" data-caption="画像6。ここに各画像のキャプションを入力します"><img src="/images/products/1/6.jpg"></a></div>
+<div><a data-fancybox="gallery" href="/images/products/2/1.jpg" data-caption="画像1。ここに各画像のキャプションを入力します"><img src="/images/products/2/1.jpg"></a></div>
+<div><a data-fancybox="gallery" href="/images/products/2/2.jpg" data-caption="画像2。ここに各画像のキャプションを入力します"><img src="/images/products/2/2.jpg"></a></div>
+<div><a data-fancybox="gallery" href="/images/products/2/3.jpg" data-caption="画像3。ここに各画像のキャプションを入力します"><img src="/images/products/2/3.jpg"></a></div>
+<div><a data-fancybox="gallery" href="/images/products/2/4.jpg" data-caption="画像4。ここに各画像のキャプションを入力します"><img src="/images/products/2/4.jpg"></a></div>
+<div><a data-fancybox="gallery" href="/images/products/2/5.jpg" data-caption="画像5。ここに各画像のキャプションを入力します"><img src="/images/products/2/5.jpg"></a></div>
+<div><a data-fancybox="gallery" href="/images/products/2/6.jpg" data-caption="画像6。ここに各画像のキャプションを入力します"><img src="/images/products/2/6.jpg"></a></div>
 </div>
 </div>
 <div class="content">
@@ -112,7 +112,7 @@ Template Name: un-products
 <div class="content">
 <h3 class="border txt"><i class="fas fa-square"></i> 紹介動画</h3>
 <div class="youtube">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5DDpB5fsG6k?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4WKO0JfVbt4?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
 </div>
 <div class="content content_s">
@@ -122,23 +122,23 @@ Template Name: un-products
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">商品コード</dt>
-<dd class="product_detail_content">NR41BA</dd>
-<dt class="product_detail_title box">管理No.</dt>
-<dd class="product_detail_content">4-11</dd>
-<dt class="product_detail_title box">メーカー</dt>
+<dd class="product_detail_content">MCC 7000A</dd>
+<dt class="product_detail_title box">クラス</dt>
+<dd class="product_detail_content">1.2</dd>
+<dt class="product_detail_title box">年式</dt>
 <dd class="product_detail_content">--</dd>
-<dt class="product_detail_title box">メーカー形式</dt>
-<dd class="product_detail_content">--</dd>
+<dt class="product_detail_title box">本体重量</dt>
+<dd class="product_detail_content">2,070</dd>
 </dl>
 </div>
 <div class="product_detail_data">
 <dl>
-<dt class="product_detail_title box">年式</dt>
+<dt class="product_detail_title box">管理No.</dt>
+<dd class="product_detail_content">502</dd>
+<dt class="product_detail_title box">仕様</dt>
 <dd class="product_detail_content">--</dd>
 <dt class="product_detail_title box">状態</dt>
 <dd class="product_detail_content">良好</dd>
-<dt class="product_detail_title box">本体重量</dt>
-<dd class="product_detail_content">--</dd>
 </dl>
 </div>
 </div>
@@ -156,7 +156,7 @@ Template Name: un-products
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">コメント</dt>
-<dd class="product_detail_content">4坪単位で増設可能です。（写真は3連棟（4坪×3棟＝12坪）タイプ）</dd>
+<dd class="product_detail_content">電機配線が不要の油圧発電式マグネット搭載。次世代小割マグ！画期的な新アタッチメントです！！</dd>
 </dl>
 </div>
 </div>
@@ -207,7 +207,7 @@ Template Name: un-products
 <link rel="stylesheet" href="/css/slick-theme.css">
 <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
 
-<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="/js/jquery.debouncedresize.min.js"></script>
 <script src="/js/slick.min.js"></script>
 <script src="/js/jquery.fancybox.min.js"></script>

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: un-result 
+Template Name: bt-result 
 */
 ?>
 <?php get_header(); ?>
@@ -38,9 +38,9 @@ Template Name: un-result
 <nav>
 <ul id="sub_menu" class="clearfix">
 <li id="back" class="no-sp"><a href="/" class="disp_f">ホームに戻る</a></li>
-<li class="text_c"><a href="un-search" class="disp_f active">商品検索</a></li>
-<li class="text_c"><a href="un-guide-top" class="disp_f">ご利用ガイド</a></li>
-<li class="text_c"><a href="un-info-top" class="disp_f">ご案内</a></li>
+<li class="text_c"><a href="bt-search" class="disp_f active">商品検索</a></li>
+<li class="text_c"><a href="bt-guide-top" class="disp_f">ご利用ガイド</a></li>
+<li class="text_c"><a href="bt-info-top" class="disp_f">ご案内</a></li>
 <li class="text_c"><a href="/" class="disp_f">お問い合わせ</a></li>
 </ul>
 </nav>
@@ -56,17 +56,17 @@ Template Name: un-result
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="unitproducts" itemprop="url">
-<span itemprop="title">ユニットハウス</span>
+<a href="btproducts" itemprop="url">
+<span itemprop="title">高所作業車 他</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="un-search" itemprop="url">
+<a href="bt-search" itemprop="url">
 <span itemprop="title">商品検索メニュー</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="un-result" itemprop="url">
+<a href="bt-result" itemprop="url">
 <span itemprop="title">検索結果</span>
 </a>
 </li>
@@ -77,7 +77,7 @@ Template Name: un-result
 
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f"><span class="num">006</span>  件 ヒットしました<span class="more unit"><a href="un-search"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
+<div class="hits flex strong_f"><span class="num">006</span>  件 ヒットしました<span class="more lift"><a href="bt-search"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
 <div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>
@@ -92,22 +92,20 @@ Template Name: un-result
 <div class="content">
 
 
-<section class="searched-product product_data_unit">
-<h2><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span><span class="product_name">4坪エアコンハウス</span></h2>
-<p>エアコン付きで快適！滅多に出ない美品です！</p>
+<section class="searched-product product_data_lift">
+<h2><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span><span class="product_name">高所作業車 Ｋテーブル 4mポスト型 バッテリー RM04CNS-S</span></h2>
+<p>補水不要で手間もコストも削減、しかも長寿命のバッテリー</p>
 <div class="searched_product_data flex">
-<div class="product_image"><img src="/images/product.jpg"></div>
+<div class="product_image"><img src="/images/lift.jpg"></div>
 <div class="product_data">
 <div class="product_detail flex clearfix">
 <dl>
-<dt class="product_data_title">用途</dt>
-<dd class="product_data_content">事務所,倉庫</dd>
-<dt class="product_data_title">寸法</dt>
-<dd class="product_data_content">6,010×2,300×2,650</dd>
+<dt class="product_data_title">メーカー</dt>
+<dd class="product_data_content">株式会社アイチコーポレーション</dd>
 </dl>
 <dl>
-<dt class="product_data_title">面積</dt>
-<dd class="product_data_content">4坪</dd>
+<dt class="product_data_title">メーカー形式</dt>
+<dd class="product_data_content">RM04CNS</dd>
 <dt class="product_data_title">本体価格</dt>
 <dd class="product_data_content"><span class="num">56</span>万円（税抜）</dd>
 </dl>
@@ -116,20 +114,20 @@ Template Name: un-result
 <div class="product_spec">
 <div class="product_detail flex clearfix">
 <dl>
-<dt class="product_data_title">商品コード</dt>
-<dd class="product_data_content">NR41BA</dd>
-<dt class="product_data_title">メーカー</dt>
-<dd class="product_data_content">--</dd>
-<dt class="product_data_title">本体重量</dt>
-<dd class="product_data_content">--</dd>
+<dt class="product_data_title">作業床高さ</dt>
+<dd class="product_data_content">3.8m</dd>
+<dt class="product_data_title">積載荷量</dt>
+<dd class="product_data_content">200kg</dd>
+<dt class="product_data_title">車両重量</dt>
+<dd class="product_data_content">580kg</dd>
 <dt class="product_data_title">状態</dt>
 <dd class="product_data_content">良好</dd>
 </dl>
 <dl>
-<dt class="product_data_title">管理No.</dt>
-<dd class="product_data_content">4-11</dd>
-<dt class="product_data_title">メーカー型式</dt>
-<dd class="product_data_content">--</dd>
+<dt class="product_data_title">寸法</dt>
+<dd class="product_data_content">0.77m x 1.62m x 1.25m</dd>
+<dt class="product_data_title">駆動方法</dt>
+<dd class="product_data_content">バッテリー</dd>
 <dt class="product_data_title">年式</dt>
 <dd class="product_data_content">--</dd>
 </dl>
@@ -139,26 +137,24 @@ Template Name: un-result
 </div>
 <div class="product_contact flex">
 <div class="contact_info"><span class="contact strong_f">お問い合わせ</span><i class="fas fa-phone-square"></i><span class="num"><a href="tel:0120-345-6789">0120-345-6789</a></span><i class="fas fa-user"></i>担当者：山田</div>
-<div class="product_see_more unit"><a href="un-products" class="btn strong_f">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
+<div class="product_see_more lift"><a href="bt-products" class="btn strong_f">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
 </div>
 </section>
 
-<section class="searched-product product_data_unit">
-<h2><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span><span class="product_name">4坪エアコンハウス</span></h2>
-<p>エアコン付きで快適！滅多に出ない美品です！</p>
+<section class="searched-product product_data_lift">
+<h2><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span><span class="product_name">高所作業車 Ｋテーブル 4mポスト型 バッテリー RM04CNS-S</span></h2>
+<p>補水不要で手間もコストも削減、しかも長寿命のバッテリー</p>
 <div class="searched_product_data flex">
-<div class="product_image"><img src="/images/product.jpg"></div>
+<div class="product_image"><img src="/images/lift.jpg"></div>
 <div class="product_data">
 <div class="product_detail flex clearfix">
 <dl>
-<dt class="product_data_title">用途</dt>
-<dd class="product_data_content">事務所,倉庫</dd>
-<dt class="product_data_title">寸法</dt>
-<dd class="product_data_content">6,010×2,300×2,650</dd>
+<dt class="product_data_title">メーカー</dt>
+<dd class="product_data_content">株式会社アイチコーポレーション</dd>
 </dl>
 <dl>
-<dt class="product_data_title">面積</dt>
-<dd class="product_data_content">4坪</dd>
+<dt class="product_data_title">メーカー形式</dt>
+<dd class="product_data_content">RM04CNS</dd>
 <dt class="product_data_title">本体価格</dt>
 <dd class="product_data_content"><span class="num">56</span>万円（税抜）</dd>
 </dl>
@@ -167,20 +163,20 @@ Template Name: un-result
 <div class="product_spec">
 <div class="product_detail flex clearfix">
 <dl>
-<dt class="product_data_title">商品コード</dt>
-<dd class="product_data_content">NR41BA</dd>
-<dt class="product_data_title">メーカー</dt>
-<dd class="product_data_content">--</dd>
-<dt class="product_data_title">本体重量</dt>
-<dd class="product_data_content">--</dd>
+<dt class="product_data_title">作業床高さ</dt>
+<dd class="product_data_content">3.8m</dd>
+<dt class="product_data_title">積載荷量</dt>
+<dd class="product_data_content">200kg</dd>
+<dt class="product_data_title">車両重量</dt>
+<dd class="product_data_content">580kg</dd>
 <dt class="product_data_title">状態</dt>
 <dd class="product_data_content">良好</dd>
 </dl>
 <dl>
-<dt class="product_data_title">管理No.</dt>
-<dd class="product_data_content">4-11</dd>
-<dt class="product_data_title">メーカー型式</dt>
-<dd class="product_data_content">--</dd>
+<dt class="product_data_title">寸法</dt>
+<dd class="product_data_content">0.77m x 1.62m x 1.25m</dd>
+<dt class="product_data_title">駆動方法</dt>
+<dd class="product_data_content">バッテリー</dd>
 <dt class="product_data_title">年式</dt>
 <dd class="product_data_content">--</dd>
 </dl>
@@ -190,26 +186,24 @@ Template Name: un-result
 </div>
 <div class="product_contact flex">
 <div class="contact_info"><span class="contact strong_f">お問い合わせ</span><i class="fas fa-phone-square"></i><span class="num"><a href="tel:0120-345-6789">0120-345-6789</a></span><i class="fas fa-user"></i>担当者：山田</div>
-<div class="product_see_more unit"><a href="un-products" class="btn strong_f">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
+<div class="product_see_more lift"><a href="bt-products" class="btn strong_f">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
 </div>
 </section>
 
-<section class="searched-product product_data_unit">
-<h2><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span><span class="product_name">4坪エアコンハウス</span></h2>
-<p>エアコン付きで快適！滅多に出ない美品です！</p>
+<section class="searched-product product_data_lift">
+<h2><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span><span class="product_name">高所作業車 Ｋテーブル 4mポスト型 バッテリー RM04CNS-S</span></h2>
+<p>補水不要で手間もコストも削減、しかも長寿命のバッテリー</p>
 <div class="searched_product_data flex">
-<div class="product_image"><img src="/images/product.jpg"></div>
+<div class="product_image"><img src="/images/lift.jpg"></div>
 <div class="product_data">
 <div class="product_detail flex clearfix">
 <dl>
-<dt class="product_data_title">用途</dt>
-<dd class="product_data_content">事務所,倉庫</dd>
-<dt class="product_data_title">寸法</dt>
-<dd class="product_data_content">6,010×2,300×2,650</dd>
+<dt class="product_data_title">メーカー</dt>
+<dd class="product_data_content">株式会社アイチコーポレーション</dd>
 </dl>
 <dl>
-<dt class="product_data_title">面積</dt>
-<dd class="product_data_content">4坪</dd>
+<dt class="product_data_title">メーカー形式</dt>
+<dd class="product_data_content">RM04CNS</dd>
 <dt class="product_data_title">本体価格</dt>
 <dd class="product_data_content"><span class="num">56</span>万円（税抜）</dd>
 </dl>
@@ -218,20 +212,20 @@ Template Name: un-result
 <div class="product_spec">
 <div class="product_detail flex clearfix">
 <dl>
-<dt class="product_data_title">商品コード</dt>
-<dd class="product_data_content">NR41BA</dd>
-<dt class="product_data_title">メーカー</dt>
-<dd class="product_data_content">--</dd>
-<dt class="product_data_title">本体重量</dt>
-<dd class="product_data_content">--</dd>
+<dt class="product_data_title">作業床高さ</dt>
+<dd class="product_data_content">3.8m</dd>
+<dt class="product_data_title">積載荷量</dt>
+<dd class="product_data_content">200kg</dd>
+<dt class="product_data_title">車両重量</dt>
+<dd class="product_data_content">580kg</dd>
 <dt class="product_data_title">状態</dt>
 <dd class="product_data_content">良好</dd>
 </dl>
 <dl>
-<dt class="product_data_title">管理No.</dt>
-<dd class="product_data_content">4-11</dd>
-<dt class="product_data_title">メーカー型式</dt>
-<dd class="product_data_content">--</dd>
+<dt class="product_data_title">寸法</dt>
+<dd class="product_data_content">0.77m x 1.62m x 1.25m</dd>
+<dt class="product_data_title">駆動方法</dt>
+<dd class="product_data_content">バッテリー</dd>
 <dt class="product_data_title">年式</dt>
 <dd class="product_data_content">--</dd>
 </dl>
@@ -241,17 +235,16 @@ Template Name: un-result
 </div>
 <div class="product_contact flex">
 <div class="contact_info"><span class="contact strong_f">お問い合わせ</span><i class="fas fa-phone-square"></i><span class="num"><a href="tel:0120-345-6789">0120-345-6789</a></span><i class="fas fa-user"></i>担当者：山田</div>
-<div class="product_see_more unit"><a href="un-products" class="btn strong_f">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
+<div class="product_see_more lift"><a href="bt-products" class="btn strong_f">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
 </div>
 </section>
-
 
 </div>
 </section>
 
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f"><span class="num">006</span>  件 ヒットしました<span class="more unit"><a href="un-search"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
+<div class="hits flex strong_f"><span class="num">006</span>  件 ヒットしました<span class="more lift"><a href="bt-search"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
 <div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>

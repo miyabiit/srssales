@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: un-search 
+Template Name: pm-search 
 */
 ?>
 <?php get_header(); ?>
@@ -32,15 +32,15 @@ Template Name: un-search
 </div>
 </section>
 
-<section id="sub-menu" class="unit">
+<section id="sub-menu" class="atch">
 <div class="content clearfix">
-<div id="sub_title" class="no-pc strong_f">ユニットハウス</div>
+<div id="sub_title" class="no-pc strong_f">アタッチメント</div>
 <nav>
 <ul id="sub_menu" class="clearfix">
 <li id="back" class="no-sp"><a href="index" class="disp_f">ホームに戻る</a></li>
-<li class="text_c"><a href="un-search" class="disp_f active">商品検索</a></li>
-<li class="text_c"><a href="un-guide-top" class="disp_f">ご利用ガイド</a></li>
-<li class="text_c"><a href="un-info-top" class="disp_f">ご案内</a></li>
+<li class="text_c"><a href="pm-search" class="disp_f active">商品検索</a></li>
+<li class="text_c"><a href="/" class="disp_f">ご利用ガイド</a></li>
+<li class="text_c"><a href="/" class="disp_f">ご案内</a></li>
 <li class="text_c"><a href="/" class="disp_f">お問い合わせ</a></li>
 </ul>
 </nav>
@@ -56,12 +56,12 @@ Template Name: un-search
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="unitproducts" itemprop="url">
-<span itemprop="title">ユニットハウス</span>
+<a href="pmproducts" itemprop="url">
+<span itemprop="title">アタッチメント</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="un-search" itemprop="url">
+<a href="pm-search" itemprop="url">
 <span itemprop="title">商品検索メニュー</span>
 </a>
 </li>
@@ -85,59 +85,59 @@ Template Name: un-search
 <form class="clearfix">
 
 <div id="search-head-num">
-<div class="search-hits strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i></button>
+<div class="search-hits strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn atch disp_f"><i class="fas fa-search"></i></button>
 </div>
 
 <div class="search-check-selection clearfix">
 <div class="check-selections clearfix">
-<div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i> ユニットハウスを探す</button></div>
+<div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn atch disp_f"><i class="fas fa-search"></i> アタッチメントを探す</button></div>
 </div>
 </div>
 
 <div class="search-check-selection clearfix">
-<span class="unit strong_f selection_title">坪数で探す</span>
+<span class="atch strong_f selection_title">商品分類で探す</span>
 <div class="check-selections clearfix">
 <ul>
     <li>
-        <input type='checkbox' id="size_all" /> <label for="size_all" class="unit_t strong_f big mdl">すべて選択</label>
+        <input type='checkbox' id="atch_category_all" /> <label for="atch_category_all" class="atch_t strong_f big mdl">すべて選択</label>
         <ul class="choices clearfix">
-            <li><input type='checkbox' name="size[]" id="size_1" value="3坪未満" /> <label for="size_1">3坪未満</label></li>
-            <li><input type='checkbox' name="size[]" id="size_2" value="3坪〜4坪" /> <label for="size_2">3坪〜4坪まで</label></li>
-            <li><input type='checkbox' name="size[]" id="size_3" value="4坪〜9坪" /> <label for="size_3">4坪〜9坪まで</label></li>
-            <li><input type='checkbox' name="size[]" id="size_4" value="8坪以上" /> <label for="size_4">8坪以上</label></li>
+            <li><input type='checkbox' name="atch_category[]" id="atch_category_1" value="解体用アタッチメント" /> <label for="atch_category_1">解体用アタッチメント</label></li>
+            <li><input type='checkbox' name="atch_category[]" id="atch_category_2" value="バケット類" /> <label for="atch_category_2">バケット類</label></li>
+            <li><input type='checkbox' name="atch_category[]" id="atch_category_3" value="フォーク" /> <label for="atch_category_3">フォーク</label></li>
+            <li><input type='checkbox' name="atch_category[]" id="atch_category_4" value="その他" /> <label for="atch_category_4">その他</label></li>
+            <li><input type='checkbox' name="atch_category[]" id="atch_category_5" value="特殊アタッチメント" /> <label for="atch_category_5">特殊アタッチメント</label></li>
         </ul>
     </li>
 </ul>
-<button type="submit" class="btn btn_s unit strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
+<button type="submit" class="btn btn_s atch strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
 </div>
 </div>
 
 <div class="search-check-selection clearfix">
-<span class="unit strong_f selection_title">用途で探す</span>
+<span class="atch strong_f selection_title">クラスで探す</span>
 <div class="check-selections clearfix">
 <ul>
     <li>
-        <input type='checkbox' id="usage_all" /> <label for="usage_all" class="unit_t strong_f big mdl">すべて選択</label>
+        <input type='checkbox' id="class_all" /> <label for="class_all" class="atch_t strong_f big mdl">すべて選択</label>
         <ul class="choices clearfix">
-            <li><input type='checkbox' name="usage[]" id="usage_1" value="事務所/休憩所" /> <label for="usage_1">事務所/休憩所</label></li>
-            <li><input type='checkbox' name="usage[]" id="usage_2" value="倉庫/物置" /> <label for="usage_2">倉庫/物置</label></li>
-            <li><input type='checkbox' name="usage[]" id="usage_3" value="店舗" /> <label for="usage_3">店舗</label></li>
-            <li><input type='checkbox' name="usage[]" id="usage_4" value="トイレ" /> <label for="usage_4">トイレ</label></li>
-            <li><input type='checkbox' name="usage[]" id="usage_5" value="2階建て" /> <label for="usage_5">2階建て</label></li>
-            <li><input type='checkbox' name="usage[]" id="usage_6" value="その他" /> <label for="usage_6">その他</label></li>
+            <li><input type='checkbox' name="class[]" id="class_1" value="0.2以下" /> <label for="class_1">0.2以下</label></li>
+            <li><input type='checkbox' name="class[]" id="class_2" value="0.25" /> <label for="class_2">0.25</label></li>
+            <li><input type='checkbox' name="class[]" id="class_3" value="0.45" /> <label for="class_3">0.45</label></li>
+            <li><input type='checkbox' name="class[]" id="class_4" value="0.7" /> <label for="class_4">0.7</label></li>
+            <li><input type='checkbox' name="class[]" id="class_5" value="1.2以上" /> <label for="class_5">1.2以上</label></li>
         </ul>
     </li>
 </ul>
-<button type="submit" class="btn btn_s unit strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
+<button type="submit" class="btn btn_s atch strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
 </div>
 </div>
 
 <div class="search-check-selection clearfix">
-<span class="unit strong_f selection_title">価格で探す</span>
+<span class="atch strong_f selection_title">価格で探す</span>
 <div class="check-selections clearfix">
 <ul>
     <li>
-        <input type='checkbox' id="price_all" /> <label for="price_all" class="unit_t strong_f big mdl">すべて選択</label>
+        <input type='checkbox' id="price_all" /> <label for="price_all" class="atch_t strong_f big mdl">すべて選択</label>
         <ul class="choices clearfix">
             <li><input type='checkbox' name="price[]" id="price_1" value="10万円未満" /> <label for="price_1">10万円未満</label></li>
             <li><input type='checkbox' name="price[]" id="price_2" value="10～20万円未満" /> <label for="price_2">10～20万円未満</label></li>
@@ -150,18 +150,18 @@ Template Name: un-search
         </ul>
     </li>
 </ul>
-<button type="submit" class="btn btn_s unit strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
+<button type="submit" class="btn btn_s atch strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
 </div>
 </div>
 
 <div class="search-check-selection clearfix">
-<span class="unit strong_f selection_title">販売店で探す</span>
+<span class="atch strong_f selection_title">販売店で探す</span>
 <div class="check-selections clearfix">
 <ul>
     <li>
-        <input type='checkbox' id="dealer_all" /> <label for="dealer_all" class="unit_t strong_f big mdl">すべて選択</label>
+        <input type='checkbox' id="dealer_all" /> <label for="dealer_all" class="atch_t strong_f big mdl">すべて選択</label>
         <ul class="clearfix">
-            <li class="choice_area"><input type='checkbox' id="dealer_hokkaido" /><label for="dealer_hokkaido" class="unit_t strong_f big">北海道/東北</label>
+            <li class="choice_area"><input type='checkbox' id="dealer_hokkaido" /><label for="dealer_hokkaido" class="atch_t strong_f big">北海道/東北</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="dealer[]" id="dealer_1" value="札幌営業所" /> <label for="dealer_1">札幌営業所</label></li>
                     <li><input type='checkbox' name="dealer[]" id="dealer_2" value="仙台営業所" /> <label for="dealer_2">仙台営業所</label></li>
@@ -174,12 +174,12 @@ Template Name: un-search
                     <li><input type='checkbox' name="dealer[]" id="dealer_9" value="郡山ハウスヤード" /> <label for="dealer_9">郡山ハウスヤード</label></li>
                 </ul>
             </li>
-            <li class="choice_area"><input type='checkbox' id="dealer_hokuriku" /><label for="dealer_hokuriku" class="unit_t strong_f big">北陸/信越</label>
+            <li class="choice_area"><input type='checkbox' id="dealer_hokuriku" /><label for="dealer_hokuriku" class="atch_t strong_f big">北陸/信越</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="dealer[]" id="dealer_10" value="新潟営業所" /> <label for="dealer_10">新潟営業所</label></li>
                 </ul>
             </li>
-            <li class="choice_area"><input type='checkbox' id="dealer_kanto" /><label for="dealer_kanto" class="unit_t strong_f big">関東</label>
+            <li class="choice_area"><input type='checkbox' id="dealer_kanto" /><label for="dealer_kanto" class="atch_t strong_f big">関東</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="dealer[]" id="dealer_11" value="プロマックス事業部本社" /> <label for="dealer_11">プロマックス事業部本社</label></li>
                     <li><input type='checkbox' name="dealer[]" id="dealer_12" value="東日本ブロックハウスヤード" /> <label for="dealer_12">東日本ブロックハウスヤード</label></li>
@@ -202,7 +202,7 @@ Template Name: un-search
                     <li><input type='checkbox' name="dealer[]" id="dealer_29" value="東松山展示場" /> <label for="dealer_29">東松山展示場</label></li>
                 </ul>
             </li>
-            <li class="choice_area"><input type='checkbox' id="dealer_toukai" /><label for="dealer_toukai" class="unit_t strong_f big">東海</label>
+            <li class="choice_area"><input type='checkbox' id="dealer_toukai" /><label for="dealer_toukai" class="atch_t strong_f big">東海</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="dealer[]" id="dealer_30" value="名古屋営業所" /> <label for="dealer_30">名古屋営業所</label></li>
                     <li><input type='checkbox' name="dealer[]" id="dealer_31" value="岐阜ハウスヤード" /> <label for="dealer_31">岐阜ハウスヤード</label></li>
@@ -212,7 +212,7 @@ Template Name: un-search
                     <li><input type='checkbox' name="dealer[]" id="dealer_35" value="静岡ハウスヤード" /> <label for="dealer_35">静岡ハウスヤード</label></li>
                 </ul>
             </li>
-            <li class="choice_area"><input type='checkbox' id="dealer_kinki" /><label for="dealer_kinki" class="unit_t strong_f big">近畿</label>
+            <li class="choice_area"><input type='checkbox' id="dealer_kinki" /><label for="dealer_kinki" class="atch_t strong_f big">近畿</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="dealer[]" id="dealer_36" value="大阪営業所" /> <label for="dealer_36">大阪営業所</label></li>
                     <li><input type='checkbox' name="dealer[]" id="dealer_37" value="大阪ハウスヤード" /> <label for="dealer_37">大阪ハウスヤード</label></li>
@@ -223,12 +223,12 @@ Template Name: un-search
                     <li><input type='checkbox' name="dealer[]" id="dealer_42" value="神戸営業所" /> <label for="dealer_42">神戸営業所</label></li>
                 </ul>
             </li>
-            <li class="choice_area"><input type='checkbox' id="dealer_chugoku" /><label for="dealer_chugoku" class="unit_t strong_f big">中国/四国</label>
+            <li class="choice_area"><input type='checkbox' id="dealer_chugoku" /><label for="dealer_chugoku" class="atch_t strong_f big">中国/四国</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="dealer[]" id="dealer_43" value="広島営業所" /> <label for="dealer_43">広島営業所</label></li>
                 </ul>
             </li>
-            <li class="choice_area"><input type='checkbox' id="dealer_kyusyu" /><label for="dealer_kyusyu" class="unit_t strong_f big">九州</label>
+            <li class="choice_area"><input type='checkbox' id="dealer_kyusyu" /><label for="dealer_kyusyu" class="atch_t strong_f big">九州</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="dealer[]" id="dealer_44" value="北九州営業所" /> <label for="dealer_44">北九州営業所</label></li>
                     <li><input type='checkbox' name="dealer[]" id="dealer_45" value="中間ハウスヤード" /> <label for="dealer_45">中間ハウスヤード</label></li>
@@ -251,18 +251,18 @@ Template Name: un-search
         </ul>
     </li>
 </ul>
-<button type="submit" class="btn btn_s unit strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
+<button type="submit" class="btn btn_s atch strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
 </div>
 </div>
 
 <div class="search-check-selection clearfix">
-<span class="unit strong_f selection_title">住所で探す</span>
+<span class="atch strong_f selection_title">住所で探す</span>
 <div class="check-selections clearfix">
 <ul>
     <li>
-        <input type='checkbox' id="prefecture_all" /> <label for="prefecture_all" class="unit_t strong_f big mdl">すべて選択</label>
+        <input type='checkbox' id="prefecture_all" /> <label for="prefecture_all" class="atch_t strong_f big mdl">すべて選択</label>
         <ul class="clearfix">
-            <li class="choice_area"><input type='checkbox' id="prefecture_tohoku" /><label for="prefecture_tohoku" class="unit_t strong_f big">北海道/東北地方</label>
+            <li class="choice_area"><input type='checkbox' id="prefecture_tohoku" /><label for="prefecture_tohoku" class="atch_t strong_f big">北海道/東北地方</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_1" value="青森県" /> <label for="prefecture_1">青森県</label></li>
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_2" value="岩手県" /> <label for="prefecture_2">岩手県</label></li>
@@ -272,7 +272,7 @@ Template Name: un-search
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_6" value="福島県" /> <label for="prefecture_6">福島県</label></li>
                 </ul>
             </li>
-            <li class="choice_area"><input type='checkbox' id="prefecture_kanto" /><label for="prefecture_kanto" class="unit_t strong_f big">関東地方</label>
+            <li class="choice_area"><input type='checkbox' id="prefecture_kanto" /><label for="prefecture_kanto" class="atch_t strong_f big">関東地方</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_7" value="茨城県" /> <label for="prefecture_7">茨城県</label></li>
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_8" value="栃木県" /> <label for="prefecture_8">栃木県</label></li>
@@ -283,7 +283,7 @@ Template Name: un-search
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_13" value="神奈川県" /> <label for="prefecture_13">神奈川県</label></li>
                 </ul>
             </li>
-            <li class="choice_area"><input type='checkbox' id="prefecture_chubu" /><label for="prefecture_chubu" class="unit_t strong_f big">中部地方</label>
+            <li class="choice_area"><input type='checkbox' id="prefecture_chubu" /><label for="prefecture_chubu" class="atch_t strong_f big">中部地方</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_14" value="新潟県" /> <label for="prefecture_14">新潟県</label></li>
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_15" value="富山県" /> <label for="prefecture_15">富山県</label></li>
@@ -296,7 +296,7 @@ Template Name: un-search
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_22" value="愛知県" /> <label for="prefecture_22">愛知県</label></li>
                 </ul>
             </li>
-            <li class="choice_area"><input type='checkbox' id="prefecture_kinki" /><label for="prefecture_kinki" class="unit_t strong_f big">近畿地方</label>
+            <li class="choice_area"><input type='checkbox' id="prefecture_kinki" /><label for="prefecture_kinki" class="atch_t strong_f big">近畿地方</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_23" value="三重県" /> <label for="prefecture_23">三重県</label></li>
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_24" value="滋賀県" /> <label for="prefecture_24">滋賀県</label></li>
@@ -307,7 +307,7 @@ Template Name: un-search
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_29" value="和歌山県" /> <label for="prefecture_29">和歌山県</label></li>
                 </ul>
             </li>
-            <li class="choice_area"><input type='checkbox' id="prefecture_chugoku" /><label for="prefecture_chugoku" class="unit_t strong_f big">中国地方</label>
+            <li class="choice_area"><input type='checkbox' id="prefecture_chugoku" /><label for="prefecture_chugoku" class="atch_t strong_f big">中国地方</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_30" value="鳥取県" /> <label for="prefecture_30">鳥取県</label></li>
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_31" value="島根県" /> <label for="prefecture_31">島根県</label></li>
@@ -316,7 +316,7 @@ Template Name: un-search
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_34" value="山口県" /> <label for="prefecture_34">山口県</label></li>
                 </ul>
             </li>
-            <li class="choice_area"><input type='checkbox' id="prefecture_shikoku" /><label for="prefecture_shikoku" class="unit_t strong_f big">四国地方</label>
+            <li class="choice_area"><input type='checkbox' id="prefecture_shikoku" /><label for="prefecture_shikoku" class="atch_t strong_f big">四国地方</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_35" value="徳島県" /> <label for="prefecture_35">徳島県</label></li>
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_36" value="香川県" /> <label for="prefecture_36">香川県</label></li>
@@ -324,7 +324,7 @@ Template Name: un-search
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_38" value="高知県" /> <label for="prefecture_38">鳥取県</label></li>
                 </ul>
             </li>
-            <li class="choice_area"><input type='checkbox' id="prefecture_kyusyu" /><label for="prefecture_kyusyu" class="unit_t strong_f big">九州地方</label>
+            <li class="choice_area"><input type='checkbox' id="prefecture_kyusyu" /><label for="prefecture_kyusyu" class="atch_t strong_f big">九州地方</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_39" value="福岡県" /> <label for="prefecture_39">福岡県</label></li>
                     <li><input type='checkbox' name="prefecture[]" id="prefecture_40" value="佐賀県" /> <label for="prefecture_40">佐賀県</label></li>
@@ -339,16 +339,16 @@ Template Name: un-search
         </ul>
     </li>
 </ul>
-<button type="submit" class="btn btn_s unit strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
+<button type="submit" class="btn btn_s atch strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
 </div>
 </div>
 
 <div class="search-check-selection clearfix">
-<span class="unit strong_f selection_title">状態で探す</span>
+<span class="atch strong_f selection_title">状態で探す</span>
 <div class="check-selections clearfix">
 <ul>
     <li>
-        <input type='checkbox' id="condition_all" /> <label for="condition_all" class="unit_t strong_f big mdl">すべて選択</label>
+        <input type='checkbox' id="condition_all" /> <label for="condition_all" class="atch_t strong_f big mdl">すべて選択</label>
         <ul class="choices clearfix">
             <li><input type='checkbox' name="condition[]" id="condition_1" value="N" /> <label for="condition_1">N:新品</label></li>
             <li><input type='checkbox' name="condition[]" id="condition_2" value="S" /> <label for="condition_2">S:未使用品</label></li>
@@ -359,13 +359,13 @@ Template Name: un-search
         </ul>
     </li>
 </ul>
-<button type="submit" class="btn btn_s unit strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
+<button type="submit" class="btn btn_s atch strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
 </div>
 </div>
 
 <div class="search-check-selection clearfix">
 <div class="check-selections clearfix">
-<div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i> ユニットハウスを探す</button></div>
+<div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn atch disp_f"><i class="fas fa-search"></i> アタッチメントを探す</button></div>
 </div>
 </div>
 
