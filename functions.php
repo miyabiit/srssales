@@ -240,6 +240,72 @@ add_action('init', function(){
       'hierarchical' => true
     )
   );
+  //taxonomy 用途で探す アタッチメント
+  register_taxonomy('pm_usage_cat', array('pms'),
+    array(
+      'labels' => array(
+        'name' => '用途で探す',
+        'singular_name'   => '用途で探す',
+      ),
+      'public' => true,
+      'hierarchical' => true
+    )
+  );
+  //taxonomy クラスで探す アタッチメント
+  register_taxonomy('pm_class_cat', array('pms'),
+    array(
+      'labels' => array(
+        'name' => 'クラスで探す',
+        'singular_name'   => 'クラスで探す',
+      ),
+      'public' => true,
+      'hierarchical' => true
+    )
+  );
+  //taxonomy 価格で探す アタッチメント
+  register_taxonomy('pm_price_range_cat', array('pms'),
+    array(
+      'labels' => array(
+        'name' => '価格で探す',
+        'singular_name'   => '価格で探す',
+      ),
+      'public' => true,
+      'hierarchical' => true
+    )
+  );
+  //taxonomy 高さで探す 高所作業車他
+  register_taxonomy('bt_height_cat', array('bts'),
+    array(
+      'labels' => array(
+        'name' => '高さで探す',
+        'singular_name'   => '高さで探す',
+      ),
+      'public' => true,
+      'hierarchical' => true
+    )
+  );
+  //taxonomy 分類で探す 高所作業車他
+  register_taxonomy('bt_usage_cat', array('bts'),
+    array(
+      'labels' => array(
+        'name' => '分類で探す',
+        'singular_name'   => '分類で探す',
+      ),
+      'public' => true,
+      'hierarchical' => true
+    )
+  );
+  //taxonomy 種類で探す 高所作業車他
+  register_taxonomy('bt_goods_cat', array('bts'),
+    array(
+      'labels' => array(
+        'name' => '種類で探す',
+        'singular_name'   => '種類で探す',
+      ),
+      'public' => true,
+      'hierarchical' => true
+    )
+  );
 });
 
 // タイトルのプレースフォルダを変更
