@@ -308,9 +308,24 @@ Template Name: unitproducts
 <div class="content">
 <h2 class="disp_f text_l"><i class="fas fa-bullhorn"></i> お知らせ</h2>
 <ul id="news-list">
-<li><span class="date">2018年04月02日（月）</span><a href="">プロマックス事業部 熊本営業所が移転致しました。</a></li>
-<li><span class="date">2018年04月02日（月）</span><a href="">プロマックス事業部 熊本営業所が移転致しました。</a></li>
-<li><span class="date">2018年04月02日（月）</span><a href="">プロマックス事業部 熊本営業所が移転致しました。</a></li>
+<?php
+$query = new WP_Query(array(
+  'post_type' => 'news',
+  'post_per_page' => 5,
+  'tax_query' => array(
+    array(
+      'taxonomy' => 'products_cat',
+      'field' => 'slug',
+      'terms' => 'products_units'
+    )
+  ),
+  'orderby' => 'date',
+  'order' => 'DESC'
+));
+while($query->have_posts()) : $query->the_post();
+?>
+  <li><span class="date"><?php the_time("Y年m月d日 l  "); ?></span><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
+<?php endwhile; ?>
 </ul>
 </div>
 </section>

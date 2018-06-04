@@ -32,7 +32,7 @@ add_action('init', function(){
       'delete_with_user'  => true, 
       'menu_position' => 3,
       'supports' => array( 'title', 'editor'),
-      'taxonomies'  => array()
+      'taxonomies'  => array('products_cat')
     )
   );
   //post 販売店
