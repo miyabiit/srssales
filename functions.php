@@ -89,7 +89,7 @@ add_action('init', function(){
       'delete_with_user'  => true, 
       'menu_position' => 3,
       'supports' => array( 'title'),
-      'taxonomies'  => array()
+      'taxonomies'  => array('un_tubo_cat')
     )
   );
   //post アタッチメント

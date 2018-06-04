@@ -48,10 +48,12 @@
 <div class="menu_lists">
 <div class="strong_f show_menu_links">坪数で探す</div>
 <ul class="menu_links">
-<li><a href="">3坪未満</a></li>
-<li><a href="">3坪〜4坪まで</a></li>
-<li><a href="">4坪〜9坪まで</a></li>
-<li><a href="">8坪以上</a></li>
+<?php
+$terms = get_terms('un_tubo_cat',array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 <div class="strong_f show_menu_links">用途で探す</div>
 <ul class="menu_links">
