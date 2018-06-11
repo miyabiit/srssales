@@ -37,7 +37,7 @@ Template Name: unitproducts
 <div id="sub_title" class="no-pc strong_f">ユニットハウス</div>
 <nav>
 <ul id="sub_menu" class="clearfix">
-<li id="back" class="no-sp"><a href="/" class="disp_f">ホームに戻る</a></li>
+<li id="back" class="no-sp"><a href="/unitproducts" class="disp_f">ホームに戻る</a></li>
 <li class="text_c"><a href="un-search" class="disp_f">商品検索</a></li>
 <li class="text_c"><a href="un-guide-top" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="un-info-top" class="disp_f">ご案内</a></li>
@@ -66,15 +66,30 @@ Template Name: unitproducts
 
 <section id="search-box" class="unit_s">
 <div class="content">
-<form class="flex clearfix">
+<form class="flex clearfix" role="search" method="get" action="/un-search">
 <div class="search-selection">
 <div>
 <span class="disp_f">坪数で探す</span>
-<select name="size">
-<option value="">3坪未満</option>
-<option value="">3坪～4坪まで</option>
-<option value="">4坪～8坪まで</option>
-<option value="">8坪以上</option>
+<!-- select name="un_tubo_cat" -->
+<?php
+$selected = get_query_var("un_tubo_cat",0);
+$args = array(
+  'show_option_all' => '-',
+  'taxonomy' => 'un_tubo_cat',
+  'name' => 'un_tubo_cat',
+  'value_field' => 'slug',
+  'hide_empty' => false,
+  'selected' => $selected
+  );
+wp_dropdown_categories($args);
+
+/*
+$terms = get_terms('un_tubo_cat',array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<option value="' . $term->slug. '">' . $term->name . '</option>';
+}
+*/
+?>
 </select>
 </div>
 <div>

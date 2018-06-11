@@ -15,13 +15,13 @@ Template Name: un-search
 </div>
 </div>
 </div>
-<a href="index" class="no-pc"><img src="/images/home_sp.png" id="sp-logo" alt="エスアールエス ホームへ"></a>
+<a href="/" class="no-pc"><img src="/images/home_sp.png" id="sp-logo" alt="エスアールエス ホームへ"></a>
 <div class="content clearfix">
 <header>
 <div id="btn_menu"><a href="#" class="noscroll"><span class="box"><span></span><span></span><span></span></span></a></div>
 <nav>
 <ul id="nav_menu" class="clearfix">
-<li id="logo"><a href="index">ホーム</a></li>
+<li id="logo"><a href="/unitproducts">ホーム</a></li>
 <li class="text_c unit"><a href="unitproducts" class="disp_f">ユニットハウス</a></li>
 <li class="text_c atch"><a href="pmproducts" class="disp_f">アタッチメント</a></li>
 <li class="text_c lift"><a href="btproducts" class="disp_f">高所作業車 他</a></li>
@@ -37,7 +37,7 @@ Template Name: un-search
 <div id="sub_title" class="no-pc strong_f">ユニットハウス</div>
 <nav>
 <ul id="sub_menu" class="clearfix">
-<li id="back" class="no-sp"><a href="index" class="disp_f">ホームに戻る</a></li>
+<li id="back" class="no-sp"><a href="/unitproducts" class="disp_f">ホームに戻る</a></li>
 <li class="text_c"><a href="un-search" class="disp_f active">商品検索</a></li>
 <li class="text_c"><a href="un-guide-top" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="un-info-top" class="disp_f">ご案内</a></li>
@@ -82,7 +82,7 @@ Template Name: un-search
 
 <section id="search-check-box">
 <div class="content">
-<form class="clearfix">
+<form class="clearfix" role="search" method="get" action="/un-result">
 
 <div id="search-head-num">
 <div class="search-hits strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i></button>
@@ -99,12 +99,27 @@ Template Name: un-search
 <div class="check-selections clearfix">
 <ul>
     <li>
-        <input type='checkbox' id="size_all" /> <label for="size_all" class="unit_t strong_f big mdl">すべて選択</label>
+<?php
+  $selected = get_query_var("un_tubo_cat",0);
+  $checked = (strcmp($selected,'0')) ? '' : 'checked';
+?>
+  <input type='checkbox' id="size_all" <?php echo $checked; ?> /> <label for="size_all" class="unit_t strong_f big mdl">すべて選択</label>
         <ul class="choices clearfix">
-            <li><input type='checkbox' name="size[]" id="size_1" value="3坪未満" /> <label for="size_1">3坪未満</label></li>
-            <li><input type='checkbox' name="size[]" id="size_2" value="3坪〜4坪" /> <label for="size_2">3坪〜4坪まで</label></li>
-            <li><input type='checkbox' name="size[]" id="size_3" value="4坪〜9坪" /> <label for="size_3">4坪〜9坪まで</label></li>
-            <li><input type='checkbox' name="size[]" id="size_4" value="8坪以上" /> <label for="size_4">8坪以上</label></li>
+<?php
+  //$selected = get_query_var("un_tubo_cat",0);
+  $tags = get_terms('un_tubo_cat', array('hide_empty' => false));
+  $checkboxes = '';
+  foreach($tags as $tag) :
+    if(!strcmp($selected,'0')){
+      $checked = 'checked';
+    }else{
+      $checked = (strcmp($selected,$tag->slug)) ? '' : 'checked';
+    }
+    $checkboxes .= '<li><input type="checkbox" name="un_tubo_cat[]" value="' . $tag->slug . '" id="un_tubo_cat-' . $tag->term_id. '" ' . $checked . '/>';
+    $checkboxes .= '<label for="un_tubo_cat-' . $tag->slug . '">' . $tag->name . '</label></li>';
+  endforeach;
+  print $checkboxes;
+?>
         </ul>
     </li>
 </ul>

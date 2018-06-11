@@ -77,6 +77,7 @@ Template Name: un-result
 
 <section class="search-results-pagination">
 <div class="content flex">
+<?php echo var_dump(get_query_var('un_tubo_cat','0')); ?>
 <div class="hits flex strong_f"><span class="num">006</span>  件 ヒットしました<span class="more unit"><a href="un-search"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
 <div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
