@@ -73,12 +73,42 @@ Template Name: un-result
 </ul>
 </div>
 </section>
+<?php
+$args = array(
+  'post_type' => 'units',
+);
+if($_GET['un_tubo_cat']){
+  $un_tubo_cat_args = array(
+    'taxonomy' => 'un_tubo_cat',
+    'field' => 'slug',
+    'terms' => $_GET['un_tubo_cat']
+  );
+  $args["un_tubo_cat"] = $un_tubo_cat_args;
+};
+if( !empty($un_tubo_cat_args) || !empty($un_usage_cat_args)){
+  $args['tax_query'] = array(
+    'relation' => 'OR',
+    $un_tubo_cat_args,
+    $un_usage_cat_args
+  );
+};
+$wp_query = new WP_Query();
+the_search_query();
+$wp_query->query($args);
+?>
 
-
+<?php
+    $big = 9999999999;
+    $arg = array(
+        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'current' => max( 1, get_query_var('paged') ),
+        'total'   => $wp_query->max_num_pages
+    );
+    echo paginate_links($arg);
+?>
 <section class="search-results-pagination">
 <div class="content flex">
-<?php echo var_dump(get_query_var('un_tubo_cat','0')); ?>
-<div class="hits flex strong_f"><span class="num">006</span>  件 ヒットしました<span class="more unit"><a href="un-search"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
+<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="un-search"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
 <div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>
@@ -88,29 +118,34 @@ Template Name: un-result
 </div>
 </div>
 </section>
-
 <section id="search-results">
 <div class="content">
 
 
+<?php
+while( $wp_query->have_posts()) : $wp_query->the_post();
+?>
+  <h2><?php the_title(); ?></h2>
+
 <section class="searched-product product_data_unit">
-<h2><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span><span class="product_name">4坪エアコンハウス</span></h2>
-<p>エアコン付きで快適！滅多に出ない美品です！</p>
+<h2><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span>
+<span class="product_name"><?php the_title(); ?></span></h2>
+<p><?php echo get_post_meta($post->ID, 'comment', true); ?></p>
 <div class="searched_product_data flex">
 <div class="product_image"><img src="/images/product.jpg"></div>
 <div class="product_data">
 <div class="product_detail flex clearfix">
 <dl>
 <dt class="product_data_title">用途</dt>
-<dd class="product_data_content">事務所,倉庫</dd>
+<dd class="product_data_content"><?php $term = get_field('usage'); echo $term->name; ?></dd>
 <dt class="product_data_title">寸法</dt>
-<dd class="product_data_content">6,010×2,300×2,650</dd>
+<dd class="product_data_content"><?php echo get_post_meta($post->ID, 'lwh', true); ?></dd>
 </dl>
 <dl>
 <dt class="product_data_title">面積</dt>
-<dd class="product_data_content">4坪</dd>
+<dd class="product_data_content"><?php echo get_post_meta($post->ID, 'm2', true); ?>坪</dd>
 <dt class="product_data_title">本体価格</dt>
-<dd class="product_data_content"><span class="num">56</span>万円（税抜）</dd>
+<dd class="product_data_content"><span class="num"><?php get_post_meta($post->ID, 'price', true); ?></span>万円（税抜）</dd>
 </dl>
 </div>
 <h3><i class="fas fa-square"></i> 仕様</h3>
@@ -118,134 +153,36 @@ Template Name: un-result
 <div class="product_detail flex clearfix">
 <dl>
 <dt class="product_data_title">商品コード</dt>
-<dd class="product_data_content">NR41BA</dd>
+<dd class="product_data_content"><?php the_field('code'); ?></dd>
 <dt class="product_data_title">メーカー</dt>
-<dd class="product_data_content">--</dd>
+<dd class="product_data_content"><?php the_field('maker'); ?></dd>
 <dt class="product_data_title">本体重量</dt>
-<dd class="product_data_content">--</dd>
+<dd class="product_data_content"><?php the_field('weight'); ?></dd>
 <dt class="product_data_title">状態</dt>
-<dd class="product_data_content">良好</dd>
+<dd class="product_data_content"><?php $term = get_field('status'); echo $term->name; ?></dd>
 </dl>
 <dl>
 <dt class="product_data_title">管理No.</dt>
-<dd class="product_data_content">4-11</dd>
+<dd class="product_data_content"><?php the_field('ctl_no'); ?></dd>
 <dt class="product_data_title">メーカー型式</dt>
-<dd class="product_data_content">--</dd>
+<dd class="product_data_content"><?php the_field('maker_type'); ?></dd>
 <dt class="product_data_title">年式</dt>
-<dd class="product_data_content">--</dd>
+<dd class="product_data_content"><?php the_field('y_type'); ?></dd>
 </dl>
 </div>
 </div>
 </div>
 </div>
 <div class="product_contact flex">
-<div class="contact_info"><span class="contact strong_f">お問い合わせ</span><i class="fas fa-phone-square"></i><span class="num"><a href="tel:0120-345-6789">0120-345-6789</a></span><i class="fas fa-user"></i>担当者：山田</div>
-<div class="product_see_more unit"><a href="un-products" class="btn strong_f">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
+<div class="contact_info"><span class="contact strong_f">お問い合わせ</span><i class="fas fa-phone-square"></i><span class="num"><a href="tel:<?php the_field('tel'); ?>"><?php the_field('tel');?></a></span><i class="fas fa-user"></i>担当者：<?php if(get_field('staff')){$user = get_field('staff'); echo $user['nickname']; } ?></div>
+<div class="product_see_more unit"><a href="un-products" class="btn strong_f"><a href="<?php echo get_permalink($post->ID );?>" title="<?php echo get_the_title($post->ID);?>">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
 </div>
 </section>
 
-<section class="searched-product product_data_unit">
-<h2><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span><span class="product_name">4坪エアコンハウス</span></h2>
-<p>エアコン付きで快適！滅多に出ない美品です！</p>
-<div class="searched_product_data flex">
-<div class="product_image"><img src="/images/product.jpg"></div>
-<div class="product_data">
-<div class="product_detail flex clearfix">
-<dl>
-<dt class="product_data_title">用途</dt>
-<dd class="product_data_content">事務所,倉庫</dd>
-<dt class="product_data_title">寸法</dt>
-<dd class="product_data_content">6,010×2,300×2,650</dd>
-</dl>
-<dl>
-<dt class="product_data_title">面積</dt>
-<dd class="product_data_content">4坪</dd>
-<dt class="product_data_title">本体価格</dt>
-<dd class="product_data_content"><span class="num">56</span>万円（税抜）</dd>
-</dl>
-</div>
-<h3><i class="fas fa-square"></i> 仕様</h3>
-<div class="product_spec">
-<div class="product_detail flex clearfix">
-<dl>
-<dt class="product_data_title">商品コード</dt>
-<dd class="product_data_content">NR41BA</dd>
-<dt class="product_data_title">メーカー</dt>
-<dd class="product_data_content">--</dd>
-<dt class="product_data_title">本体重量</dt>
-<dd class="product_data_content">--</dd>
-<dt class="product_data_title">状態</dt>
-<dd class="product_data_content">良好</dd>
-</dl>
-<dl>
-<dt class="product_data_title">管理No.</dt>
-<dd class="product_data_content">4-11</dd>
-<dt class="product_data_title">メーカー型式</dt>
-<dd class="product_data_content">--</dd>
-<dt class="product_data_title">年式</dt>
-<dd class="product_data_content">--</dd>
-</dl>
-</div>
-</div>
-</div>
-</div>
-<div class="product_contact flex">
-<div class="contact_info"><span class="contact strong_f">お問い合わせ</span><i class="fas fa-phone-square"></i><span class="num"><a href="tel:0120-345-6789">0120-345-6789</a></span><i class="fas fa-user"></i>担当者：山田</div>
-<div class="product_see_more unit"><a href="un-products" class="btn strong_f">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
-</div>
-</section>
-
-<section class="searched-product product_data_unit">
-<h2><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span><span class="product_name">4坪エアコンハウス</span></h2>
-<p>エアコン付きで快適！滅多に出ない美品です！</p>
-<div class="searched_product_data flex">
-<div class="product_image"><img src="/images/product.jpg"></div>
-<div class="product_data">
-<div class="product_detail flex clearfix">
-<dl>
-<dt class="product_data_title">用途</dt>
-<dd class="product_data_content">事務所,倉庫</dd>
-<dt class="product_data_title">寸法</dt>
-<dd class="product_data_content">6,010×2,300×2,650</dd>
-</dl>
-<dl>
-<dt class="product_data_title">面積</dt>
-<dd class="product_data_content">4坪</dd>
-<dt class="product_data_title">本体価格</dt>
-<dd class="product_data_content"><span class="num">56</span>万円（税抜）</dd>
-</dl>
-</div>
-<h3><i class="fas fa-square"></i> 仕様</h3>
-<div class="product_spec">
-<div class="product_detail flex clearfix">
-<dl>
-<dt class="product_data_title">商品コード</dt>
-<dd class="product_data_content">NR41BA</dd>
-<dt class="product_data_title">メーカー</dt>
-<dd class="product_data_content">--</dd>
-<dt class="product_data_title">本体重量</dt>
-<dd class="product_data_content">--</dd>
-<dt class="product_data_title">状態</dt>
-<dd class="product_data_content">良好</dd>
-</dl>
-<dl>
-<dt class="product_data_title">管理No.</dt>
-<dd class="product_data_content">4-11</dd>
-<dt class="product_data_title">メーカー型式</dt>
-<dd class="product_data_content">--</dd>
-<dt class="product_data_title">年式</dt>
-<dd class="product_data_content">--</dd>
-</dl>
-</div>
-</div>
-</div>
-</div>
-<div class="product_contact flex">
-<div class="contact_info"><span class="contact strong_f">お問い合わせ</span><i class="fas fa-phone-square"></i><span class="num"><a href="tel:0120-345-6789">0120-345-6789</a></span><i class="fas fa-user"></i>担当者：山田</div>
-<div class="product_see_more unit"><a href="un-products" class="btn strong_f">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
-</div>
-</section>
-
+<?php endwhile; ?>
+<div><?php previous_posts_link('&laguo;前'); ?></div>
+<div><?php next_posts_link('&laguo;次'); ?></div>
+<?php wp_reset_postdata(); ?>
 
 </div>
 </section>
