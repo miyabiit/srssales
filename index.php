@@ -49,9 +49,10 @@
 <div class="strong_f show_menu_links">坪数で探す</div>
 <ul class="menu_links">
 <?php
-$terms = get_terms('un_tubo_cat',array('hide_empty' => false));
+$mytax = 'un_tubo_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="">' . $term->name . '</a></li>';
+  echo '<li><a href="/unitproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>

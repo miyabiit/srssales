@@ -93,7 +93,6 @@ if( !empty($un_tubo_cat_args) || !empty($un_usage_cat_args)){
   );
 };
 $wp_query = new WP_Query();
-the_search_query();
 $wp_query->query($args);
 ?>
 
@@ -189,7 +188,7 @@ while( $wp_query->have_posts()) : $wp_query->the_post();
 
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f"><span class="num">006</span>  件 ヒットしました<span class="more unit"><a href="un-search"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
+<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="un-search"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
 <div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>

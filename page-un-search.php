@@ -84,13 +84,36 @@ Template Name: un-search
 <div class="content">
 <form class="clearfix" role="search" method="get" action="/un-result">
 
+<?php
+$args = array(
+  'post_type' => 'units',
+);
+if($_GET['un_tubo_cat']){
+  $un_tubo_cat_args = array(
+    'taxonomy' => 'un_tubo_cat',
+    'field' => 'slug',
+    'terms' => $_GET['un_tubo_cat']
+  );
+  $args["un_tubo_cat"] = $un_tubo_cat_args;
+};
+if( !empty($un_tubo_cat_args) || !empty($un_usage_cat_args)){
+  $args['tax_query'] = array(
+    'relation' => 'OR',
+    $un_tubo_cat_args,
+    $un_usage_cat_args
+  );
+};
+$wp_query = new WP_Query();
+$wp_query->query($args);
+?>
 <div id="search-head-num">
-<div class="search-hits strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i></button>
+<div class="search-hits strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i></button>
 </div>
+
 
 <div class="search-check-selection clearfix">
 <div class="check-selections clearfix">
-<div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i> ユニットハウスを探す</button></div>
+<div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i> ユニットハウスを探す</button></div>
 </div>
 </div>
 
@@ -100,20 +123,27 @@ Template Name: un-search
 <ul>
     <li>
 <?php
-  $selected = get_query_var("un_tubo_cat",0);
-  $checked = (strcmp($selected,'0')) ? '' : 'checked';
+  $selected = get_query_var("un_tubo_cat");
+  $items = array();
+  if(!is_array($selected)){
+    array_push($items, $selected);
+  }elseif(!is_array($selected->terms)){
+    array_push($items, $selected['terms']);
+  }else{
+    $items += $selected->terms;
+  }
+  $checked = in_array("0", $items) ? 'checked' : '';
 ?>
   <input type='checkbox' id="size_all" <?php echo $checked; ?> /> <label for="size_all" class="unit_t strong_f big mdl">すべて選択</label>
         <ul class="choices clearfix">
 <?php
-  //$selected = get_query_var("un_tubo_cat",0);
   $tags = get_terms('un_tubo_cat', array('hide_empty' => false));
   $checkboxes = '';
   foreach($tags as $tag) :
-    if(!strcmp($selected,'0')){
+    if(in_array("0", $items)){
       $checked = 'checked';
     }else{
-      $checked = (strcmp($selected,$tag->slug)) ? '' : 'checked';
+      $checked = (in_array($tag->slug,$items)) ? 'checked' : '';
     }
     $checkboxes .= '<li><input type="checkbox" name="un_tubo_cat[]" value="' . $tag->slug . '" id="un_tubo_cat-' . $tag->term_id. '" ' . $checked . '/>';
     $checkboxes .= '<label for="un_tubo_cat-' . $tag->slug . '">' . $tag->name . '</label></li>';
@@ -380,7 +410,7 @@ Template Name: un-search
 
 <div class="search-check-selection clearfix">
 <div class="check-selections clearfix">
-<div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i> ユニットハウスを探す</button></div>
+<div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i> ユニットハウスを探す</button></div>
 </div>
 </div>
 

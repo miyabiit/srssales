@@ -72,7 +72,7 @@ Template Name: unitproducts
 <span class="disp_f">坪数で探す</span>
 <!-- select name="un_tubo_cat" -->
 <?php
-$selected = get_query_var("un_tubo_cat",0);
+$selected = get_query_var("un_tubo_cat");
 $args = array(
   'show_option_all' => '-',
   'taxonomy' => 'un_tubo_cat',
@@ -82,13 +82,6 @@ $args = array(
   'selected' => $selected
   );
 wp_dropdown_categories($args);
-
-/*
-$terms = get_terms('un_tubo_cat',array('hide_empty' => false));
-foreach($terms as $term){
-  echo '<option value="' . $term->slug. '">' . $term->name . '</option>';
-}
-*/
 ?>
 </select>
 </div>
@@ -154,7 +147,29 @@ foreach($terms as $term){
 </select>
 </div>
 </div>
-<div class="search-button"><div id="search-hits" class="strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i> ユニットハウスを探す</button></div>
+<?php
+$args = array(
+  'post_type' => 'units',
+);
+if($_GET['un_tubo_cat']){
+  $un_tubo_cat_args = array(
+    'taxonomy' => 'un_tubo_cat',
+    'field' => 'slug',
+    'terms' => $_GET['un_tubo_cat']
+  );
+  $args["un_tubo_cat"] = $un_tubo_cat_args;
+};
+if( !empty($un_tubo_cat_args) || !empty($un_usage_cat_args)){
+  $args['tax_query'] = array(
+    'relation' => 'OR',
+    $un_tubo_cat_args,
+    $un_usage_cat_args
+  );
+};
+$wp_query = new WP_Query();
+$wp_query->query($args);
+?>
+  <div class="search-button"><div id="search-hits" class="strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i> ユニットハウスを探す</button></div>
 </form>
 </div>
 </section>
