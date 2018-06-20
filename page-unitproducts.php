@@ -189,110 +189,35 @@ $wp_query->query($args);
 <div class="content">
 <h2 class="disp_f text_l"><i class="fas fa-thumbs-up"></i> お勧め商品</h2>
 <div id="products-list" class="clearfix">
+<?php
+$query = new WP_Query(array(
+  'post_type' => 'units',
+  'post_per_page' => 5,
+  'orderby' => 'date',
+  'order' => 'DESC'
+));
+while($query->have_posts()) : $query->the_post();
+?>
 <div class="products float_l">
-<a href="un-products">
+<a href="<?php the_permalink(); ?>">
 <div class="product_list_title flex">
 <div class="product_list_sign orange strong_f">美品</div>
-<div class="product_list_catch strong_f">エアコン付きで快適<br>勉強部屋に</div>
+<div class="product_list_catch strong_f"><?php echo get_post_meta($post->ID, 'comment', true); ?></div>
 </div>
 <img src="/images/prod.jpg" class="product_list_img" alt="商品">
 <div class="product_list_detail">
-<div class="product_list_name strong_f">4坪エアコンハウス</div>
+<div class="product_list_name strong_f"><?php the_title(); ?></div>
 <div class="product_list_info flex">
 <div class="product_list_info_sub">サイズ</div>
-<div class="product_list_info_data">4坪</div>
+<div class="product_list_info_data"><?php echo get_post_meta($post->ID, 'm2', true); ?>坪</div>
 </div>
 <div class="product_list_info flex">
 <div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">NEOIQHGAQ9</div>
+<div class="product_list_info_data"><?php echo the_field('code'); ?></div>
 </div>
 <div class="product_list_info flex">
 <div class="product_list_info_unit">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
-</div>
-<div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
-</div>
-</div>
-</a>
-</div>
-<div class="products float_l">
-<a href="un-products">
-<div class="product_list_title flex">
-<div class="product_list_sign orange strong_f">美品</div>
-<div class="product_list_catch strong_f">エアコン付きで快適<br>勉強部屋に</div>
-</div>
-<img src="/images/prod.jpg" class="product_list_img" alt="商品">
-<div class="product_list_detail">
-<div class="product_list_name strong_f">4坪エアコンハウス</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">サイズ</div>
-<div class="product_list_info_data">4坪</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">NEOIQHGAQ9</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_unit">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
-</div>
-<div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
-</div>
-</div>
-</a>
-</div>
-<div class="products float_l">
-<a href="un-products">
-<div class="product_list_title flex">
-<div class="product_list_sign orange strong_f">美品</div>
-<div class="product_list_catch strong_f">エアコン付きで快適<br>勉強部屋に</div>
-</div>
-<img src="/images/prod.jpg" class="product_list_img" alt="商品">
-<div class="product_list_detail">
-<div class="product_list_name strong_f">4坪エアコンハウス</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">サイズ</div>
-<div class="product_list_info_data">4坪</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">NEOIQHGAQ9</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_unit">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
-</div>
-<div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
-</div>
-</div>
-</a>
-</div>
-<div class="products float_l">
-<a href="un-products">
-<div class="product_list_title flex">
-<div class="product_list_sign blue strong_f">美品</div>
-<div class="product_list_catch strong_f">エアコン付きで快適<br>勉強部屋に</div>
-</div>
-<img src="/images/prod.jpg" class="product_list_img" alt="商品">
-<div class="product_list_detail">
-<div class="product_list_name strong_f">4坪エアコンハウス 4坪エアコンハウス</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">サイズ</div>
-<div class="product_list_info_data">4坪</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">NEOIQHGAQ9</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_unit">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
+<div class="product_list_info_price text_r num"><?php echo the_field('price'); ?><span class="yen">万円</span></div>
 </div>
 <div class="product_list_tags flex">
 <div class="product_list_sign red strong_f">NEW</div>
@@ -302,34 +227,8 @@ $wp_query->query($args);
 </div>
 </a>
 </div>
-<div class="products float_l">
-<a href="un-products">
-<div class="product_list_title flex">
-<div class="product_list_sign orange strong_f">美品</div>
-<div class="product_list_catch strong_f">エアコン付きで快適<br>勉強部屋に</div>
-</div>
-<img src="/images/prod.jpg" class="product_list_img" alt="商品">
-<div class="product_list_detail">
-<div class="product_list_name strong_f">4坪エアコンハウス</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">サイズ</div>
-<div class="product_list_info_data">4坪</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">NEOIQHGAQ9</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_unit">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
-</div>
-<div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
-</div>
-</div>
-</a>
-</div>
+<?php endwhile; ?>
+
 </div>
 </div>
 </section>

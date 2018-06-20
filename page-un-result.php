@@ -15,13 +15,13 @@ Template Name: un-result
 </div>
 </div>
 </div>
-<a href="index" class="no-pc"><img src="/images/home_sp.png" id="sp-logo" alt="エスアールエス ホームへ"></a>
+<a href="/" class="no-pc"><img src="/images/home_sp.png" id="sp-logo" alt="エスアールエス ホームへ"></a>
 <div class="content clearfix">
 <header>
 <div id="btn_menu"><a href="#" class="noscroll"><span class="box"><span></span><span></span><span></span></span></a></div>
 <nav>
 <ul id="nav_menu" class="clearfix">
-<li id="logo"><a href="index">ホーム</a></li>
+<li id="logo"><a href="/">ホーム</a></li>
 <li class="text_c unit"><a href="unitproducts" class="disp_f">ユニットハウス</a></li>
 <li class="text_c atch"><a href="pmproducts" class="disp_f">アタッチメント</a></li>
 <li class="text_c lift"><a href="btproducts" class="disp_f">高所作業車 他</a></li>
@@ -37,7 +37,7 @@ Template Name: un-result
 <div id="sub_title" class="no-pc strong_f">ユニットハウス</div>
 <nav>
 <ul id="sub_menu" class="clearfix">
-<li id="back" class="no-sp"><a href="/" class="disp_f">ホームに戻る</a></li>
+<li id="back" class="no-sp"><a href="/unitproducts" class="disp_f">ホームに戻る</a></li>
 <li class="text_c"><a href="un-search" class="disp_f active">商品検索</a></li>
 <li class="text_c"><a href="un-guide-top" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="un-info-top" class="disp_f">ご案内</a></li>
@@ -107,7 +107,7 @@ $wp_query->query($args);
 ?>
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="un-search"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
+<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="un-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
 <div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>
@@ -188,7 +188,7 @@ while( $wp_query->have_posts()) : $wp_query->the_post();
 
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="un-search"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
+<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="un-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
 <div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>
