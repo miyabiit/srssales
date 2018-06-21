@@ -317,3 +317,15 @@ function custom_enter_title_here( $enter_title_here, $post ) {
     }
     return $enter_title_here;
 }
+// search-投稿タイプ.php
+add_filter('template_include','custom_search_template');
+function custom_search_template($template){
+  if ( is_search() ){
+    $post_types = get_query_var('post_type');
+    foreach ( (array) $post_types as $post_type )
+      $templates[] = "search-{$post_type}.php";
+    $templates[] = 'search.php';
+    $template = get_query_template('search',$templates);
+  }
+  return $template;
+}

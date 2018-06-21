@@ -175,10 +175,11 @@ $wp_query->query($args);
 </section>
 <section id="key-visual" class="unit">
 <div class="content">
-<form id="keyword-search-box" class="flex">
+<form id="keyword-search-box" class="flex" method="get" action="<?php echo home_url(); ?>">
 <div id="search-title" class="disp_f text_c">サイト内検索</div>
-<input type="text" />
-<button type="submit" name="submit"><i class="fas fa-search"></i></button>
+<input type="hidden" name="post_type" id="post_type" value="units">
+<input type="text" value="" name="s" id="s" />
+<button type="submit"><i class="fas fa-search"></i></button>
 </form>
 <h1 class="disp_f text_c shadow">ユニットハウス</h1>
 <p class="disp_f text_c shadow">構造・メインテナンス状態も良好</p>
