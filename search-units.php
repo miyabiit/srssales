@@ -26,7 +26,7 @@ Template Name: un-result-s
 <li class="text_c unit"><a href="unitproducts" class="disp_f">ユニットハウス</a></li>
 <li class="text_c atch"><a href="pmproducts" class="disp_f">アタッチメント</a></li>
 <li class="text_c lift"><a href="btproducts" class="disp_f">高所作業車 他</a></li>
-<li class="text_c srsi"><a href="about" class="disp_f">エスアールエスのご紹介</a></li>
+<li class="text_c srsi"><a href="/srs/_about.html" class="disp_f">エスアールエスのご紹介</a></li>
 </ul>
 </nav>
 </header>
@@ -41,7 +41,7 @@ Template Name: un-result-s
 <li id="back" class="no-sp"><a href="/unitproducts" class="disp_f">ホームに戻る</a></li>
 <li class="text_c"><a href="un-search" class="disp_f active">商品検索</a></li>
 <li class="text_c"><a href="/srs/_un-guide-top.html" class="disp_f">ご利用ガイド</a></li>
-<li class="text_c"><a href="un-info-top" class="disp_f">ご案内</a></li>
+<li class="text_c"><a href="/srs/_un-info-top.html" class="disp_f">ご案内</a></li>
 <li class="text_c"><a href="/" class="disp_f">お問い合わせ</a></li>
 </ul>
 </nav>

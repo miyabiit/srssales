@@ -25,7 +25,7 @@ Template Name: pmproducts
 <li class="text_c unit"><a href="unitproducts" class="disp_f">ユニットハウス</a></li>
 <li class="text_c atch"><a href="pmproducts" class="disp_f">アタッチメント</a></li>
 <li class="text_c lift"><a href="btproducts" class="disp_f">高所作業車 他</a></li>
-<li class="text_c srsi"><a href="about" class="disp_f">エスアールエスのご紹介</a></li>
+<li class="text_c srsi"><a href="/srs/_about.html" class="disp_f">エスアールエスのご紹介</a></li>
 </ul>
 </nav>
 </header>
