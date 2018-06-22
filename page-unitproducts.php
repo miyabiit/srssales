@@ -39,7 +39,7 @@ Template Name: unitproducts
 <ul id="sub_menu" class="clearfix">
 <li id="back" class="no-sp"><a href="/unitproducts" class="disp_f">ホームに戻る</a></li>
 <li class="text_c"><a href="un-search" class="disp_f">商品検索</a></li>
-<li class="text_c"><a href="un-guide-top" class="disp_f">ご利用ガイド</a></li>
+<li class="text_c"><a href="/srs/_un-guide-top.html" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="un-info-top" class="disp_f">ご案内</a></li>
 <li class="text_c"><a href="/" class="disp_f">お問い合わせ</a></li>
 </ul>
