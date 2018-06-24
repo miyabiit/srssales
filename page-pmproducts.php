@@ -76,6 +76,7 @@ Template Name: pmproducts
 <option value="">フォーク</option>
 <option value="">その他</option>
 <option value="">特殊アタッチメント</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 <div>
@@ -85,6 +86,7 @@ Template Name: pmproducts
 <option value="">0.45</option>
 <option value="">0.7</option>
 <option value="">1.2以上</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 <div>
@@ -98,6 +100,7 @@ Template Name: pmproducts
 <option value="">50～75万円未満</option>
 <option value="">75～100万円未満</option>
 <option value="">100万円以上</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 </div>
@@ -112,6 +115,7 @@ Template Name: pmproducts
 <option value="">近畿</option>
 <option value="">中国/四国</option>
 <option value="">九州</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 <div>
@@ -124,6 +128,7 @@ Template Name: pmproducts
 <option value="">中国地方</option>
 <option value="">四国地方</option>
 <option value="">九州地方</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 <div>
@@ -135,6 +140,7 @@ Template Name: pmproducts
 <option value="">B:使用感中</option>
 <option value="">C:使用感大</option>
 <option value="">D:難あり</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 </div>
@@ -150,7 +156,7 @@ Template Name: pmproducts
 <button type="submit" name="submit"><i class="fas fa-search"></i></button>
 </form>
 <h1 class="disp_f text_c shadow">アタッチメント</h1>
-<p class="disp_f text_c shadow">豊富なラインナップをご覧ください。</p>
+<p class="disp_f text_c shadow">アタッチメントの購入をお考えの皆様へ<br>豊富なラインナップをご覧ください。</p>
 </div>
 </section>
 
@@ -161,7 +167,6 @@ Template Name: pmproducts
 <div class="products float_l">
 <a href="pm-products">
 <div class="product_list_title flex">
-<div class="product_list_sign orange strong_f">美品</div>
 <div class="product_list_catch strong_f">破砕力ダントツ<br>ガラ付鉄筋キャッチ</div>
 </div>
 <img src="/images/atch.jpg" class="product_list_img" alt="商品">
@@ -189,7 +194,6 @@ Template Name: pmproducts
 <div class="products float_l">
 <a href="pm-products">
 <div class="product_list_title flex">
-<div class="product_list_sign orange strong_f">美品</div>
 <div class="product_list_catch strong_f">破砕力ダントツ<br>ガラ付鉄筋キャッチ</div>
 </div>
 <img src="/images/atch.jpg" class="product_list_img" alt="商品">
@@ -217,7 +221,6 @@ Template Name: pmproducts
 <div class="products float_l">
 <a href="pm-products">
 <div class="product_list_title flex">
-<div class="product_list_sign orange strong_f">美品</div>
 <div class="product_list_catch strong_f">破砕力ダントツ<br>ガラ付鉄筋キャッチ</div>
 </div>
 <img src="/images/atch.jpg" class="product_list_img" alt="商品">
@@ -245,7 +248,6 @@ Template Name: pmproducts
 <div class="products float_l">
 <a href="pm-products">
 <div class="product_list_title flex">
-<div class="product_list_sign blue strong_f">美品</div>
 <div class="product_list_catch strong_f">林業に特化！首振り＆全旋回つかみ機</div>
 </div>
 <img src="/images/atch2.jpg" class="product_list_img" alt="商品">
@@ -274,7 +276,6 @@ Template Name: pmproducts
 <div class="products float_l">
 <a href="pm-products">
 <div class="product_list_title flex">
-<div class="product_list_sign orange strong_f">美品</div>
 <div class="product_list_catch strong_f">破砕力ダントツ<br>ガラ付鉄筋キャッチ</div>
 </div>
 <img src="/images/atch.jpg" class="product_list_img" alt="商品">
@@ -342,12 +343,12 @@ while($query->have_posts()) : $query->the_post();
 <section id="guide">
 <div class="content">
 <h2 class="disp_f text_l"><i class="fas fa-compass"></i> ご利用ガイド</h2>
-<ul id="guidance-list" class="clearfix">
-<li class="guide"><section class="guidance"><h3 class="guide_title atch_t">初めての方へ</h3><p>初めてご利用される方のために、このウェブサイトについて、わかりやすくご説明いたします。</p><a href="/" class="atch disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title atch_t">ご購入の流れ</h3><p>ご購入やお支払の流れを、4つのステップに分けて詳しくご説明します。</p><a href="/" class="atch disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title atch_t">商品の選び方</h3><p>お客様にとって最適なアタッチメントをお選びいただけるように、商品の選び方のポイントをご紹介しています。</p><a href="/" class="atch disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title atch_t">法律に関して</h3><p>アタッチメントに関係する法令上の制限をご説明いたします。</p><a href="/" class="atch disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title atch_t">トラブルサポート</h3><p>商品が正しく動かない！？ そんな時はまずこちらのページをご確認ください。お客さまのヒントになる情報が掲載されているかもしれません。</p><a href="/" class="atch disp_f sml">詳細を見る</a></section></li>
+<ul id="atch-guide" class="clearfix">
+<li class="guide"><section class="guidance"><h3 class="guide_title">初めての方へ</h3><p>初めてご利用される方のために、このウェブサイトについて、わかりやすくご説明いたします。</p><a href="pm-biginner.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">ご購入の流れ</h3><p>ご購入やお支払の流れを、4つのステップに分けて詳しくご説明します。</p><a href="/srs/_pm-purchase-flow.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">商品の選び方</h3><p>お客様にとって最適なアタッチメントをお選びいただけるように、商品の選び方のポイントをご紹介しています。</p><a href="/srs/_pm-select.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">法律に関して</h3><p>アタッチメントに関係する法令上の制限をご説明いたします。</p><a href="/srs/_pm-law.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">FAQ</h3><p>お客様から寄せられたよくあるご質問を一問一答でお答えします。</p><a href="/srs/_pm-faq.html" class="disp_f sml">詳細を見る</a></section></li>
 </ul>
 </div>
 </section>
@@ -369,7 +370,7 @@ while($query->have_posts()) : $query->the_post();
 <p id="company" class="flex"><img src="/images/srs.png"><span>高所作業車、特殊作業車、アタッチメント、ユニットハウスのことなら<span id="company-name">エスアールエス株式会社</span></span></p>
 </div>
 <div>
-<p id="links" class=""><a href="">HOME</a> | <a href="">プライバシーポリシー</a> | <br><a href="">特定商取引に関する表示</a> | <a href="">サイトマップ</a></p>
+<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy.html">プライバシーポリシー</a> | <br><a href="commerce.html">特定商取引に関する表示</a> | <a href="sitemap.html">サイトマップ</a></p>
 <p id="copy" class="xs">Copyright &copy; 2018 SRS Corporation. <br>All Rights Reserved.</p>
 </div>
 <div id="pagetop" class="srsd"><i class="fas fa-chevron-circle-up"></i> 上へ戻る</div>

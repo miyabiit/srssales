@@ -96,6 +96,7 @@ wp_dropdown_categories($args);
 <option value="">50～75万円未満</option>
 <option value="">75～100万円未満</option>
 <option value="">100万円以上</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 <div>
@@ -107,6 +108,7 @@ wp_dropdown_categories($args);
 <option value="">トイレ</option>
 <option value="">2階建て</option>
 <option value="">その他</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 </div>
@@ -121,6 +123,7 @@ wp_dropdown_categories($args);
 <option value="">近畿</option>
 <option value="">中国/四国</option>
 <option value="">九州</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 <div>
@@ -133,6 +136,7 @@ wp_dropdown_categories($args);
 <option value="">中国地方</option>
 <option value="">四国地方</option>
 <option value="">九州地方</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 <div>
@@ -144,6 +148,7 @@ wp_dropdown_categories($args);
 <option value="">B:使用感中</option>
 <option value="">C:使用感大</option>
 <option value="">D:難あり</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 </div>
@@ -182,7 +187,7 @@ $wp_query->query($args);
 <button type="submit"><i class="fas fa-search"></i></button>
 </form>
 <h1 class="disp_f text_c shadow">ユニットハウス</h1>
-<p class="disp_f text_c shadow">構造・メインテナンス状態も良好</p>
+<p class="disp_f text_c shadow">ユニットハウスの購入をお考えの皆様へ<br>信頼と実績のエスアールエスをご検討ください。</p>
 </div>
 </section>
 
@@ -274,16 +279,17 @@ while($query->have_posts()) : $query->the_post();
 <section id="guide">
 <div class="content">
 <h2 class="disp_f text_l"><i class="fas fa-compass"></i> ご利用ガイド</h2>
-<ul id="guidance-list" class="clearfix">
-<li class="guide"><section class="guidance"><h3 class="guide_title unit_t">初めての方へ</h3><p>初めてご利用される方のために、このウェブサイトについて、わかりやすくご説明いたします。</p><a href="/" class="unit disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title unit_t">ユニットハウスとは</h3><p>ユニットハウスって何？プレハブとの違いは何？ユニットハウスについてわかりやすくご説明いたします。</p><a href="/" class="unit disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title unit_t">ご購入の流れ</h3><p>ご購入やお支払の流れを、4つのステップに分けて詳しくご説明します。</p><a href="/" class="unit disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title unit_t">納品・施工の流れ</h3><p>ご購入やお支払の流れを、４つのステップに分けて詳しくご説明します。</p><a href="/" class="unit disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title unit_t">商品の選び方</h3><p>お客様にとって最適なユニットハウスをお選びいただけるように、商品の選び方のポイントをご紹介しています。</p><a href="/" class="unit disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title unit_t">法律に関して</h3><p>ユニットハウスを設置する際に関係する法令上の制限をご説明いたします。</p><a href="/" class="unit disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title unit_t">リフォーム・カスタム</h3><p>リフォームやカスタマイズをご希望のお客様へ快適な空間づくりをサポートいたします。</p><a href="/" class="unit disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title unit_t">FAQ</h3><p>お客様から寄せられたよくあるご質問を一問一答でお答えします。</p><a href="/" class="unit disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title unit_t">ご購入の流れ</h3><p>ご購入やお支払の流れを、4つのステップに分けて詳しくご説明します。</p><a href="/" class="unit disp_f sml">詳細を見る</a></section></li>
+<ul id="unit-guide" class="clearfix">
+<li class="guide"><section class="guidance"><h3 class="guide_title">初めての方へ</h3><p>初めてご利用される方のために、このウェブサイトについて、わかりやすくご説明いたします。</p><a href="/srs/_un-beginner.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">ユニットハウスとは</h3><p>ユニットハウスって何？プレハブとの違いは何？ユニットハウスについてわかりやすくご説明いたします。</p><a href="/srs/_unitproducts-about.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">ご購入の流れ</h3><p>ご購入やお支払の流れを、4つのステップに分けて詳しくご説明します。</p><a href="/srs/_un-purchase-flow.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">納品・施工の流れ</h3><p>ご購入やお支払の流れを、４つのステップに分けて詳しくご説明します。</p><a href="/srs/_construction-flow.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">商品の選び方</h3><p>お客様にとって最適なユニットハウスをお選びいただけるように、商品の選び方のポイントをご紹介しています。</p><a href="un-select.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">設置ガイド</h3><p>ここではユニットハウスの設置についてご説明させていただきます。ユニットハウスご購入の際の参考になさってください。</p><a href="/srs/_installation.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">法律に関して</h3><p>ユニットハウスに関係する法令上の制限をご説明いたします。</p><a href="/srs/_un-law.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">リフォーム・カスタム</h3><p>リフォームやカスタマイズをご希望のお客様へ快適な空間づくりをサポートいたします。</p><a href="/srs/_customize.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">FAQ</h3><p>お客様から寄せられたよくあるご質問を一問一答でお答えします。</p><a href="/srs/_un-faq.html" class="disp_f sml">詳細を見る</a></section></li>
+
 </ul>
 </div>
 </section>

@@ -51,7 +51,7 @@ Template Name: pm-search
 <div class="content">
 <ul class="breadcrumb clearfix">
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="ホームのＵＲＬ" itemprop="url">
+<a href="/" itemprop="url">
 <span itemprop="title">ホーム</span>
 </a> >
 </li>
@@ -393,7 +393,7 @@ Template Name: pm-search
 <p id="company" class="flex"><img src="/images/srs.png"><span>高所作業車、特殊作業車、アタッチメント、ユニットハウスのことなら<span id="company-name">エスアールエス株式会社</span></span></p>
 </div>
 <div>
-<p id="links" class=""><a href="">HOME</a> | <a href="">プライバシーポリシー</a> | <br><a href="">特定商取引に関する表示</a> | <a href="">サイトマップ</a></p>
+<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy.html">プライバシーポリシー</a> | <br><a href="commerce.html">特定商取引に関する表示</a> | <a href="sitemap.html">サイトマップ</a></p>
 <p id="copy" class="xs">Copyright &copy; 2018 SRS Corporation. <br>All Rights Reserved.</p>
 </div>
 <div id="pagetop" class="srsd"><i class="fas fa-chevron-circle-up"></i> 上へ戻る</div>

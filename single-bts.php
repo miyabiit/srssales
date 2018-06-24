@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: pm-products 
+Template Name: bt-products 
 */
 ?>
 <?php get_header(); ?>
@@ -32,13 +32,13 @@ Template Name: pm-products
 </div>
 </section>
 
-<section id="sub-menu" class="atch">
+<section id="sub-menu" class="lift">
 <div class="content clearfix">
 <div id="sub_title" class="no-pc strong_f">アタッチメント</div>
 <nav>
 <ul id="sub_menu" class="clearfix">
 <li id="back" class="no-sp"><a href="index" class="disp_f">ホームに戻る</a></li>
-<li class="text_c"><a href="pm-search" class="disp_f">商品検索</a></li>
+<li class="text_c"><a href="bt-search" class="disp_f">商品検索</a></li>
 <li class="text_c"><a href="/" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="/" class="disp_f">ご案内</a></li>
 <li class="text_c"><a href="/" class="disp_f">お問い合わせ</a></li>
@@ -56,23 +56,23 @@ Template Name: pm-products
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="pmproducts" itemprop="url">
-<span itemprop="title">アタッチメント</span>
+<a href="btproducts" itemprop="url">
+<span itemprop="title">高所作業車 他</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="un-products" itemprop="url">
-<span itemprop="title">マグネット小割機（発電式）</span>
+<a href="bt-products" itemprop="url">
+<span itemprop="title">高所作業車 Ｋテーブル 4mポスト型 バッテリー RM04CNS-S</span>
 </a>
 </li>
 </ul>
 </div>
 </section>
 
-<section id="product-detail" class="atch_detail">
+<section id="product-detail" class="lift_detail">
 <div id="product-title" class="content">
-<h1 class="txt">マグネット小割機（発電式）<div id="icons"><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span></div></h1>
-<p>破砕力も磁力もダントツのパワーでガラ付鉄筋もしっかりキャッチ＆回収！</p>
+<h1 class="txt">高所作業車 Ｋテーブル 4mポスト型 バッテリー RM04CNS-S<div id="icons"><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span></div></h1>
+<p>補水不要で手間もコストも削減、しかも長寿命のバッテリー</p>
 </div>
 <div id="product-border" class="border"></div>
 <div class="content flex clearfix">
@@ -86,23 +86,23 @@ Template Name: pm-products
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">用途</dt>
-<dd class="product_detail_content">小割機</dd>
+<dd class="product_detail_content">高所作業車</dd>
 <dt class="product_detail_title box">メーカー</dt>
-<dd class="product_detail_content">株式会社タグチ工業</dd>
+<dd class="product_detail_content">株式会社アイチコーポレーション</dd>
 <dt class="product_detail_title box">メーカー形式</dt>
-<dd class="product_detail_content">MC-201DM7</dd>
+<dd class="product_detail_content">RM04CNS</dd>
 </dl>
 </div>
 </div>
 <div class="content">
 
 <div class="slider responsive">
-<div><a data-fancybox="gallery" href="/images/products/2/1.jpg" data-caption="画像1。ここに各画像のキャプションを入力します"><img src="/images/products/2/1.jpg"></a></div>
-<div><a data-fancybox="gallery" href="/images/products/2/2.jpg" data-caption="画像2。ここに各画像のキャプションを入力します"><img src="/images/products/2/2.jpg"></a></div>
-<div><a data-fancybox="gallery" href="/images/products/2/3.jpg" data-caption="画像3。ここに各画像のキャプションを入力します"><img src="/images/products/2/3.jpg"></a></div>
-<div><a data-fancybox="gallery" href="/images/products/2/4.jpg" data-caption="画像4。ここに各画像のキャプションを入力します"><img src="/images/products/2/4.jpg"></a></div>
-<div><a data-fancybox="gallery" href="/images/products/2/5.jpg" data-caption="画像5。ここに各画像のキャプションを入力します"><img src="/images/products/2/5.jpg"></a></div>
-<div><a data-fancybox="gallery" href="/images/products/2/6.jpg" data-caption="画像6。ここに各画像のキャプションを入力します"><img src="/images/products/2/6.jpg"></a></div>
+<div><a data-fancybox="gallery" href="/images/products/3/1.jpg" data-caption="画像1。ここに各画像のキャプションを入力します"><img src="/images/products/3/1.jpg"></a></div>
+<div><a data-fancybox="gallery" href="/images/products/3/2.jpg" data-caption="画像2。ここに各画像のキャプションを入力します"><img src="/images/products/3/2.jpg"></a></div>
+<div><a data-fancybox="gallery" href="/images/products/3/3.jpg" data-caption="画像3。ここに各画像のキャプションを入力します"><img src="/images/products/3/3.jpg"></a></div>
+<div><a data-fancybox="gallery" href="/images/products/3/4.jpg" data-caption="画像4。ここに各画像のキャプションを入力します"><img src="/images/products/3/4.jpg"></a></div>
+<div><a data-fancybox="gallery" href="/images/products/3/5.jpg" data-caption="画像5。ここに各画像のキャプションを入力します"><img src="/images/products/3/5.jpg"></a></div>
+<div><a data-fancybox="gallery" href="/images/products/3/6.jpg" data-caption="画像6。ここに各画像のキャプションを入力します"><img src="/images/products/3/6.jpg"></a></div>
 </div>
 </div>
 <div class="content">
@@ -121,24 +121,24 @@ Template Name: pm-products
 <div class="content flex clearfix">
 <div class="product_detail_data">
 <dl>
-<dt class="product_detail_title box">商品コード</dt>
-<dd class="product_detail_content">MCC 7000A</dd>
-<dt class="product_detail_title box">クラス</dt>
-<dd class="product_detail_content">1.2</dd>
-<dt class="product_detail_title box">年式</dt>
-<dd class="product_detail_content">--</dd>
-<dt class="product_detail_title box">本体重量</dt>
-<dd class="product_detail_content">2,070</dd>
+<dt class="product_detail_title box">作業床高さ</dt>
+<dd class="product_detail_content">3.8m</dd>
+<dt class="product_detail_title box">積載荷量</dt>
+<dd class="product_detail_content">200kg</dd>
+<dt class="product_detail_title box">車両重量</dt>
+<dd class="product_detail_content">580kg</dd>
+<dt class="product_detail_title box">状態</dt>
+<dd class="product_detail_content">良好</dd>
 </dl>
 </div>
 <div class="product_detail_data">
 <dl>
-<dt class="product_detail_title box">管理No.</dt>
-<dd class="product_detail_content">502</dd>
-<dt class="product_detail_title box">仕様</dt>
+<dt class="product_detail_title box">寸法</dt>
+<dd class="product_detail_content">0.77m x 1.62m x 1.25m</dd>
+<dt class="product_detail_title box">駆動方法</dt>
+<dd class="product_detail_content">バッテリー</dd>
+<dt class="product_detail_title box">年式</dt>
 <dd class="product_detail_content">--</dd>
-<dt class="product_detail_title box">状態</dt>
-<dd class="product_detail_content">良好</dd>
 </dl>
 </div>
 </div>
@@ -156,7 +156,7 @@ Template Name: pm-products
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">コメント</dt>
-<dd class="product_detail_content">電機配線が不要の油圧発電式マグネット搭載。次世代小割マグ！画期的な新アタッチメントです！！</dd>
+<dd class="product_detail_content">高所作業車の運転（高所作業）には以下の資格が必要です。<br>・作業床の最大高さが2m以上10m未満のものは、高所作業車運転のための「特別教育修了者」または「技能講習修了者」。<br>・作業床の最大高さが10m以上のものは、高所作業車運転のための「技能講習修了者」。</dd>
 </dl>
 </div>
 </div>
@@ -193,7 +193,7 @@ Template Name: pm-products
 <p id="company" class="flex"><img src="/images/srs.png"><span>高所作業車、特殊作業車、アタッチメント、ユニットハウスのことなら<span id="company-name">エスアールエス株式会社</span></span></p>
 </div>
 <div>
-<p id="links" class=""><a href="">HOME</a> | <a href="">プライバシーポリシー</a> | <br><a href="">特定商取引に関する表示</a> | <a href="">サイトマップ</a></p>
+<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy.html">プライバシーポリシー</a> | <br><a href="commerce.html">特定商取引に関する表示</a> | <a href="sitemap.html">サイトマップ</a></p>
 <p id="copy" class="xs">Copyright &copy; 2018 SRS Corporation. <br>All Rights Reserved.</p>
 </div>
 <div id="pagetop" class="srsd"><i class="fas fa-chevron-circle-up"></i> 上へ戻る</div>

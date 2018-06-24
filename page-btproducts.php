@@ -76,6 +76,7 @@ Template Name: btproducts
 <option value="">〜8m</option>
 <option value="">〜10m</option>
 <option value="">10m以上</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 <div>
@@ -85,6 +86,7 @@ Template Name: btproducts
 <option value="">キャタピラ / クローラ</option>
 <option value="">バッテリー</option>
 <option value="">エンジン</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 </div>
@@ -96,6 +98,7 @@ Template Name: btproducts
 <option value="">高所作業車</option>
 <option value="">仮設材</option>
 <option value="">その他</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 <div>
@@ -107,6 +110,7 @@ Template Name: btproducts
 <option value="">B:使用感中</option>
 <option value="">C:使用感大</option>
 <option value="">D:難あり</option>
+<option value="">すべて選択</option>
 </select>
 </div>
 </div>
@@ -133,7 +137,6 @@ Template Name: btproducts
 <div class="products float_l">
 <a href="bt-products">
 <div class="product_list_title flex">
-<div class="product_list_sign orange strong_f">美品</div>
 <div class="product_list_catch strong_f">スムーズな乗降<br>長寿命バッテリー</div>
 </div>
 <img src="/images/lift.jpg" class="product_list_img" alt="商品">
@@ -161,7 +164,6 @@ Template Name: btproducts
 <div class="products float_l">
 <a href="bt-products">
 <div class="product_list_title flex">
-<div class="product_list_sign orange strong_f">美品</div>
 <div class="product_list_catch strong_f">スムーズな乗降<br>長寿命バッテリー</div>
 </div>
 <img src="/images/lift.jpg" class="product_list_img" alt="商品">
@@ -189,7 +191,6 @@ Template Name: btproducts
 <div class="products float_l">
 <a href="bt-products">
 <div class="product_list_title flex">
-<div class="product_list_sign orange strong_f">美品</div>
 <div class="product_list_catch strong_f">スムーズな乗降<br>長寿命バッテリー</div>
 </div>
 <img src="/images/lift.jpg" class="product_list_img" alt="商品">
@@ -217,7 +218,6 @@ Template Name: btproducts
 <div class="products float_l">
 <a href="bt-products">
 <div class="product_list_title flex">
-<div class="product_list_sign blue strong_f">美品</div>
 <div class="product_list_catch strong_f">スムーズな乗降<br>長寿命バッテリー</div>
 </div>
 <img src="/images/lift.jpg" class="product_list_img" alt="商品">
@@ -246,7 +246,6 @@ Template Name: btproducts
 <div class="products float_l">
 <a href="bt-products">
 <div class="product_list_title flex">
-<div class="product_list_sign orange strong_f">美品</div>
 <div class="product_list_catch strong_f">スムーズな乗降<br>長寿命バッテリー</div>
 </div>
 <img src="/images/lift.jpg" class="product_list_img" alt="商品">
@@ -314,12 +313,12 @@ while($query->have_posts()) : $query->the_post();
 <section id="guide">
 <div class="content">
 <h2 class="disp_f text_l"><i class="fas fa-compass"></i> ご利用ガイド</h2>
-<ul id="guidance-list" class="clearfix">
-<li class="guide"><section class="guidance"><h3 class="guide_title lift_t">初めての方へ</h3><p>初めてご利用される方のために、このウェブサイトについて、わかりやすくご説明いたします。</p><a href="/" class="lift disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title lift_t">ご購入の流れ</h3><p>ご購入やお支払の流れを、4つのステップに分けて詳しくご説明します。</p><a href="/" class="lift disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title lift_t">商品の選び方</h3><p>お客様にとって最適な商品をお選びいただけるように、商品の選び方のポイントをご紹介しています。</p><a href="/" class="lift disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title lift_t">法律に関して</h3><p>高所作業車に関係する法令上の制限をご説明いたします。</p><a href="/" class="lift disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title lift_t">トラブルサポート</h3><p>商品が正しく動かない！？ そんな時はまずこちらのページをご確認ください。お客さまのヒントになる情報が掲載されているかもしれません。</p><a href="/" class="lift disp_f sml">詳細を見る</a></section></li>
+<ul id="lift-guide" class="clearfix">
+<li class="guide"><section class="guidance"><h3 class="guide_title">初めての方へ</h3><p>初めてご利用される方のために、このウェブサイトについて、わかりやすくご説明いたします。</p><a href="bt-biginner.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">ご購入の流れ</h3><p>ご購入やお支払の流れを、4つのステップに分けて詳しくご説明します。</p><a href="/srs/_bt-purchase-flow.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">商品の選び方</h3><p>お客様にとって最適な高所作業車をお選びいただけるように、商品の選び方のポイントをご紹介しています。</p><a href="/srs/_bt-select.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">法律に関して</h3><p>高所作業車に関係する法令上の制限をご説明いたします。</p><a href="/srs/_bt-law.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">トラブルサポート</h3><p>商品が正しく動かない！？ そんな時はまずこちらのページをご確認ください。お客さまのヒントになる情報が掲載されているかもしれません。</p><a href="bt-faq.html" class="disp_f sml">詳細を見る</a></section></li>
 </ul>
 </div>
 </section>
@@ -341,7 +340,7 @@ while($query->have_posts()) : $query->the_post();
 <p id="company" class="flex"><img src="/images/srs.png"><span>高所作業車、特殊作業車、アタッチメント、ユニットハウスのことなら<span id="company-name">エスアールエス株式会社</span></span></p>
 </div>
 <div>
-<p id="links" class=""><a href="">HOME</a> | <a href="">プライバシーポリシー</a> | <br><a href="">特定商取引に関する表示</a> | <a href="">サイトマップ</a></p>
+<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy.html">プライバシーポリシー</a> | <br><a href="commerce.html">特定商取引に関する表示</a> | <a href="sitemap.html">サイトマップ</a></p>
 <p id="copy" class="xs">Copyright &copy; 2018 SRS Corporation. <br>All Rights Reserved.</p>
 </div>
 <div id="pagetop" class="srsd"><i class="fas fa-chevron-circle-up"></i> 上へ戻る</div>
