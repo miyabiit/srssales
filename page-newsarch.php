@@ -1,5 +1,6 @@
 <?php
 /*
+Template Name: newsarch 
 */
 ?>
 <?php get_header(); ?>
@@ -46,7 +47,6 @@
 </div>
 </section>
 
-<?php if(have_posts()): while(have_posts()):the_post(); ?>
 <section id="breadcrumb">
 <div class="content">
 <ul class="breadcrumb clearfix">
@@ -56,13 +56,8 @@
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="/newsarch" itemprop="url">
+<a href="newsarch" itemprop="url">
 <span itemprop="title">お知らせ</span>
-</a> >
-</li>
-<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="news" itemprop="url">
-<span itemprop="title"><?php the_title(); ?></span>
 </a>
 </li>
 </ul>
@@ -71,46 +66,66 @@
 
 <section id="misc" class="srsi_detail">
 <div id="misc-title" class="content">
-<h1 class="txt"><?php the_title(); ?></h1>
+<h1 class="txt">お知らせ</h1>
 </div>
 <div id="misc-border" class="border"></div>
 
-<div class="content">
-
-<div id="news-publish-date" class="text_r"><i class="fa fa-clock"></i><?php the_time('Y-m-d');?></div>
-<div id="news-image" class="text_c"><img src="/images/about-unit1.jpg"></div>
-
-<?php the_content(); ?>
-<p>&nbsp;</p>
-<p>2018年6月開催のプロマックス事業部各地区での展示即売会をご案内致します。</p>
-<p>多種多様な商品をご用意しておりますので、是非、各展示会場までお越しください。</p>
-<p>&nbsp;</p>
-<p>【関東地区】<br>
-2018/6/16（土）～17（日）　<span style="text-decoration: underline;"><a href="http://www.srscorp.co.jp/fieldoffice/pm045/" target="_blank">水戸ハウスヤード</a></span><br>
-　※目玉商品多数出品！特典もあります！是非ご来場ください</p>
-<p>&nbsp;</p>
-<p>【九州地区】<br>
-2018/6/1（金）～3（日）　<span style="text-decoration: underline;"><a href="http://www.srscorp.co.jp/showroom/pm-t008/" target="_blank">鹿屋展示場</a></span><br>
-　※目玉商品多数出品！その他特価品もあります！是非ご来場ください</p>
-<p>&nbsp;</p>
-<p>2018/6/9（土）～10（日）　<span style="text-decoration: underline;"><a href="http://www.srscorp.co.jp/fieldoffice/pm032/" target="_blank">中間ハウスヤード</a></span><br>
-　※目玉商品・特価品も多数ご用意しております！是非ご来場ください</p>
-<p>&nbsp;</p>
-<p>※各拠点名をクリックしていただくと拠点地図にジャンプ致します。</p>
-<p>&nbsp;</p>
-
-<h2 class="txt"><i class="fas fa-download"></i> ファイルダウンロード</h2>
-<p><a href=""><i class="fas fa-file-pdf"></i> プロマックス事業部各地区での展示即売会開催について (PDF / 120kb)</a></p>
-
-
-<h2 class="txt"><i class="fas fa-link"></i> リンク先</h2>
-<p><a href="http://www.srscorp.co.jp/" target="_blank"><i class="fas fa-arrow-circle-right"></i> エスアールエス株式会社</a></p>
-
-
+<div class="content clearfix">
+<ul id="news-arch-list" class="float_l w75">
+<?php 
+$query = new WP_Query(array(
+  'post_type' => 'news',
+  'post_per_page' => 10,
+  'tax_query' => array(
+    array(
+      'taxonomy' => 'products_cat',
+      'field' => 'slug',
+      'terms' => array('products_all','products_units','products_pms','products_bts')
+    )
+  ),
+  'orderby' => 'date',
+  'order' => 'DESC'
+));
+while($query->have_posts()) : $query->the_post();
+?>
+  <li><span class="date"><?php the_time("Y年m月d日 l  ");?></span><a href="<?php the_permalink() ?>"><?php the_title();?></a></li>
+<?php endwhile; ?>
+</ul>
+<!-- archive block start -->
+<div id="news-archives" class="float_r w25_100">
+<h2 class="srsi_t">アーカイブ</h2>
+<?php
+$year_prev = null;
+$months = $wpdb->get_results("SELECT DISTINCT MONTH( post_date ) AS month ,
+                                    YEAR( post_date ) AS year,
+                                    COUNT( id ) as post_count FROM $wpdb->posts
+                                    WHERE post_status = 'publish' and post_date <= now( )
+                                    and post_type = 'news'
+                                    GROUP BY month , year
+                                    ORDER BY post_date DESC");
+foreach($months as $month) :
+$year_current = $month->year;
+if ($year_current != $year_prev){
+if ($year_prev != null){?>
+            </ul></div>
+        <?php } ?>
+<div><h4><?php echo $month->year; ?>年</h4>
+<ul id="news-list-sub">
+    <?php } ?>
+    <li>
+        <a href="<?php bloginfo('url') ?>/date/<?php echo $month->year; ?>/<?php echo date("m", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>">
+            <?php echo date("n", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>月
+            (<?php echo $month->post_count; ?>)
+        </a>
+    </li>
+    <?php $year_prev = $year_current;
+    endforeach; ?>
+</ul></div>
 </div>
-</div>
+<!-- archive block end -->
+</div></div>
 </section>
-<?php endwhile; endif; ?>
+
 <section id="footer" class="srsd">
 <div class="content">
 <footer class="clearfix flex">
@@ -128,8 +143,10 @@
 </section>
 
 <link rel="stylesheet" href="/css/main.css">
+
 <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="/js/jquery.debouncedresize.min.js"></script>
 <script src="/js/common.js"></script>
+
 
 <?php get_footer(); ?>
