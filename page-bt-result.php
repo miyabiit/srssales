@@ -15,13 +15,13 @@ Template Name: bt-result
 </div>
 </div>
 </div>
-<a href="index" class="no-pc"><img src="/images/home_sp.png" id="sp-logo" alt="エスアールエス ホームへ"></a>
+<a href="/" class="no-pc"><img src="/images/home_sp.png" id="sp-logo" alt="エスアールエス ホームへ"></a>
 <div class="content clearfix">
 <header>
 <div id="btn_menu"><a href="#" class="noscroll"><span class="box"><span></span><span></span><span></span></span></a></div>
 <nav>
 <ul id="nav_menu" class="clearfix">
-<li id="logo"><a href="index">ホーム</a></li>
+<li id="logo"><a href="/">ホーム</a></li>
 <li class="text_c unit"><a href="unitproducts" class="disp_f">ユニットハウス</a></li>
 <li class="text_c atch"><a href="pmproducts" class="disp_f">アタッチメント</a></li>
 <li class="text_c lift"><a href="btproducts" class="disp_f">高所作業車 他</a></li>

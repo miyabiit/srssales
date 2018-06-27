@@ -38,10 +38,10 @@ Template Name: pmproducts
 <nav>
 <ul id="sub_menu" class="clearfix">
 <li id="back" class="no-sp"><a href="/pmproducts" class="disp_f">ホームに戻る</a></li>
-<li class="text_c"><a href="pm-search" class="disp_f">商品検索</a></li>
-<li class="text_c"><a href="/" class="disp_f">ご利用ガイド</a></li>
-<li class="text_c"><a href="/" class="disp_f">ご案内</a></li>
-<li class="text_c"><a href="/" class="disp_f">お問い合わせ</a></li>
+<li class="text_c"><a href="/pm-search" class="disp_f">商品検索</a></li>
+<li class="text_c"><a href="/srs/_pm-guide-top.html" class="disp_f">ご利用ガイド</a></li>
+<li class="text_c"><a href="/srs/_pm-info-top.html" class="disp_f">ご案内</a></li>
+<li class="text_c"><a href="/srs/_pm-contact.html" class="disp_f">お問い合わせ</a></li>
 </ul>
 </nav>
 </div>
@@ -334,7 +334,7 @@ while($query->have_posts()) : $query->the_post();
 <div class="content">
 <h2 class="disp_f text_l"><i class="fas fa-info-circle"></i> ご案内</h2>
 <ul id="information-banners" class="flex">
-<li><a href="" class="info_banner" id="info_banner_1"><span class="shadow disp_f text_c">イベント情報</span></a></li>
+<li><a href="/srs/_pm-event.html" class="info_banner" id="info_banner_1"><span class="shadow disp_f text_c">イベント情報</span></a></li>
 <li><a href="" class="info_banner" id="info_banner_2"><span class="shadow disp_f text_c">買い取り情報</span></a></li>
 </ul>
 </div>
