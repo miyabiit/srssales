@@ -70,86 +70,101 @@ Template Name: unitproducts
 <div class="search-selection">
 <div>
 <span class="disp_f">坪数で探す</span>
-<!-- select name="un_tubo_cat" -->
 <?php
-$selected = get_query_var("un_tubo_cat");
+$mytax = "un_tubo_cat";
+$selected = get_query_var($mytax);
 $args = array(
   'show_option_all' => '-',
-  'taxonomy' => 'un_tubo_cat',
-  'name' => 'un_tubo_cat',
+  'taxonomy' => $mytax,
+  'name' => $mytax,
   'value_field' => 'slug',
   'hide_empty' => false,
   'selected' => $selected
   );
 wp_dropdown_categories($args);
 ?>
-</select>
 </div>
 <div>
 <span class="disp_f">価格で探す</span>
-<select name="price">
-<option value="">～10万円未満</option>
-<option value="">10～20万円未満</option>
-<option value="">20～30万円未満</option>
-<option value="">30～40万円未満</option>
-<option value="">40～50万円未満</option>
-<option value="">50～75万円未満</option>
-<option value="">75～100万円未満</option>
-<option value="">100万円以上</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+$mytax = "un_price_range_cat";
+$selected = get_query_var($mytax);
+$args = array(
+  'show_option_all' => '-',
+  'taxonomy' => $mytax,
+  'name' => $mytax,
+  'value_field' => 'slug',
+  'hide_empty' => false,
+  'selected' => $selected
+);
+wp_dropdown_categories($args);
+?>
 </div>
 <div>
 <span class="disp_f">用途で探す</span>
-<select name="usage">
-<option value="">事務所/休憩所</option>
-<option value="">倉庫/物置</option>
-<option value="">店舗</option>
-<option value="">トイレ</option>
-<option value="">2階建て</option>
-<option value="">その他</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+$mytax = "un_usage_cat";
+$selected = get_query_var($mytax);
+$args = array(
+  'show_option_all' => '-',
+  'taxonomy' => $mytax,
+  'name' => $mytax,
+  'value_field' => 'slug',
+  'hide_empty' => false,
+  'selected' => $selected
+);
+wp_dropdown_categories($args);
+?>
 </div>
 </div>
 <div class="search-selection">
 <div>
 <span class="disp_f">販売店で探す</span>
-<select name="dealer">
-<option value="">北海道/東北</option>
-<option value="">北陸/信越</option>
-<option value="">関東</option>
-<option value="">東海</option>
-<option value="">近畿</option>
-<option value="">中国/四国</option>
-<option value="">九州</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+$mytax = "shop_sales_area_cat";
+$selected = get_query_var($mytax);
+$args = array(
+  'show_option_all' => '-',
+  'taxonomy' => $mytax,
+  'name' => $mytax,
+  'value_field' => 'slug',
+  'hide_empty' => false,
+  'selected' => $selected
+);
+wp_dropdown_categories($args);
+?>
 </div>
 <div>
 <span class="disp_f">住所で探す</span>
-<select name="address">
-<option value="">北海道/東北地方</option>
-<option value="">関東地方</option>
-<option value="">中部地方</option>
-<option value="">近畿地方</option>
-<option value="">中国地方</option>
-<option value="">四国地方</option>
-<option value="">九州地方</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+$mytax = "shop_pref_area_cat";
+$selected = get_query_var($mytax);
+$args = array(
+  'show_option_all' => '-',
+  'taxonomy' => $mytax,
+  'name' => $mytax,
+  'value_field' => 'slug',
+  'hide_empty' => false,
+  'selected' => $selected
+);
+wp_dropdown_categories($args);
+?>
 </div>
 <div>
 <span class="disp_f">状態で探す</span>
-<select name="status">
-<option value="">N:新品</option>
-<option value="">S:未使用品</option>
-<option value="">A:美品(使用感小)</option>
-<option value="">B:使用感中</option>
-<option value="">C:使用感大</option>
-<option value="">D:難あり</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+$mytax = "status_cat";
+$selected = get_query_var($mytax);
+$args = array(
+  'show_option_all' => '-',
+  'taxonomy' => $mytax,
+  'name' => $mytax,
+  'value_field' => 'slug',
+  'hide_empty' => false,
+  'selected' => $selected
+);
+wp_dropdown_categories($args);
+?>
 </div>
 </div>
 <?php

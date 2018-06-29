@@ -329,3 +329,40 @@ function custom_search_template($template){
   }
   return $template;
 }
+
+//my checkbox list for taxonomy
+function my_checkbox_list_taxonomy($mytax_name){
+  $mytax = $mytax_name;
+  $selected = get_query_var($mytax);
+  $items = array();
+  if(!is_array($selected)){
+    array_push($items, $selected);
+  }else{
+    $items += $selected;
+  }
+  /*
+  }elseif(!is_array($selected["terms"])){
+    array_push($items, $selected['terms']);
+  }elseif(is_array($selected["terms"])){
+    $items = $items + $selected["terms"];
+  }else{
+    $items = $items + $selected;
+  }
+  */
+  $checked = in_array("0", $items) ? 'checked' : '';
+  echo '<input type="checkbox" id="' . $mytax > '_all" ' . $checked . '/> <label for="size_all" class="unit_t strong_f big mdl">すべて選択</label>';
+  echo '<ul class="choices clearfix">';
+  $tags = get_terms($mytax, array('hide_empty' => false));
+  $checkboxes = '';
+  foreach($tags as $tag) :
+    if(in_array("0", $items)){
+      $checked = 'checked';
+    }else{
+      $checked = (in_array($tag->slug,$items)) ? 'checked' : '';
+    }
+    $checkboxes .= '<li><input type="checkbox" name="' . $mytax . '[]" value="' . $tag->slug . '" id="' . $mytax . '-' . $tag->term_id . '" ' . $checked . '/>';
+    $checkboxes .= '<label for="' . $mytax . '-' . $tag->slug . '">' . $tag->name . '</label></li>';
+  endforeach;
+  print $checkboxes;
+  echo '</ul>';
+}

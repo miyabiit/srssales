@@ -87,26 +87,56 @@ Template Name: un-search
 <form class="clearfix" role="search" method="get" action="/un-result">
 
 <?php
-$args = array(
-  'post_type' => 'units',
+$tax_query = array(
+  'relation' => 'OR'
 );
-if($_GET['un_tubo_cat']){
-  $un_tubo_cat_args = array(
-    'taxonomy' => 'un_tubo_cat',
-    'field' => 'slug',
-    'terms' => $_GET['un_tubo_cat']
-  );
-  $args["un_tubo_cat"] = $un_tubo_cat_args;
+$args = array(
+  'post_type' => 'units'
+);
+$mytaxlist = array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat', 'status_cat');
+foreach($mytaxlist as $mytax){
+  if($_GET[$mytax]){
+    $args = array(
+      'taxonomy' => $mytax,
+      'field' => 'slug',
+      'terms' => $_GET[$mytax]
+    );
+    //$args[$mytax] = $args;
+    $tax_query += $args;
+  };
 };
-if( !empty($un_tubo_cat_args) || !empty($un_usage_cat_args)){
+$args['tax_query'] = $tax_query;
+
+/*
+$mytax = 'un_tubo_cat';
+if($_GET[$mytax]){
+  $args = array(
+    'taxonomy' => $mytax,
+    'field' => 'slug',
+    'terms' => $_GET[$mytax]
+  );
+  $args[$mytax] = $args;
+};
+$mytax = 'un_tubo_cat';
+if($_GET[$mytax]){
+  $args = array(
+    'taxonomy' => $mytax,
+    'field' => 'slug',
+    'terms' => $_GET[$mytax]
+  );
+  $tax_args[$mytax] = $args;
+};
+if( !empty($tax_args['un_tubo_cat']) || !empty($tax_args['un_price_range_cat'])){
   $args['tax_query'] = array(
     'relation' => 'OR',
-    $un_tubo_cat_args,
-    $un_usage_cat_args
+    $tax_args['un_tubo_cat'],
+    $tax_args['un_price_range_cat'],
   );
 };
+*/
 $wp_query = new WP_Query();
 $wp_query->query($args);
+wp_reset_query();
 ?>
 <div id="search-head-num">
 <div class="search-hits strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i></button>
@@ -125,34 +155,8 @@ $wp_query->query($args);
 <ul>
     <li>
 <?php
-  $selected = get_query_var("un_tubo_cat");
-  $items = array();
-  if(!is_array($selected)){
-    array_push($items, $selected);
-  }elseif(!is_array($selected["terms"])){
-    array_push($items, $selected['terms']);
-  }else{
-    $items = $items + $selected["terms"];
-  }
-  $checked = in_array("0", $items) ? 'checked' : '';
+  my_checkbox_list_taxonomy('un_tubo_cat');
 ?>
-  <input type='checkbox' id="size_all" <?php echo $checked; ?> /> <label for="size_all" class="unit_t strong_f big mdl">すべて選択</label>
-        <ul class="choices clearfix">
-<?php
-  $tags = get_terms('un_tubo_cat', array('hide_empty' => false));
-  $checkboxes = '';
-  foreach($tags as $tag) :
-    if(in_array("0", $items)){
-      $checked = 'checked';
-    }else{
-      $checked = (in_array($tag->slug,$items)) ? 'checked' : '';
-    }
-    $checkboxes .= '<li><input type="checkbox" name="un_tubo_cat[]" value="' . $tag->slug . '" id="un_tubo_cat-' . $tag->term_id. '" ' . $checked . '/>';
-    $checkboxes .= '<label for="un_tubo_cat-' . $tag->slug . '">' . $tag->name . '</label></li>';
-  endforeach;
-  print $checkboxes;
-?>
-        </ul>
     </li>
 </ul>
 <button type="submit" class="btn btn_s unit strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
@@ -164,15 +168,9 @@ $wp_query->query($args);
 <div class="check-selections clearfix">
 <ul>
     <li>
-        <input type='checkbox' id="usage_all" /> <label for="usage_all" class="unit_t strong_f big mdl">すべて選択</label>
-        <ul class="choices clearfix">
-            <li><input type='checkbox' name="usage[]" id="usage_1" value="事務所/休憩所" /> <label for="usage_1">事務所/休憩所</label></li>
-            <li><input type='checkbox' name="usage[]" id="usage_2" value="倉庫/物置" /> <label for="usage_2">倉庫/物置</label></li>
-            <li><input type='checkbox' name="usage[]" id="usage_3" value="店舗" /> <label for="usage_3">店舗</label></li>
-            <li><input type='checkbox' name="usage[]" id="usage_4" value="トイレ" /> <label for="usage_4">トイレ</label></li>
-            <li><input type='checkbox' name="usage[]" id="usage_5" value="2階建て" /> <label for="usage_5">2階建て</label></li>
-            <li><input type='checkbox' name="usage[]" id="usage_6" value="その他" /> <label for="usage_6">その他</label></li>
-        </ul>
+<?php
+  my_checkbox_list_taxonomy('un_usage_cat');
+?>
     </li>
 </ul>
 <button type="submit" class="btn btn_s unit strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
@@ -184,17 +182,9 @@ $wp_query->query($args);
 <div class="check-selections clearfix">
 <ul>
     <li>
-        <input type='checkbox' id="price_all" /> <label for="price_all" class="unit_t strong_f big mdl">すべて選択</label>
-        <ul class="choices clearfix">
-            <li><input type='checkbox' name="price[]" id="price_1" value="10万円未満" /> <label for="price_1">10万円未満</label></li>
-            <li><input type='checkbox' name="price[]" id="price_2" value="10～20万円未満" /> <label for="price_2">10～20万円未満</label></li>
-            <li><input type='checkbox' name="price[]" id="price_3" value="20～30万円未満" /> <label for="price_3">20～30万円未満</label></li>
-            <li><input type='checkbox' name="price[]" id="price_4" value="30～40万円未満" /> <label for="price_4">30～40万円未満</label></li>
-            <li><input type='checkbox' name="price[]" id="price_5" value="40～50万円未満" /> <label for="price_5">40～50万円未満</label></li>
-            <li><input type='checkbox' name="price[]" id="price_6" value="50～75万円未満" /> <label for="price_6">50～75万円未満</label></li>
-            <li><input type='checkbox' name="price[]" id="price_7" value="75～100万円未満" /> <label for="price_7">75～100万円未満</label></li>
-            <li><input type='checkbox' name="price[]" id="price_8" value="100万円以上" /> <label for="price_8">100万円以上</label></li>
-        </ul>
+<?php
+  my_checkbox_list_taxonomy('un_price_range_cat');
+?>
     </li>
 </ul>
 <button type="submit" class="btn btn_s unit strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
@@ -395,15 +385,9 @@ $wp_query->query($args);
 <div class="check-selections clearfix">
 <ul>
     <li>
-        <input type='checkbox' id="condition_all" /> <label for="condition_all" class="unit_t strong_f big mdl">すべて選択</label>
-        <ul class="choices clearfix">
-            <li><input type='checkbox' name="condition[]" id="condition_1" value="N" /> <label for="condition_1">N:新品</label></li>
-            <li><input type='checkbox' name="condition[]" id="condition_2" value="S" /> <label for="condition_2">S:未使用品</label></li>
-            <li><input type='checkbox' name="condition[]" id="condition_3" value="A" /> <label for="condition_3">A:美品(使用感 小)</label></li>
-            <li><input type='checkbox' name="condition[]" id="condition_4" value="B" /> <label for="condition_4">B:使用感 中</label></li>
-            <li><input type='checkbox' name="condition[]" id="condition_5" value="C" /> <label for="condition_5">C:使用感 大</label></li>
-            <li><input type='checkbox' name="condition[]" id="condition_6" value="D" /> <label for="condition_6">D:難あり</label></li>
-        </ul>
+<?php
+  my_checkbox_list_taxonomy('status_cat');
+?>
     </li>
 </ul>
 <button type="submit" class="btn btn_s unit strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>

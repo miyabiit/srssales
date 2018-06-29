@@ -58,52 +58,53 @@ foreach($terms as $term){
 </ul>
 <div class="strong_f show_menu_links">用途で探す</div>
 <ul class="menu_links">
-<li><a href="">事務所/休憩所</a></li>
-<li><a href="">倉庫/物置</a></li>
-<li><a href="">店舗</a></li>
-<li><a href="">トイレ</a></li>
-<li><a href="">2階建て</a></li>
-<li><a href="">その他</a></li>
+<?php
+$mytax = 'un_usage_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/unitproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 <div class="strong_f show_menu_links">価格で探す</div>
 <ul class="menu_links">
-<li><a href="">10万円未満</a></li>
-<li><a href="">10～20万円未満</a></li>
-<li><a href="">20～30万円未満</a></li>
-<li><a href="">30～40万円未満</a></li>
-<li><a href="">40～50万円未満</a></li>
-<li><a href="">50～75万円未満</a></li>
-<li><a href="">75～100万円未満</a></li>
-<li><a href="">100万円以上</a></li>
+<?php
+$mytax = 'un_price_range_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/unitproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 <div class="strong_f show_menu_links">販売店で探す</div>
 <ul class="menu_links">
-<li><a href="">北海道/東北</a></li>
-<li><a href="">北陸/信越</a></li>
-<li><a href="">関東</a></li>
-<li><a href="">東海</a></li>
-<li><a href="">近畿</a></li>
-<li><a href="">中国/四国</a></li>
-<li><a href="">九州</a></li>
+<?php
+$mytax = 'shop_sales_area_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/unitproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 <div class="strong_f show_menu_links">住所で探す</div>
 <ul class="menu_links">
-<li><a href="">北海道/東北地方</a></li>
-<li><a href="">関東地方</a></li>
-<li><a href="">中部地方</a></li>
-<li><a href="">近畿地方</a></li>
-<li><a href="">中国地方</a></li>
-<li><a href="">四国地方</a></li>
-<li><a href="">九州地方</a></li>
+<?php
+$mytax = 'shop_pref_area_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/unitproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 <div class="strong_f show_menu_links">状態で探す</div>
 <ul class="menu_links">
-<li><a href="">N:新品</a></li>
-<li><a href="">S:未使用品</a></li>
-<li><a href="">A:美品(使用感 小)</a></li>
-<li><a href="">B:使用感 中</a></li>
-<li><a href="">C:使用感 大</a></li>
-<li><a href="">D:難あり</a></li>
+<?php
+$mytax = 'status_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/unitproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 </div>
 </div>
@@ -115,59 +116,63 @@ foreach($terms as $term){
 <div class="menu_lists">
 <div class="strong_f show_menu_links">商品分類で探す</div>
 <ul class="menu_links">
-<li><a href="">解体用アタッチメント</a></li>
-<li><a href="">バケット類</a></li>
-<li><a href="">フォーク</a></li>
-<li><a href="">その他</a></li>
-<li><a href="">特殊アタッチメント</a></li>
+<?php
+$mytax = 'pm_usage_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/pmproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 <div class="strong_f show_menu_links">クラスで探す</div>
 <ul class="menu_links">
-<li><a href="">0.2以下</a></li>
-<li><a href="">0.25</a></li>
-<li><a href="">0.45</a></li>
-<li><a href="">0.7</a></li>
-<li><a href="">1.2以上</a></li>
+<?php
+$mytax = 'pm_class_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/pmproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 <div class="strong_f show_menu_links">価格で探す</div>
 <ul class="menu_links">
-<li><a href="">10万円未満</a></li>
-<li><a href="">10～20万円未満</a></li>
-<li><a href="">20～30万円未満</a></li>
-<li><a href="">30～40万円未満</a></li>
-<li><a href="">40～50万円未満</a></li>
-<li><a href="">50～75万円未満</a></li>
-<li><a href="">75～100万円未満</a></li>
-<li><a href="">100万円以上</a></li>
+<?php
+$mytax = 'pm_price_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/pmproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 <div class="strong_f show_menu_links">販売店で探す</div>
 <ul class="menu_links">
-<li><a href="">北海道/東北</a></li>
-<li><a href="">北陸/信越</a></li>
-<li><a href="">関東</a></li>
-<li><a href="">東海</a></li>
-<li><a href="">近畿</a></li>
-<li><a href="">中国/四国</a></li>
-<li><a href="">九州</a></li>
+<?php
+$mytax = 'shop_sales_area_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/pmproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 <div class="strong_f show_menu_links">住所で探す</div>
 <ul class="menu_links">
-<li><a href="">北海道/東北地方</a></li>
-<li><a href="">関東地方</a></li>
-<li><a href="">中部地方</a></li>
-<li><a href="">近畿地方</a></li>
-<li><a href="">中国地方</a></li>
-<li><a href="">四国地方</a></li>
-<li><a href="">九州地方</a></li>
+<?php
+$mytax = 'shop_pref_area_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/pmproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 <div class="strong_f show_menu_links">状態で探す</div>
 <ul class="menu_links">
-<li><a href="">N:新品</a></li>
-<li><a href="">S:未使用品</a></li>
-<li><a href="">A:美品(使用感 小)</a></li>
-<li><a href="">B:使用感 中</a></li>
-<li><a href="">C:使用感 大</a></li>
-<li><a href="">D:難あり</a></li>
+<?php
+$mytax = 'status_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/pmproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 </div>
 </div>
@@ -179,32 +184,43 @@ foreach($terms as $term){
 <div class="menu_lists">
 <div class="strong_f show_menu_links">高さで探す</div>
 <ul class="menu_links">
-<li><a href="">〜4m</a></li>
-<li><a href="">〜6m</a></li>
-<li><a href="">〜8m</a></li>
-<li><a href="">〜10m</a></li>
-<li><a href="">10m以上</a></li>
+<?php
+$mytax = 'bt_height_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/btproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 <div class="strong_f show_menu_links">用途で探す</div>
 <ul class="menu_links">
-<li><a href="">タイヤ/ホイール</a></li>
-<li><a href="">キャタピラ/クローラ</a></li>
-<li><a href="">バッテリー エンジン</a></li>
+<?php
+$mytax = 'bt_usage_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/btproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 <div class="strong_f show_menu_links">種類で探す</div>
 <ul class="menu_links">
-<li><a href="">高所作業車</a></li>
-<li><a href="">仮設材</a></li>
-<li><a href="">その他</a></li>
+<?php
+$mytax = 'bt_goods_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/btproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 <div class="strong_f show_menu_links">状態で探す</div>
 <ul class="menu_links">
-<li><a href="">N:新品</a></li>
-<li><a href="">S:未使用品</a></li>
-<li><a href="">A:美品(使用感 小)</a></li>
-<li><a href="">B:使用感 中</a></li>
-<li><a href="">C:使用感 大</a></li>
-<li><a href="">D:難あり</a></li>
+<?php
+$mytax = 'status_cat';
+$terms = get_terms($mytax,array('hide_empty' => false));
+foreach($terms as $term){
+  echo '<li><a href="/btproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+}
+?>
 </ul>
 
 </div>
