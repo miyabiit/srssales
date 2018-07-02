@@ -329,6 +329,19 @@ function custom_search_template($template){
   }
   return $template;
 }
+//my dropdown for taxsonomy
+function mydropdown_taxsonomy($mytax){
+  $selected = get_query_var($mytax);
+  $args = array(
+    'show_option_all' => '-',
+    'taxonomy' => $mytax,
+    'name' => $mytax,
+    'value_field' => 'slug',
+    'hide_empty' => false,
+    'selected' => $selected
+    );
+  wp_dropdown_categories($args);
+}
 
 //my checkbox list for taxonomy
 function my_checkbox_list_taxonomy($mytax_name){
@@ -350,8 +363,8 @@ function my_checkbox_list_taxonomy($mytax_name){
   }
   */
   $checked = in_array("0", $items) ? 'checked' : '';
-  echo '<input type="checkbox" id="' . $mytax > '_all" ' . $checked . '/> <label for="size_all" class="unit_t strong_f big mdl">すべて選択</label>';
-  echo '<ul class="choices clearfix">';
+  print('<input type="checkbox" id="' . $mytax . '_all" ' . $checked . '/> <label for="size_all" class="unit_t strong_f big mdl">すべて選択</label>');
+  print('<ul class="choices clearfix">');
   $tags = get_terms($mytax, array('hide_empty' => false));
   $checkboxes = '';
   foreach($tags as $tag) :
@@ -365,4 +378,27 @@ function my_checkbox_list_taxonomy($mytax_name){
   endforeach;
   print $checkboxes;
   echo '</ul>';
+}
+//query for taxonomy
+//$mytaxlist = array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat', 'status_cat');
+function query_for_taxonomy($mypost_type,$mytaxlist){
+  $args = array(
+    'post_type' => $mypost_type,
+    'post_status' => 'publish'
+  );
+  $tax_args = array(
+    'relation' => 'OR',
+  );
+  foreach($mytaxlist as $mytax){
+    if($_GET[$mytax]){
+      array_push($tax_args,
+        array(
+          'taxonomy' => $mytax,
+          'field' => 'slug',
+          'terms' => $_GET[$mytax]
+        )
+      );
+    }
+  }
+  return $args;
 }

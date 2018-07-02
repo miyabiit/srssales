@@ -1,7 +1,6 @@
 <?php
 /*
-Template Name: un-result-s
-検索ページ用
+units サイト内検索結果
 */
 ?>
 <?php get_header(); ?>

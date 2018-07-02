@@ -71,17 +71,7 @@ Template Name: unitproducts
 <div>
 <span class="disp_f">坪数で探す</span>
 <?php
-$mytax = "un_tubo_cat";
-$selected = get_query_var($mytax);
-$args = array(
-  'show_option_all' => '-',
-  'taxonomy' => $mytax,
-  'name' => $mytax,
-  'value_field' => 'slug',
-  'hide_empty' => false,
-  'selected' => $selected
-  );
-wp_dropdown_categories($args);
+mydropdown_taxsonomy("un_tubo_cat");
 ?>
 </div>
 <div>

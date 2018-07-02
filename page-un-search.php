@@ -87,56 +87,9 @@ Template Name: un-search
 <form class="clearfix" role="search" method="get" action="/un-result">
 
 <?php
-$tax_query = array(
-  'relation' => 'OR'
-);
-$args = array(
-  'post_type' => 'units'
-);
-$mytaxlist = array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat', 'status_cat');
-foreach($mytaxlist as $mytax){
-  if($_GET[$mytax]){
-    $args = array(
-      'taxonomy' => $mytax,
-      'field' => 'slug',
-      'terms' => $_GET[$mytax]
-    );
-    //$args[$mytax] = $args;
-    $tax_query += $args;
-  };
-};
-$args['tax_query'] = $tax_query;
-
-/*
-$mytax = 'un_tubo_cat';
-if($_GET[$mytax]){
-  $args = array(
-    'taxonomy' => $mytax,
-    'field' => 'slug',
-    'terms' => $_GET[$mytax]
-  );
-  $args[$mytax] = $args;
-};
-$mytax = 'un_tubo_cat';
-if($_GET[$mytax]){
-  $args = array(
-    'taxonomy' => $mytax,
-    'field' => 'slug',
-    'terms' => $_GET[$mytax]
-  );
-  $tax_args[$mytax] = $args;
-};
-if( !empty($tax_args['un_tubo_cat']) || !empty($tax_args['un_price_range_cat'])){
-  $args['tax_query'] = array(
-    'relation' => 'OR',
-    $tax_args['un_tubo_cat'],
-    $tax_args['un_price_range_cat'],
-  );
-};
-*/
-$wp_query = new WP_Query();
-$wp_query->query($args);
-wp_reset_query();
+  $args = query_for_taxonomy('units', array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat', 'status_cat'));
+  $wp_query = new WP_query();
+  $wp_query->query($args);
 ?>
 <div id="search-head-num">
 <div class="search-hits strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i></button>
@@ -155,6 +108,7 @@ wp_reset_query();
 <ul>
     <li>
 <?php
+  wp_reset_query();
   my_checkbox_list_taxonomy('un_tubo_cat');
 ?>
     </li>
@@ -394,6 +348,11 @@ wp_reset_query();
 </div>
 </div>
 
+<?php
+  $args = query_for_taxonomy('units', array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat', 'status_cat'));
+  $wp_query = new WP_query();
+  $wp_query->query($args);
+?>
 <div class="search-check-selection clearfix">
 <div class="check-selections clearfix">
 <div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i> ユニットハウスを探す</button></div>
