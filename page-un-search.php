@@ -253,80 +253,27 @@ Template Name: un-search
     <li>
         <input type='checkbox' id="prefecture_all" /> <label for="prefecture_all" class="unit_t strong_f big mdl">すべて選択</label>
         <ul class="clearfix">
-            <li class="choice_area"><input type='checkbox' id="prefecture_tohoku" /><label for="prefecture_tohoku" class="unit_t strong_f big">北海道/東北地方</label>
-                <ul class="choices clearfix">
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_1" value="青森県" /> <label for="prefecture_1">青森県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_2" value="岩手県" /> <label for="prefecture_2">岩手県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_3" value="宮城県" /> <label for="prefecture_3">宮城県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_4" value="秋田県" /> <label for="prefecture_4">秋田県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_5" value="山形県" /> <label for="prefecture_5">山形県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_6" value="福島県" /> <label for="prefecture_6">福島県</label></li>
-                </ul>
-            </li>
-            <li class="choice_area"><input type='checkbox' id="prefecture_kanto" /><label for="prefecture_kanto" class="unit_t strong_f big">関東地方</label>
-                <ul class="choices clearfix">
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_7" value="茨城県" /> <label for="prefecture_7">茨城県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_8" value="栃木県" /> <label for="prefecture_8">栃木県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_9" value="群馬県" /> <label for="prefecture_9">群馬県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_10" value="埼玉県" /> <label for="prefecture_10">埼玉県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_11" value="千葉県" /> <label for="prefecture_11">千葉県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_12" value="東京都" /> <label for="prefecture_12">東京都</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_13" value="神奈川県" /> <label for="prefecture_13">神奈川県</label></li>
-                </ul>
-            </li>
-            <li class="choice_area"><input type='checkbox' id="prefecture_chubu" /><label for="prefecture_chubu" class="unit_t strong_f big">中部地方</label>
-                <ul class="choices clearfix">
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_14" value="新潟県" /> <label for="prefecture_14">新潟県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_15" value="富山県" /> <label for="prefecture_15">富山県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_16" value="石川県" /> <label for="prefecture_16">石川県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_17" value="福井県" /> <label for="prefecture_17">福井県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_18" value="山梨県" /> <label for="prefecture_18">山梨県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_19" value="長野県" /> <label for="prefecture_19">長野県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_20" value="岐阜県" /> <label for="prefecture_20">岐阜県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_21" value="静岡県" /> <label for="prefecture_21">静岡県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_22" value="愛知県" /> <label for="prefecture_22">愛知県</label></li>
-                </ul>
-            </li>
-            <li class="choice_area"><input type='checkbox' id="prefecture_kinki" /><label for="prefecture_kinki" class="unit_t strong_f big">近畿地方</label>
-                <ul class="choices clearfix">
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_23" value="三重県" /> <label for="prefecture_23">三重県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_24" value="滋賀県" /> <label for="prefecture_24">滋賀県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_25" value="京都府" /> <label for="prefecture_25">京都府</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_26" value="大阪府" /> <label for="prefecture_26">大阪府</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_27" value="兵庫県" /> <label for="prefecture_27">兵庫県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_28" value="奈良県" /> <label for="prefecture_28">奈良県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_29" value="和歌山県" /> <label for="prefecture_29">和歌山県</label></li>
-                </ul>
-            </li>
-            <li class="choice_area"><input type='checkbox' id="prefecture_chugoku" /><label for="prefecture_chugoku" class="unit_t strong_f big">中国地方</label>
-                <ul class="choices clearfix">
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_30" value="鳥取県" /> <label for="prefecture_30">鳥取県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_31" value="島根県" /> <label for="prefecture_31">島根県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_32" value="岡山県" /> <label for="prefecture_32">岡山県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_33" value="広島県" /> <label for="prefecture_33">広島県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_34" value="山口県" /> <label for="prefecture_34">山口県</label></li>
-                </ul>
-            </li>
-            <li class="choice_area"><input type='checkbox' id="prefecture_shikoku" /><label for="prefecture_shikoku" class="unit_t strong_f big">四国地方</label>
-                <ul class="choices clearfix">
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_35" value="徳島県" /> <label for="prefecture_35">徳島県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_36" value="香川県" /> <label for="prefecture_36">香川県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_37" value="愛媛県" /> <label for="prefecture_37">高知県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_38" value="高知県" /> <label for="prefecture_38">鳥取県</label></li>
-                </ul>
-            </li>
-            <li class="choice_area"><input type='checkbox' id="prefecture_kyusyu" /><label for="prefecture_kyusyu" class="unit_t strong_f big">九州地方</label>
-                <ul class="choices clearfix">
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_39" value="福岡県" /> <label for="prefecture_39">福岡県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_40" value="佐賀県" /> <label for="prefecture_40">佐賀県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_41" value="長崎県" /> <label for="prefecture_41">長崎県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_42" value="熊本県" /> <label for="prefecture_42">熊本県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_43" value="大分県" /> <label for="prefecture_43">大分県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_44" value="宮崎県" /> <label for="prefecture_44">宮崎県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_45" value="鹿児島県" /> <label for="prefecture_45">鹿児島県</label></li>
-                    <li><input type='checkbox' name="prefecture[]" id="prefecture_46" value="沖縄県" /> <label for="prefecture_46">沖縄県</label></li>
-                </ul>
-            </li>
+<?php
+  $mytax = 'pref_cat';
+  $tags = get_terms($mytax, array('hide_empty' => false));
+  $checkboxes = '';
+  $first_parent = true;
+  foreach($tags as $tag){
+    if(!$tag->parent){
+      if(!$first_parent){
+        $checkboxes .= '</ul></li>';
+      }
+      $checkboxes .= '<li class="choice_area"><input type="checkbox" id="dealer_hokkaido" /><label for="dealer_hokkaido" class="unit_t strong_f big">' . $tag->name . '</label>';
+      $checkboxes .= '<ul class="choices clearfix">';
+      $first_parent = false;
+    }else{
+      $checkboxes .= '<li><input type="checkbox" name="' . $mytax . '[]" value="' . $tag->slug . '" id="' . $mytax . '-' . $tag->term_id . '" ' . $checked . '/>';
+      $checkboxes .= '<label for="' . $mytax . '-' . $tag->slug . '">' . $tag->name . '</label></li>';
+    }
+  }
+  $checkboxes .= '</ul></li>';
+  print $checkboxes;
+?>
         </ul>
     </li>
 </ul>

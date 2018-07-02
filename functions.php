@@ -353,15 +353,6 @@ function my_checkbox_list_taxonomy($mytax_name){
   }else{
     $items += $selected;
   }
-  /*
-  }elseif(!is_array($selected["terms"])){
-    array_push($items, $selected['terms']);
-  }elseif(is_array($selected["terms"])){
-    $items = $items + $selected["terms"];
-  }else{
-    $items = $items + $selected;
-  }
-  */
   $checked = in_array("0", $items) ? 'checked' : '';
   print('<input type="checkbox" id="' . $mytax . '_all" ' . $checked . '/> <label for="size_all" class="unit_t strong_f big mdl">すべて選択</label>');
   print('<ul class="choices clearfix">');
