@@ -153,6 +153,29 @@ Template Name: un-search
         <input type='checkbox' id="dealer_all" /> <label for="dealer_all" class="unit_t strong_f big mdl">すべて選択</label>
         <ul class="clearfix">
             <li class="choice_area"><input type='checkbox' id="dealer_hokkaido" /><label for="dealer_hokkaido" class="unit_t strong_f big">北海道/東北</label>
+<?php
+  print('<ul class="choices clearfix">');
+  $query = new WP_Query(array(
+    'post_type' => 'shops',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'shop_sales_area_cat',
+        'field' => 'slug',
+        'terms' => 'sales_area01'
+      )
+    ),
+    'orderby' => 'slug',
+    'order' => 'DESC'
+  ));
+  while($query->have_posts()) : $query->the_post();
+?>
+  <li><input type="checkbox" name="dealer[]" id="dealer_1" value="札幌営業所" /><label for="dealer_1"><?php the_title(); ?></label></li>
+<?php
+  endwhile;
+  print('</ul></li>');
+?>
+        <ul class="clearfix">
+            <li class="choice_area"><input type='checkbox' id="dealer_hokkaido" /><label for="dealer_hokkaido" class="unit_t strong_f big">北海道/東北</label>
                 <ul class="choices clearfix">
                     <li><input type='checkbox' name="dealer[]" id="dealer_1" value="札幌営業所" /> <label for="dealer_1">札幌営業所</label></li>
                     <li><input type='checkbox' name="dealer[]" id="dealer_2" value="仙台営業所" /> <label for="dealer_2">仙台営業所</label></li>
