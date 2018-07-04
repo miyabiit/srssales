@@ -75,40 +75,6 @@ Template Name: un-result
 </section>
 <?php
   $args = query_for_taxonomy('units', array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat', 'status_cat'));
-  /*
-  $args = array(
-    'post_type' => 'units',
-    'post_status' => 'publish'
-  );
-  if($_GET['un_tubo_cat']){
-    $un_tubo_cat_tags = array(
-      'taxonomy' => 'un_tubo_cat',
-      'field' => 'slug',
-      'terms' => $_GET['un_tubo_cat'],
-    );
-  }else{
-    $un_tubo_cat_tags = '';
-  }
-  if($_GET['status_cat']){
-    $status_cat_tags = array(
-      'taxonomy' => 'status_cat',
-      'field' => 'slug',
-      'terms' => $_GET['status_cat'],
-    );
-  }else{
-    $status_cat_tags = '';
-  }
-  $tax_query = array(
-      'relation' => 'OR'
-  );
-  if(!empty($un_tubo_cat_tags) || !empty($status_cat_tags)){
-    $args['tax_query'] = array(
-      'relation' => 'OR',
-      $un_tubo_cat_tags,
-      $status_cat_tags
-    );
-  }
- */
   $wp_query = new WP_Query();
   $wp_query->query($args);
   //wp_reset_query();

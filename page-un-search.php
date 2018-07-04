@@ -151,119 +151,35 @@ Template Name: un-search
 <ul>
     <li>
         <input type='checkbox' id="dealer_all" /> <label for="dealer_all" class="unit_t strong_f big mdl">すべて選択</label>
+<?php
+  $tags = get_terms('shop_sales_area_cat', array('hide_empty' => false));
+  foreach($tags as $tag) :
+?>
         <ul class="clearfix">
-            <li class="choice_area"><input type='checkbox' id="dealer_hokkaido" /><label for="dealer_hokkaido" class="unit_t strong_f big">北海道/東北</label>
+        <li class="choice_area"><input type="checkbox" id="" /><label for="<?php echo $tag->slug; ?>" class="unit_t strong_f big"><?php echo $tag->name ?></label>
 <?php
   print('<ul class="choices clearfix">');
   $query = new WP_Query(array(
     'post_type' => 'shops',
+    'posts_per_page' => -1,
     'tax_query' => array(
       array(
-        'taxonomy' => 'shop_sales_area_cat',
-        'field' => 'slug',
-        'terms' => 'sales_area01'
+       'taxonomy' => 'shop_sales_area_cat',
+       'field' => 'slug',
+       'terms' => $tag->slug
       )
     ),
-    'orderby' => 'slug',
-    'order' => 'DESC'
+    'orderby' => 'ID',
+    'order' => 'ASC'
   ));
   while($query->have_posts()) : $query->the_post();
 ?>
-  <li><input type="checkbox" name="dealer[]" id="dealer_1" value="札幌営業所" /><label for="dealer_1"><?php the_title(); ?></label></li>
+  <li><input type="checkbox" name="req[]" id="req_<?php echo $post->ID; ?>" value="<?php echo $post->ID; ?>" /><label for="req_<?php echo $post->ID; ?>"><?php the_title(); ?></label></li>
 <?php
   endwhile;
   print('</ul></li>');
+  endforeach;
 ?>
-        <ul class="clearfix">
-            <li class="choice_area"><input type='checkbox' id="dealer_hokkaido" /><label for="dealer_hokkaido" class="unit_t strong_f big">北海道/東北</label>
-                <ul class="choices clearfix">
-                    <li><input type='checkbox' name="dealer[]" id="dealer_1" value="札幌営業所" /> <label for="dealer_1">札幌営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_2" value="仙台営業所" /> <label for="dealer_2">仙台営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_3" value="仙台ハウスヤード" /> <label for="dealer_3">仙台ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_4" value="古川ハウスヤード" /> <label for="dealer_4">古川ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_5" value="名取展示場" /> <label for="dealer_5">名取展示場</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_6" value="盛岡営業所" /> <label for="dealer_6">盛岡営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_7" value="郡山営業所" /> <label for="dealer_7">郡山営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_8" value="浪江出張所" /> <label for="dealer_8">浪江出張所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_9" value="郡山ハウスヤード" /> <label for="dealer_9">郡山ハウスヤード</label></li>
-                </ul>
-            </li>
-            <li class="choice_area"><input type='checkbox' id="dealer_hokuriku" /><label for="dealer_hokuriku" class="unit_t strong_f big">北陸/信越</label>
-                <ul class="choices clearfix">
-                    <li><input type='checkbox' name="dealer[]" id="dealer_10" value="新潟営業所" /> <label for="dealer_10">新潟営業所</label></li>
-                </ul>
-            </li>
-            <li class="choice_area"><input type='checkbox' id="dealer_kanto" /><label for="dealer_kanto" class="unit_t strong_f big">関東</label>
-                <ul class="choices clearfix">
-                    <li><input type='checkbox' name="dealer[]" id="dealer_11" value="プロマックス事業部本社" /> <label for="dealer_11">プロマックス事業部本社</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_12" value="東日本ブロックハウスヤード" /> <label for="dealer_12">東日本ブロックハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_13" value="宇都宮営業所" /> <label for="dealer_13">宇都宮営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_14" value="水戸営業所" /> <label for="dealer_14">水戸営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_15" value="水戸ハウスヤード" /> <label for="dealer_15">水戸ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_16" value="さいたま営業所" /> <label for="dealer_16">さいたま営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_17" value="柏ハウスヤード" /> <label for="dealer_17">柏ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_18" value="白岡展示場" /> <label for="dealer_18">白岡展示場</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_19" value="市川営業所" /> <label for="dealer_19">市川営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_20" value="千葉ハウスヤード" /> <label for="dealer_20">千葉ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_21" value="市原展示場" /> <label for="dealer_21">市原展示場</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_22" value="川崎営業所" /> <label for="dealer_22">川崎営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_23" value="横浜営業所" /> <label for="dealer_23">横浜営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_24" value="湘南ハウスヤード" /> <label for="dealer_24">湘南ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_25" value="相模原営業所" /> <label for="dealer_25">相模原営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_26" value="相模原ハウスヤード" /> <label for="dealer_26">相模原ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_27" value="多摩営業所" /> <label for="dealer_27">多摩営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_28" value="川越ハウスヤード" /> <label for="dealer_28">川越ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_29" value="東松山展示場" /> <label for="dealer_29">東松山展示場</label></li>
-                </ul>
-            </li>
-            <li class="choice_area"><input type='checkbox' id="dealer_toukai" /><label for="dealer_toukai" class="unit_t strong_f big">東海</label>
-                <ul class="choices clearfix">
-                    <li><input type='checkbox' name="dealer[]" id="dealer_30" value="名古屋営業所" /> <label for="dealer_30">名古屋営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_31" value="岐阜ハウスヤード" /> <label for="dealer_31">岐阜ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_32" value="名古屋南営業所" /> <label for="dealer_32">名古屋南営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_33" value="飛島ハウスヤード" /> <label for="dealer_33">飛島ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_34" value="静岡営業所" /> <label for="dealer_34">静岡営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_35" value="静岡ハウスヤード" /> <label for="dealer_35">静岡ハウスヤード</label></li>
-                </ul>
-            </li>
-            <li class="choice_area"><input type='checkbox' id="dealer_kinki" /><label for="dealer_kinki" class="unit_t strong_f big">近畿</label>
-                <ul class="choices clearfix">
-                    <li><input type='checkbox' name="dealer[]" id="dealer_36" value="大阪営業所" /> <label for="dealer_36">大阪営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_37" value="大阪ハウスヤード" /> <label for="dealer_37">大阪ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_38" value="京滋営業所" /> <label for="dealer_38">京滋営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_39" value="摂津営業所" /> <label for="dealer_39">摂津営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_40" value="大和郡山ハウスヤード" /> <label for="dealer_40">大和郡山ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_41" value="伊丹営業所" /> <label for="dealer_41">伊丹営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_42" value="神戸営業所" /> <label for="dealer_42">神戸営業所</label></li>
-                </ul>
-            </li>
-            <li class="choice_area"><input type='checkbox' id="dealer_chugoku" /><label for="dealer_chugoku" class="unit_t strong_f big">中国/四国</label>
-                <ul class="choices clearfix">
-                    <li><input type='checkbox' name="dealer[]" id="dealer_43" value="広島営業所" /> <label for="dealer_43">広島営業所</label></li>
-                </ul>
-            </li>
-            <li class="choice_area"><input type='checkbox' id="dealer_kyusyu" /><label for="dealer_kyusyu" class="unit_t strong_f big">九州</label>
-                <ul class="choices clearfix">
-                    <li><input type='checkbox' name="dealer[]" id="dealer_44" value="北九州営業所" /> <label for="dealer_44">北九州営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_45" value="中間ハウスヤード" /> <label for="dealer_45">中間ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_46" value="福岡営業所" /> <label for="dealer_46">福岡営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_47" value="朝倉ハウスヤード" /> <label for="dealer_47">朝倉ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_48" value="福岡展示場" /> <label for="dealer_48">福岡展示場</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_49" value="柳川展示場" /> <label for="dealer_49">柳川展示場</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_50" value="久留米展示場" /> <label for="dealer_50">久留米展示場</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_51" value="熊本営業所" /> <label for="dealer_51">熊本営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_52" value="熊本ハウスヤード" /> <label for="dealer_52">熊本ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_53" value="八代展示場" /> <label for="dealer_53">八代展示場</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_54" value="大分営業所" /> <label for="dealer_54">大分営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_55" value="大分ハウスヤード" /> <label for="dealer_55">大分ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_56" value="中津展示場" /> <label for="dealer_56">中津展示場</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_57" value="鹿児島営業所" /> <label for="dealer_57">鹿児島営業所</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_58" value="霧島ハウスヤード" /> <label for="dealer_58">霧島ハウスヤード</label></li>
-                    <li><input type='checkbox' name="dealer[]" id="dealer_59" value="鹿屋展示場" /> <label for="dealer_59">鹿屋展示場</label></li>
-                </ul>
-            </li>
-        </ul>
-    </li>
 </ul>
 <button type="submit" class="btn btn_s unit strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
 </div>
