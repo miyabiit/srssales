@@ -52,7 +52,7 @@
 $mytax = 'un_tubo_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/unitproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/un-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -62,7 +62,7 @@ foreach($terms as $term){
 $mytax = 'un_usage_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/unitproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/un-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -72,7 +72,7 @@ foreach($terms as $term){
 $mytax = 'un_price_range_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/unitproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/un-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -82,7 +82,7 @@ foreach($terms as $term){
 $mytax = 'shop_sales_area_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/unitproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/un-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -92,7 +92,7 @@ foreach($terms as $term){
 $mytax = 'shop_pref_area_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/unitproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/un-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -102,7 +102,7 @@ foreach($terms as $term){
 $mytax = 'status_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/unitproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/un-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -120,7 +120,7 @@ foreach($terms as $term){
 $mytax = 'pm_usage_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/pmproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/pm-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -130,7 +130,7 @@ foreach($terms as $term){
 $mytax = 'pm_class_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/pmproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/pm-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -140,7 +140,7 @@ foreach($terms as $term){
 $mytax = 'pm_price_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/pmproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/pm-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -150,7 +150,7 @@ foreach($terms as $term){
 $mytax = 'shop_sales_area_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/pmproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/pm-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -160,7 +160,7 @@ foreach($terms as $term){
 $mytax = 'shop_pref_area_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/pmproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/pm-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -170,7 +170,7 @@ foreach($terms as $term){
 $mytax = 'status_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/pmproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/pm-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -188,7 +188,7 @@ foreach($terms as $term){
 $mytax = 'bt_height_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/btproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/bt-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -198,7 +198,7 @@ foreach($terms as $term){
 $mytax = 'bt_usage_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/btproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/bt-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -208,7 +208,7 @@ foreach($terms as $term){
 $mytax = 'bt_goods_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/btproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/bt-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>
@@ -218,7 +218,7 @@ foreach($terms as $term){
 $mytax = 'status_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
-  echo '<li><a href="/btproducts/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
+  echo '<li><a href="/bt-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';
 }
 ?>
 </ul>

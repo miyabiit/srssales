@@ -376,17 +376,9 @@ function query_for_taxonomy($mypost_type,$mytaxlist){
   $args = array(
     'post_type' => $mypost_type,
     'post_status' => 'publish',
-    'meta_query' => array(
-      'relation' => 'OR',
-      array(
-        'key' => 'req',
-        'value' => $_GET['req'],
-        'compare' => 'IN'
-      )
-    )
   );
   $tax_args = array(
-    'relation' => 'OR',
+    'relation' => 'AND',
   );
   foreach($mytaxlist as $mytax){
     if($_GET[$mytax]){
@@ -399,5 +391,16 @@ function query_for_taxonomy($mypost_type,$mytaxlist){
       );
     }
   }
+  $args['tax_query'] = $tax_args;
   return $args;
+    /*
+    'meta_query' => array(
+      'relation' => 'OR',
+      array(
+        'key' => 'req',
+        'value' => $_GET['req'],
+        'compare' => 'IN'
+      )
+    )
+    */
 }

@@ -66,7 +66,7 @@ Template Name: unitproducts
 
 <section id="search-box" class="unit_s">
 <div class="content">
-<form class="flex clearfix" role="search" method="get" action="/un-search">
+<form class="flex clearfix" role="search" method="get" action="/un-result">
 <div class="search-selection">
 <div>
 <span class="disp_f">坪数で探す</span>

@@ -92,13 +92,13 @@ Template Name: un-result
 <section class="search-results-pagination">
 <div class="content flex">
 <div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="un-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
-<div class="pagination">
+<!--- div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>
 <a href="" class="active">2</a>
 <a href="">3</a>
 <a href="" class="prev"><i class="fas fa-angle-double-right"></i></a>
-</div>
+</div -->
 </div>
 </section>
 <section id="search-results">
@@ -128,7 +128,8 @@ while( $wp_query->have_posts()) : $wp_query->the_post();
 <dt class="product_data_title">面積</dt>
 <dd class="product_data_content"><?php echo get_post_meta($post->ID, 'm2', true); ?>坪</dd>
 <dt class="product_data_title">本体価格</dt>
-<dd class="product_data_content"><span class="num"><?php get_post_meta($post->ID, 'price', true); ?></span>万円（税抜）</dd>
+<!-- dd class="product_data_content"><span class="num"><?php get_post_meta($post->ID, 'price', true); ?></span>万円（税抜）</dd -->
+<dd class="product_data_content"><?php echo get_post_meta($post->ID, 'price', true); ?>万円（税抜）</dd>
 </dl>
 </div>
 <h3><i class="fas fa-square"></i> 仕様</h3>
@@ -173,13 +174,13 @@ while( $wp_query->have_posts()) : $wp_query->the_post();
 <section class="search-results-pagination">
 <div class="content flex">
 <div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="un-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
-<div class="pagination">
+<!-- div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>
 <a href="" class="active">2</a>
 <a href="">3</a>
 <a href="" class="prev"><i class="fas fa-angle-double-right"></i></a>
-</div>
+</div -->
 </div>
 </section>
 
