@@ -212,7 +212,12 @@ while($query->have_posts()) : $query->the_post();
 <div class="products float_l">
 <a href="<?php the_permalink(); ?>">
 <div class="product_list_title flex">
-<div class="product_list_sign orange strong_f">美品</div>
+<?php
+$terms = get_the_terms($post->ID, 'mark_label_cat');
+$tags = [];
+foreach($terms as $term)array_push($tags, $term->slug);
+if(in_array("goodone",$tags)) print '<div class="product_list_sign orange strong_f">美品</div>';
+?>
 <div class="product_list_catch strong_f"><?php echo get_post_meta($post->ID, 'comment', true); ?></div>
 </div>
 <img src="/images/prod.jpg" class="product_list_img" alt="商品">
@@ -231,9 +236,14 @@ while($query->have_posts()) : $query->the_post();
 <div class="product_list_info_price text_r num"><?php echo the_field('price'); ?><span class="yen">万円</span></div>
 </div>
 <div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
-<div class="product_list_sign blue strong_f">快適</div>
+<?php
+$terms = get_the_terms($post->ID, 'mark_label_cat');
+$tags = [];
+foreach($terms as $term)array_push($tags, $term->slug);
+if(in_array("newone",$tags))print '<div class="product_list_sign red strong_f">NEW</div>';
+if(in_array("recommend",$tags))print '<div class="product_list_sign orange strong_f">おすすめ</div>';
+if(in_array("condition",$tags))print '<div class="product_list_sign blue strong_f">快適</div>';
+?>
 </div>
 </div>
 </a>

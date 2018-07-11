@@ -175,3 +175,14 @@ bt_goods_cat
 高所作業車$goods01
 仮設材$goods02
 その他$goods03
+
+mark_label_cat
+----
+
+商談中$onsale
+即出荷$nowship
+美品$goodone
+おすすめ$recommend
+NEW$newone
+快適$condition
+

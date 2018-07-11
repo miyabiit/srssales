@@ -306,6 +306,17 @@ add_action('init', function(){
       'hierarchical' => true
     )
   );
+  //taxonomy 販促ラベル 美品、快適、NEW、商談中、即出荷、おすすめ
+  register_taxonomy('mark_label_cat', array('units', 'pms', 'bts'),
+    array(
+      'labels' => array(
+        'name' => '販促ラベル',
+        'singular_name'   => '販促ラベル',
+      ),
+      'public' => true,
+      'hierarchical' => true
+    )
+  );
 });
 
 // タイトルのプレースフォルダを変更
