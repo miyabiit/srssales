@@ -87,7 +87,7 @@ Template Name: un-search
 <form class="clearfix" role="search" method="get" action="/un-result">
 
 <?php
-  $args = query_for_taxonomy('units', array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat', 'status_cat'));
+  $args = query_for_taxonomy('units', array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat','pref_cat','shop_sales_area_cat','shop_pref_area_cat','status_cat'),array('req'));
   $wp_query = new WP_query();
   $wp_query->query($args);
 ?>
@@ -153,10 +153,24 @@ Template Name: un-search
         <input type='checkbox' id="dealer_all" /> <label for="dealer_all" class="unit_t strong_f big mdl">すべて選択</label>
 <?php
   $tags = get_terms('shop_sales_area_cat', array('hide_empty' => false));
+  $items = array();
+  $selected = get_query_var('shop_sales_area_cat');
+  if(!is_array($selected)){
+    array_push($items, $selected);
+  }else{
+    $items = array_merge($items, $selected);
+  }
+  $selected = get_query_var('req');
+  if(!is_array($selected)){
+    array_push($items, $selected);
+  }else{
+    $items = array_merge($items, $selected);
+  }
   foreach($tags as $tag) :
+    $checked = in_array($tag->slug, $items) ? 'checked' : '';
 ?>
         <ul class="clearfix">
-        <li class="choice_area"><input type="checkbox" id="" /><label for="<?php echo $tag->slug; ?>" class="unit_t strong_f big"><?php echo $tag->name ?></label>
+        <li class="choice_area"><input type="checkbox" id="" <?php echo $checked; ?> /><label for="<?php echo $tag->slug; ?>" class="unit_t strong_f big"><?php echo $tag->name ?></label>
 <?php
   print('<ul class="choices clearfix">');
   $query = new WP_Query(array(
@@ -173,8 +187,11 @@ Template Name: un-search
     'order' => 'ASC'
   ));
   while($query->have_posts()) : $query->the_post();
+    if($checked == ''){
+      $checked = in_array($post->ID, $items) ? 'checked' : '';
+    }
 ?>
-  <li><input type="checkbox" name="req[]" id="req_<?php echo $post->ID; ?>" value="<?php echo $post->ID; ?>" /><label for="req_<?php echo $post->ID; ?>"><?php the_title(); ?></label></li>
+  <li><input type="checkbox" name="req[]" id="req_<?php echo $post->ID; ?>" value="<?php echo $post->ID; ?>" <?php echo $checked; ?> /><label for="req_<?php echo $post->ID; ?>"><?php the_title(); ?></label></li>
 <?php
   endwhile;
   print('</ul></li>');
@@ -195,19 +212,38 @@ Template Name: un-search
 <?php
   $mytax = 'pref_cat';
   $tags = get_terms($mytax, array('hide_empty' => false));
+  $items = array();
+  $selected = get_query_var('shop_pref_area_cat');
+  if(!is_array($selected)){
+    array_push($items, $selected);
+  }else{
+    $items = array_merge($items, $selected);
+  }
+  $selected = get_query_var('pref_cat');
+  if(!is_array($selected)){
+    array_push($items, $selected);
+  }else{
+    $items = array_merge($items, $selected);
+  }
   $checkboxes = '';
   $first_parent = true;
   foreach($tags as $tag){
-    if(!$tag->parent){
+    if($tag->parent){
+      // 子の階層
+      if($checked == ''){
+        $checked = in_array($tag->slug, $items) ? 'checked' : '';
+      }
+      $checkboxes .= '<li><input type="checkbox" name="' . $mytax . '[]" value="' . $tag->slug . '" id="' . $mytax . '-' . $tag->term_id . '" ' . $checked . '/>';
+      $checkboxes .= '<label for="' . $mytax . '-' . $tag->slug . '">' . $tag->name . '</label></li>';
+    }else{
+      // 親の階層
+      $checked = in_array($tag->slug, $items) ? 'checked' : '';
       if(!$first_parent){
         $checkboxes .= '</ul></li>';
       }
-      $checkboxes .= '<li class="choice_area"><input type="checkbox" id="dealer_hokkaido" /><label for="dealer_hokkaido" class="unit_t strong_f big">' . $tag->name . '</label>';
+      $checkboxes .= '<li class="choice_area"><input type="checkbox" id="" '. $checked . '/><label for="" class="unit_t strong_f big">' . $tag->name . '</label>';
       $checkboxes .= '<ul class="choices clearfix">';
       $first_parent = false;
-    }else{
-      $checkboxes .= '<li><input type="checkbox" name="' . $mytax . '[]" value="' . $tag->slug . '" id="' . $mytax . '-' . $tag->term_id . '" ' . $checked . '/>';
-      $checkboxes .= '<label for="' . $mytax . '-' . $tag->slug . '">' . $tag->name . '</label></li>';
     }
   }
   $checkboxes .= '</ul></li>';
@@ -235,7 +271,7 @@ Template Name: un-search
 </div>
 
 <?php
-  $args = query_for_taxonomy('units', array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat', 'status_cat'));
+  $args = query_for_taxonomy('units', array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat','pref_cat','shop_sales_area_cat','shop_pref_area_cat','status_cat'),array('req'));
   $wp_query = new WP_query();
   $wp_query->query($args);
 ?>

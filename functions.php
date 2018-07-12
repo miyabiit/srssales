@@ -362,7 +362,7 @@ function my_checkbox_list_taxonomy($mytax_name){
   if(!is_array($selected)){
     array_push($items, $selected);
   }else{
-    $items += $selected;
+    $items = array_merge($items,$selected);
   }
   $checked = in_array("0", $items) ? 'checked' : '';
   print('<input type="checkbox" id="' . $mytax . '_all" ' . $checked . '/> <label for="size_all" class="unit_t strong_f big mdl">すべて選択</label>');
@@ -382,8 +382,9 @@ function my_checkbox_list_taxonomy($mytax_name){
   echo '</ul>';
 }
 //query for taxonomy
-//$mytaxlist = array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat', 'status_cat');
-function query_for_taxonomy($mypost_type,$mytaxlist){
+//ex) $mytaxlist = array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat', 'status_cat');
+//ex) $mymetalist = array('req');
+function query_for_taxonomy($mypost_type,$mytaxlist,$mymetalist){
   $args = array(
     'post_type' => $mypost_type,
     'post_status' => 'publish',
@@ -403,15 +404,27 @@ function query_for_taxonomy($mypost_type,$mytaxlist){
     }
   }
   $args['tax_query'] = $tax_args;
+  //$mymetalist = array('req');
+  $meta_args = array(
+    'relation' => 'AND',
+  );
+  foreach($mymetalist as $mymeta){
+    if($_GET[$mymeta]){
+      array_push($meta_args,
+        array(
+          'key' => 'req',
+          'value' => $_GET[$mymeta],
+          'compare' => 'IN'
+        )
+      );
+    }
+  }
+  $args['meta_query'] = $meta_args;
   return $args;
-    /*
-    'meta_query' => array(
-      'relation' => 'OR',
-      array(
-        'key' => 'req',
-        'value' => $_GET['req'],
-        'compare' => 'IN'
-      )
-    )
-    */
 }
+//
+function add_query_vars_filter( $vars ){
+  $vars[] = "req";
+  return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
