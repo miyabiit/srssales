@@ -137,7 +137,7 @@ foreach($terms as $term){
 <div class="strong_f show_menu_links">価格で探す</div>
 <ul class="menu_links">
 <?php
-$mytax = 'pm_price_cat';
+$mytax = 'pm_price_range_cat';
 $terms = get_terms($mytax,array('hide_empty' => false));
 foreach($terms as $term){
   echo '<li><a href="/pm-result/?' . $mytax . '=' . $term->slug. '">' . $term->name . '</a></li>';

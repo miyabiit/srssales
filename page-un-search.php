@@ -167,10 +167,10 @@ Template Name: un-search
     $items = array_merge($items, $selected);
   }
   foreach($tags as $tag) :
-    $checked = in_array($tag->slug, $items) ? 'checked' : '';
+    $parentchecked = in_array($tag->slug, $items) ? 'checked' : '';
 ?>
         <ul class="clearfix">
-        <li class="choice_area"><input type="checkbox" id="" <?php echo $checked; ?> /><label for="<?php echo $tag->slug; ?>" class="unit_t strong_f big"><?php echo $tag->name ?></label>
+        <li class="choice_area"><input type="checkbox" id="" <?php echo $parentchecked; ?> /><label for="<?php echo $tag->slug; ?>" class="unit_t strong_f big"><?php echo $tag->name ?></label>
 <?php
   print('<ul class="choices clearfix">');
   $query = new WP_Query(array(
@@ -187,8 +187,10 @@ Template Name: un-search
     'order' => 'ASC'
   ));
   while($query->have_posts()) : $query->the_post();
-    if($checked == ''){
+    if($parentchecked == ''){
       $checked = in_array($post->ID, $items) ? 'checked' : '';
+    }else{
+      $checked = 'checked';
     }
 ?>
   <li><input type="checkbox" name="req[]" id="req_<?php echo $post->ID; ?>" value="<?php echo $post->ID; ?>" <?php echo $checked; ?> /><label for="req_<?php echo $post->ID; ?>"><?php the_title(); ?></label></li>
@@ -230,18 +232,20 @@ Template Name: un-search
   foreach($tags as $tag){
     if($tag->parent){
       // 子の階層
-      if($checked == ''){
+      if($parentchecked == ''){
         $checked = in_array($tag->slug, $items) ? 'checked' : '';
+      }else{
+        $checked = 'checked';
       }
       $checkboxes .= '<li><input type="checkbox" name="' . $mytax . '[]" value="' . $tag->slug . '" id="' . $mytax . '-' . $tag->term_id . '" ' . $checked . '/>';
       $checkboxes .= '<label for="' . $mytax . '-' . $tag->slug . '">' . $tag->name . '</label></li>';
     }else{
       // 親の階層
-      $checked = in_array($tag->slug, $items) ? 'checked' : '';
+      $parentchecked = in_array($tag->slug, $items) ? 'checked' : '';
       if(!$first_parent){
         $checkboxes .= '</ul></li>';
       }
-      $checkboxes .= '<li class="choice_area"><input type="checkbox" id="" '. $checked . '/><label for="" class="unit_t strong_f big">' . $tag->name . '</label>';
+      $checkboxes .= '<li class="choice_area"><input type="checkbox" id="" '. $parentchecked . '/><label for="" class="unit_t strong_f big">' . $tag->name . '</label>';
       $checkboxes .= '<ul class="choices clearfix">';
       $first_parent = false;
     }

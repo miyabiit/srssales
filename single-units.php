@@ -46,17 +46,17 @@
 <div class="content">
 <ul class="breadcrumb clearfix">
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="ホームのＵＲＬ" itemprop="url">
+<a href="/" itemprop="url">
 <span itemprop="title">ホーム</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="unitproducts" itemprop="url">
+<a href="/unitproducts" itemprop="url">
 <span itemprop="title">ユニットハウス</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="un-products" itemprop="url">
+<a href="/un-products" itemprop="url">
 <span itemprop="title"><?php the_title(); ?></span>
 </a>
 </li>
@@ -175,16 +175,7 @@ if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">保有場所</dt>
-<dd class="product_detail_content">
-<?php 
-$objs = get_field('stock_point');
-if($objs){
-  foreach($objs as $obj){
-    echo $obj->post_title;
-    echo " ";
-  }
-}
-?></dd>
+<dd class="product_detail_content"><?php $term = get_field('stock_point'); echo $term->post_title; ?></dd>
 <dt class="product_detail_title box">お問い合わせ先</dt>
 <dd class="product_detail_content"><?php $term = get_field('req'); echo $term->post_title; ?></dd>
 </dl>
@@ -201,6 +192,7 @@ if(get_field('staff')){
   echo $user['nickname'];
 }
 ?>
+</dd>
 </dl>
 </div>
 </div>
