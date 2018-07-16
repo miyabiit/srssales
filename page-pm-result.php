@@ -56,17 +56,17 @@ Template Name: pm-result
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="pmproducts" itemprop="url">
+<a href="/pmproducts" itemprop="url">
 <span itemprop="title">アタッチメント</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="pm-search" itemprop="url">
+<a href="/pm-search" itemprop="url">
 <span itemprop="title">商品検索メニュー</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="un-result" itemprop="url">
+<a href="/pm-result" itemprop="url">
 <span itemprop="title">検索結果</span>
 </a>
 </li>
@@ -77,7 +77,6 @@ Template Name: pm-result
   $args = query_for_taxonomy('pms', array('pm_usage_cat', 'pm_class_cat', 'pm_price_range_cat','pref_cat','shop_sales_area_cat','shop_pref_area_cat','status_cat'),array('stockpoint'));
   $wp_query = new WP_Query();
   $wp_query->query($args);
-  //wp_reset_query();
 ?>
 
 <?php
@@ -91,7 +90,7 @@ Template Name: pm-result
 ?>
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more atch"><a href="pm-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
+<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more atch"><a href="/pm-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
 <!-- div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>
@@ -115,7 +114,7 @@ while( $wp_query->have_posts()) : $wp_query->the_post();
 <?php
 $terms = get_the_terms($post->ID, 'mark_label_cat');
 $tags = [];
-foreach($terms as $term)array_push($tags, $term->slug);
+if($terms) foreach($terms as $term)array_push($tags, $term->slug);
 if(in_array("newone",$tags)) print '<span class="product_list_sign red strong_f">NEW</span>';
 if(in_array("recommend",$tags)) print '<span class="product_list_sign orange strong_f">おすすめ</span>';
 if(in_array("goodone",$tags)) print '<span class="product_list_sign blue strong_f">美品</span>';

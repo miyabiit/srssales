@@ -56,7 +56,7 @@ Template Name: unitproducts
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="unitproducts" itemprop="url">
+<a href="/unitproducts" itemprop="url">
 <span itemprop="title">ユニットハウス</span>
 </a>
 </li>
@@ -77,33 +77,13 @@ mydropdown_taxsonomy("un_tubo_cat");
 <div>
 <span class="disp_f">価格で探す</span>
 <?php
-$mytax = "un_price_range_cat";
-$selected = get_query_var($mytax);
-$args = array(
-  'show_option_all' => '-',
-  'taxonomy' => $mytax,
-  'name' => $mytax,
-  'value_field' => 'slug',
-  'hide_empty' => false,
-  'selected' => $selected
-);
-wp_dropdown_categories($args);
+mydropdown_taxsonomy("un_price_range_cat");
 ?>
 </div>
 <div>
 <span class="disp_f">用途で探す</span>
 <?php
-$mytax = "un_usage_cat";
-$selected = get_query_var($mytax);
-$args = array(
-  'show_option_all' => '-',
-  'taxonomy' => $mytax,
-  'name' => $mytax,
-  'value_field' => 'slug',
-  'hide_empty' => false,
-  'selected' => $selected
-);
-wp_dropdown_categories($args);
+mydropdown_taxsonomy("un_usage_cat");
 ?>
 </div>
 </div>
@@ -111,72 +91,25 @@ wp_dropdown_categories($args);
 <div>
 <span class="disp_f">販売店で探す</span>
 <?php
-$mytax = "shop_sales_area_cat";
-$selected = get_query_var($mytax);
-$args = array(
-  'show_option_all' => '-',
-  'taxonomy' => $mytax,
-  'name' => $mytax,
-  'value_field' => 'slug',
-  'hide_empty' => false,
-  'selected' => $selected
-);
-wp_dropdown_categories($args);
+mydropdown_taxsonomy("shop_sales_area_cat");
 ?>
 </div>
 <div>
 <span class="disp_f">住所で探す</span>
 <?php
-$mytax = "shop_pref_area_cat";
-$selected = get_query_var($mytax);
-$args = array(
-  'show_option_all' => '-',
-  'taxonomy' => $mytax,
-  'name' => $mytax,
-  'value_field' => 'slug',
-  'hide_empty' => false,
-  'selected' => $selected
-);
-wp_dropdown_categories($args);
+mydropdown_taxsonomy("shop_pref_area_cat");
 ?>
 </div>
 <div>
 <span class="disp_f">状態で探す</span>
 <?php
-$mytax = "status_cat";
-$selected = get_query_var($mytax);
-$args = array(
-  'show_option_all' => '-',
-  'taxonomy' => $mytax,
-  'name' => $mytax,
-  'value_field' => 'slug',
-  'hide_empty' => false,
-  'selected' => $selected
-);
-wp_dropdown_categories($args);
+mydropdown_taxsonomy("status_cat");
 ?>
 </div>
 </div>
 <?php
-$args = array(
-  'post_type' => 'units',
-);
-if($_GET['un_tubo_cat']){
-  $un_tubo_cat_args = array(
-    'taxonomy' => 'un_tubo_cat',
-    'field' => 'slug',
-    'terms' => $_GET['un_tubo_cat']
-  );
-  $args["un_tubo_cat"] = $un_tubo_cat_args;
-};
-if( !empty($un_tubo_cat_args) || !empty($un_usage_cat_args)){
-  $args['tax_query'] = array(
-    'relation' => 'OR',
-    $un_tubo_cat_args,
-    $un_usage_cat_args
-  );
-};
-$wp_query = new WP_Query();
+$args = query_for_taxonomy('units', array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat','pref_cat','shop_sales_area_cat','shop_pref_area_cat','status_cat'),array('req'));
+$wp_query = new WP_query();
 $wp_query->query($args);
 ?>
   <div class="search-button"><div id="search-hits" class="strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i> ユニットハウスを探す</button></div>
@@ -215,7 +148,9 @@ while($query->have_posts()) : $query->the_post();
 <?php
 $terms = get_the_terms($post->ID, 'mark_label_cat');
 $tags = [];
-foreach($terms as $term)array_push($tags, $term->slug);
+if($terms){
+  foreach($terms as $term)array_push($tags, $term->slug);
+}
 if(in_array("goodone",$tags)) print '<div class="product_list_sign orange strong_f">美品</div>';
 ?>
 <div class="product_list_catch strong_f"><?php echo get_post_meta($post->ID, 'comment', true); ?></div>
@@ -239,7 +174,9 @@ if(in_array("goodone",$tags)) print '<div class="product_list_sign orange strong
 <?php
 $terms = get_the_terms($post->ID, 'mark_label_cat');
 $tags = [];
-foreach($terms as $term)array_push($tags, $term->slug);
+if($terms){
+  foreach($terms as $term)array_push($tags, $term->slug);
+}
 if(in_array("newone",$tags))print '<div class="product_list_sign red strong_f">NEW</div>';
 if(in_array("recommend",$tags))print '<div class="product_list_sign orange strong_f">おすすめ</div>';
 if(in_array("condition",$tags))print '<div class="product_list_sign blue strong_f">快適</div>';

@@ -51,22 +51,22 @@ Template Name: un-result
 <div class="content">
 <ul class="breadcrumb clearfix">
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="ホームのＵＲＬ" itemprop="url">
+<a href="/" itemprop="url">
 <span itemprop="title">ホーム</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="unitproducts" itemprop="url">
+<a href="/unitproducts" itemprop="url">
 <span itemprop="title">ユニットハウス</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="un-search" itemprop="url">
+<a href="/un-search" itemprop="url">
 <span itemprop="title">商品検索メニュー</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="un-result" itemprop="url">
+<a href="/un-result" itemprop="url">
 <span itemprop="title">検索結果</span>
 </a>
 </li>
@@ -77,7 +77,6 @@ Template Name: un-result
   $args = query_for_taxonomy('units', array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat','pref_cat','shop_sales_area_cat','shop_pref_area_cat','status_cat'),array('req'));
   $wp_query = new WP_Query();
   $wp_query->query($args);
-  //wp_reset_query();
 ?>
 
 <?php
@@ -92,7 +91,7 @@ Template Name: un-result
 <section class="search-results-pagination">
 <div class="content flex">
 <div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="un-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
-<!--- div class="pagination">
+<!-- div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>
 <a href="" class="active">2</a>
@@ -115,7 +114,7 @@ while( $wp_query->have_posts()) : $wp_query->the_post();
 <?php
 $terms = get_the_terms($post->ID, 'mark_label_cat');
 $tags = [];
-foreach($terms as $term)array_push($tags, $term->slug);
+if($terms) foreach($terms as $term)array_push($tags, $term->slug);
 if(in_array("newone",$tags)) print '<span class="product_list_sign red strong_f">NEW</span>';
 if(in_array("recommend",$tags)) print '<span class="product_list_sign orange strong_f">おすすめ</span>';
 if(in_array("goodone",$tags)) print '<span class="product_list_sign blue strong_f">美品</span>';
@@ -139,8 +138,7 @@ if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f
 <dt class="product_data_title">面積</dt>
 <dd class="product_data_content"><?php echo get_post_meta($post->ID, 'm2', true); ?>坪</dd>
 <dt class="product_data_title">本体価格</dt>
-<!-- dd class="product_data_content"><span class="num"><?php get_post_meta($post->ID, 'price', true); ?></span>万円（税抜）</dd -->
-<dd class="product_data_content"><?php echo get_post_meta($post->ID, 'price', true); ?>万円（税抜）</dd>
+<dd class="product_data_content"><span class="num"><?php get_post_meta($post->ID, 'price', true); ?></span>万円（税抜）</dd>
 </dl>
 </div>
 <h3><i class="fas fa-square"></i> 仕様</h3>

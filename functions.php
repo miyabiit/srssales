@@ -381,7 +381,7 @@ function my_checkbox_list_taxonomy($mytax_name){
   print $checkboxes;
   echo '</ul>';
 }
-//query for taxonomy
+//query for taxonomy and meta query
 //ex) $mytaxlist = array('un_tubo_cat', 'un_usage_cat', 'un_price_range_cat', 'status_cat');
 //ex) $mymetalist = array('req');
 function query_for_taxonomy($mypost_type,$mytaxlist,$mymetalist){

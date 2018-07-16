@@ -51,22 +51,22 @@ units サイト内検索結果
 <div class="content">
 <ul class="breadcrumb clearfix">
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="ホームのＵＲＬ" itemprop="url">
+<a href="/" itemprop="url">
 <span itemprop="title">ホーム</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="unitproducts" itemprop="url">
+<a href="/unitproducts" itemprop="url">
 <span itemprop="title">ユニットハウス</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="un-search" itemprop="url">
+<a href="/un-search" itemprop="url">
 <span itemprop="title">商品検索メニュー</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="un-result" itemprop="url">
+<a href="/un-result" itemprop="url">
 <span itemprop="title">検索結果</span>
 </a>
 </li>
@@ -88,14 +88,14 @@ units サイト内検索結果
 ?>
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f">[<?php echo get_search_query(); ?>]での検索結果: <span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="un-search"><i class="fas fa-filter"></i>絞り込む</a></span></div>
-<div class="pagination">
+<div class="hits flex strong_f">[<?php echo get_search_query(); ?>]での検索結果: <span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="/un-search"><i class="fas fa-filter"></i>絞り込む</a></span></div>
+<!-- div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>
 <a href="" class="active">2</a>
 <a href="">3</a>
 <a href="" class="prev"><i class="fas fa-angle-double-right"></i></a>
-</div>
+</div -->
 </div>
 </section>
 <section id="search-results">
@@ -108,8 +108,19 @@ while( $wp_query->have_posts()) : $wp_query->the_post();
   <h2><?php the_title(); ?></h2>
 
 <section class="searched-product product_data_unit">
-<h2><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span>
-<span class="product_name"><?php the_title(); ?></span></h2>
+<h2>
+<?php
+$terms = get_the_terms($post->ID, 'mark_label_cat');
+$tags = [];
+if($terms) foreach($terms as $term)array_push($tags, $term->slug);
+if(in_array("newone",$tags)) print '<span class="product_list_sign red strong_f">NEW</span>';
+if(in_array("recommend",$tags)) print '<span class="product_list_sign orange strong_f">おすすめ</span>';
+if(in_array("goodone",$tags)) print '<span class="product_list_sign blue strong_f">美品</span>';
+if(in_array("nowship",$tags)) print '<span class="product_list_sign green strong_f">即出荷</span>';
+if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f">商談中</span>';
+?>
+<span class="product_name"><?php the_title(); ?></span>
+</h2>
 <p><?php echo get_post_meta($post->ID, 'comment', true); ?></p>
 <div class="searched_product_data flex">
 <div class="product_image"><img src="/images/product.jpg"></div>
@@ -169,14 +180,14 @@ while( $wp_query->have_posts()) : $wp_query->the_post();
 
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f">[<?php echo get_search_query(); ?>]での検索結果: <span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="un-search"><i class="fas fa-filter"></i>絞り込む</a></span></div>
-<div class="pagination">
+<div class="hits flex strong_f">[<?php echo get_search_query(); ?>]での検索結果: <span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="/un-search"><i class="fas fa-filter"></i>絞り込む</a></span></div>
+<!-- div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>
 <a href="" class="active">2</a>
 <a href="">3</a>
 <a href="" class="prev"><i class="fas fa-angle-double-right"></i></a>
-</div>
+</div -->
 </div>
 </section>
 

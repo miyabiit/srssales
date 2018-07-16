@@ -71,7 +71,9 @@
 <?php
 $terms = get_the_terms($post->ID, 'mark_label_cat');
 $tags = [];
-foreach($terms as $term)array_push($tags, $term->slug);
+if($terms){
+  foreach($terms as $term)array_push($tags, $term->slug);
+}
 if(in_array("newone",$tags)) print '<span class="product_list_sign red strong_f">NEW</span>';
 if(in_array("recommend",$tags)) print '<span class="product_list_sign orange strong_f">おすすめ</span>';
 if(in_array("goodone",$tags)) print '<span class="product_list_sign blue strong_f">美品</span>';

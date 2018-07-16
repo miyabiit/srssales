@@ -22,9 +22,9 @@ Template Name: pmproducts
 <nav>
 <ul id="nav_menu" class="clearfix">
 <li id="logo"><a href="/">ホーム</a></li>
-<li class="text_c unit"><a href="unitproducts" class="disp_f">ユニットハウス</a></li>
-<li class="text_c atch"><a href="pmproducts" class="disp_f">アタッチメント</a></li>
-<li class="text_c lift"><a href="btproducts" class="disp_f">高所作業車 他</a></li>
+<li class="text_c unit"><a href="/unitproducts" class="disp_f">ユニットハウス</a></li>
+<li class="text_c atch"><a href="/pmproducts" class="disp_f">アタッチメント</a></li>
+<li class="text_c lift"><a href="/btproducts" class="disp_f">高所作業車 他</a></li>
 <li class="text_c srsi"><a href="/srs/_about.html" class="disp_f">エスアールエスのご紹介</a></li>
 </ul>
 </nav>
@@ -56,7 +56,7 @@ Template Name: pmproducts
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="pmproducts" itemprop="url">
+<a href="/pmproducts" itemprop="url">
 <span itemprop="title">アタッチメント</span>
 </a>
 </li>
@@ -66,94 +66,63 @@ Template Name: pmproducts
 
 <section id="search-box" class="atch_s">
 <div class="content">
-<form class="flex clearfix">
+<form class="flex clearfix" role="search" method="get" action="/pm-result">
 <div class="search-selection">
 <div>
 <span class="disp_f">分類で探す</span>
-<select name="atch_category">
-<option value="">解体用アタッチメント</option>
-<option value="">バケット類</option>
-<option value="">フォーク</option>
-<option value="">その他</option>
-<option value="">特殊アタッチメント</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+mydropdown_taxsonomy("pm_usage_cat");
+?>
 </div>
 <div>
 <span class="disp_f">クラスで探す</span>
-<select name="class">
-<option value="">0.2以下</option>
-<option value="">0.45</option>
-<option value="">0.7</option>
-<option value="">1.2以上</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+mydropdown_taxsonomy("pm_class_cat");
+?>
 </div>
 <div>
 <span class="disp_f">価格で探す</span>
-<select name="price">
-<option value="">～10万円未満</option>
-<option value="">10～20万円未満</option>
-<option value="">20～30万円未満</option>
-<option value="">30～40万円未満</option>
-<option value="">40～50万円未満</option>
-<option value="">50～75万円未満</option>
-<option value="">75～100万円未満</option>
-<option value="">100万円以上</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+mydropdown_taxsonomy("pm_price_range_cat");
+?>
 </div>
 </div>
 <div class="search-selection">
 <div>
 <span class="disp_f">販売店で探す</span>
-<select name="dealer">
-<option value="">北海道/東北</option>
-<option value="">北陸/信越</option>
-<option value="">関東</option>
-<option value="">東海</option>
-<option value="">近畿</option>
-<option value="">中国/四国</option>
-<option value="">九州</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+mydropdown_taxsonomy("shop_sales_area_cat");
+?>
 </div>
 <div>
 <span class="disp_f">住所で探す</span>
-<select name="address">
-<option value="">北海道/東北地方</option>
-<option value="">関東地方</option>
-<option value="">中部地方</option>
-<option value="">近畿地方</option>
-<option value="">中国地方</option>
-<option value="">四国地方</option>
-<option value="">九州地方</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+mydropdown_taxsonomy("shop_pref_area_cat");
+?>
 </div>
 <div>
 <span class="disp_f">状態で探す</span>
-<select name="status">
-<option value="">N:新品</option>
-<option value="">S:未使用品</option>
-<option value="">A:美品(使用感小)</option>
-<option value="">B:使用感中</option>
-<option value="">C:使用感大</option>
-<option value="">D:難あり</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+mydropdown_taxsonomy("status_cat");
+?>
 </div>
 </div>
-<div class="search-button"><div id="search-hits" class="strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn atch disp_f"><i class="fas fa-search"></i> アタッチメントを探す</button></div>
+<?php
+$args = query_for_taxonomy('pms', array('pm_usage_cat', 'pm_class_cat', 'pm_price_range_cat','pref_cat','shop_sales_area_cat','shop_pref_area_cat','status_cat'),array('stockpoint'));
+$wp_query = new WP_query();
+$wp_query->query($args);
+?>
+  <div class="search-button"><div id="search-hits" class="strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn atch disp_f"><i class="fas fa-search"></i> アタッチメントを探す</button></div>
 </form>
 </div>
 </section>
 <section id="key-visual" class="atch">
 <div class="content">
-<form id="keyword-search-box" class="flex">
+<form id="keyword-search-box" class="flex" method="get" action="<?php echo home_url(); ?>">
 <div id="search-title" class="disp_f text_c">サイト内検索</div>
-<input type="text" />
-<button type="submit" name="submit"><i class="fas fa-search"></i></button>
+<input type="hidden" name="post_type" id="post_type" value="pms">
+<input type="text" value="" name="s" id="s" />
+<button type="submit"><i class="fas fa-search"></i></button>
 </form>
 <h1 class="disp_f text_c shadow">アタッチメント</h1>
 <p class="disp_f text_c shadow">アタッチメントの購入をお考えの皆様へ<br>豊富なラインナップをご覧ください。</p>
@@ -164,142 +133,60 @@ Template Name: pmproducts
 <div class="content">
 <h2 class="disp_f text_l"><i class="fas fa-thumbs-up"></i> お勧め商品</h2>
 <div id="products-list" class="clearfix">
+<?php
+$query = new WP_Query(array(
+  'post_type' => 'pms',
+  'post_per_page' => 5,
+  'orderby' => 'date',
+  'order' => 'DESC'
+));
+while($query->have_posts()) : $query->the_post();
+?>
 <div class="products float_l">
-<a href="pm-products">
+<a href="<?php the_permalink(); ?>">
 <div class="product_list_title flex">
-<div class="product_list_catch strong_f">破砕力ダントツ<br>ガラ付鉄筋キャッチ</div>
+<?php
+$terms = get_the_terms($post->ID, 'mark_label_cat');
+$tags = [];
+if($terms){
+  foreach($terms as $term)array_push($tags, $term->slug);
+}
+if(in_array("goodone",$tags)) print '<div class="product_list_sign orange strong_f">美品</div>';
+?>
+  <div class="product_list_catch strong_f"><?php the_field('comment'); ?></div>
 </div>
 <img src="/images/atch.jpg" class="product_list_img" alt="商品">
 <div class="product_list_detail">
-<div class="product_list_name strong_f">マグネット小割機(発電式)</div>
+<div class="product_list_name strong_f"><?php the_title(); ?></div>
 <div class="product_list_info flex">
 <div class="product_list_info_sub">メーカー</div>
-<div class="product_list_info_data">株式会社タグチ工業</div>
+<div class="product_list_info_data"><?php the_field('maker'); ?></div>
 </div>
 <div class="product_list_info flex">
 <div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">MCC 7000A</div>
+<div class="product_list_info_data"><?php the_field('code'); ?></div>
 </div>
 <div class="product_list_info flex">
 <div class="product_list_info_unit">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
+<div class="product_list_info_price text_r num"><?php the_field('price'); ?><span class="yen">万円</span></div>
 </div>
 <div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
+<?php
+$terms = get_the_terms($post->ID, 'mark_label_cat');
+$tags = [];
+if($terms){
+  foreach($terms as $term)array_push($tags, $term->slug);
+}
+if(in_array("newone",$tags))print '<div class="product_list_sign red strong_f">NEW</div>';
+if(in_array("recommend",$tags))print '<div class="product_list_sign orange strong_f">おすすめ</div>';
+if(in_array("condition",$tags))print '<div class="product_list_sign blue strong_f">快適</div>';
+?>
 </div>
 </div>
 </a>
 </div>
-<div class="products float_l">
-<a href="pm-products">
-<div class="product_list_title flex">
-<div class="product_list_catch strong_f">破砕力ダントツ<br>ガラ付鉄筋キャッチ</div>
-</div>
-<img src="/images/atch.jpg" class="product_list_img" alt="商品">
-<div class="product_list_detail">
-<div class="product_list_name strong_f">マグネット小割機(発電式)</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">メーカー</div>
-<div class="product_list_info_data">株式会社タグチ工業</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">MCC 7000A</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_unit">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
-</div>
-<div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
-</div>
-</div>
-</a>
-</div>
-<div class="products float_l">
-<a href="pm-products">
-<div class="product_list_title flex">
-<div class="product_list_catch strong_f">破砕力ダントツ<br>ガラ付鉄筋キャッチ</div>
-</div>
-<img src="/images/atch.jpg" class="product_list_img" alt="商品">
-<div class="product_list_detail">
-<div class="product_list_name strong_f">マグネット小割機(発電式)</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">メーカー</div>
-<div class="product_list_info_data">株式会社タグチ工業</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">MCC 7000A</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_unit">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
-</div>
-<div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
-</div>
-</div>
-</a>
-</div>
-<div class="products float_l">
-<a href="pm-products">
-<div class="product_list_title flex">
-<div class="product_list_catch strong_f">林業に特化！首振り＆全旋回つかみ機</div>
-</div>
-<img src="/images/atch2.jpg" class="product_list_img" alt="商品">
-<div class="product_list_detail">
-<div class="product_list_name strong_f">木材グラップル</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">メーカー</div>
-<div class="product_list_info_data">株式会社タグチ工業</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">MCM 45100</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_unit">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
-</div>
-<div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
-<div class="product_list_sign blue strong_f">快適</div>
-</div>
-</div>
-</a>
-</div>
-<div class="products float_l">
-<a href="pm-products">
-<div class="product_list_title flex">
-<div class="product_list_catch strong_f">破砕力ダントツ<br>ガラ付鉄筋キャッチ</div>
-</div>
-<img src="/images/atch.jpg" class="product_list_img" alt="商品">
-<div class="product_list_detail">
-<div class="product_list_name strong_f">マグネット小割機(発電式)</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">メーカー</div>
-<div class="product_list_info_data">株式会社タグチ工業</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">MCC 7000A</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_unit">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
-</div>
-<div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
-</div>
-</div>
-</a>
-</div>
+<?php endwhile; ?>
+
 </div>
 </div>
 </section>
