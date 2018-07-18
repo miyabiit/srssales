@@ -22,9 +22,9 @@ Template Name: btproducts
 <nav>
 <ul id="nav_menu" class="clearfix">
 <li id="logo"><a href="/">ホーム</a></li>
-<li class="text_c unit"><a href="unitproducts" class="disp_f">ユニットハウス</a></li>
-<li class="text_c atch"><a href="pmproducts" class="disp_f">アタッチメント</a></li>
-<li class="text_c lift"><a href="btproducts" class="disp_f">高所作業車 他</a></li>
+<li class="text_c unit"><a href="/unitproducts" class="disp_f">ユニットハウス</a></li>
+<li class="text_c atch"><a href="/pmproducts" class="disp_f">アタッチメント</a></li>
+<li class="text_c lift"><a href="/btproducts" class="disp_f">高所作業車 他</a></li>
 <li class="text_c srsi"><a href="/srs/_about.html" class="disp_f">エスアールエスのご紹介</a></li>
 </ul>
 </nav>
@@ -38,7 +38,7 @@ Template Name: btproducts
 <nav>
 <ul id="sub_menu" class="clearfix">
 <li id="back" class="no-sp"><a href="/btproducts" class="disp_f">ホームに戻る</a></li>
-<li class="text_c"><a href="bt-search" class="disp_f">商品検索</a></li>
+<li class="text_c"><a href="/bt-search" class="disp_f">商品検索</a></li>
 <li class="text_c"><a href="/srs/_bt-guide-top.html" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="/srs/_bt-info-top.html" class="disp_f">ご案内</a></li>
 <li class="text_c"><a href="/" class="disp_f">お問い合わせ</a></li>
@@ -56,7 +56,7 @@ Template Name: btproducts
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="btproducts" itemprop="url">
+<a href="/btproducts" itemprop="url">
 <span itemprop="title">高所作業車 他</span>
 </a>
 </li>
@@ -66,64 +66,63 @@ Template Name: btproducts
 
 <section id="search-box" class="lift_s">
 <div class="content">
-<form class="flex clearfix">
+<form class="flex clearfix" role="search" method="get" action="/bt-result">
 <div class="search-selection">
 <div>
 <span class="disp_f">高さで探す</span>
-<select name="height">
-<option value="">〜4m</option>
-<option value="">〜6m</option>
-<option value="">〜8m</option>
-<option value="">〜10m</option>
-<option value="">10m以上</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+mydropdown_taxsonomy('bt_height_cat');
+?>
 </div>
 <div>
 <span class="disp_f">分類で探す</span>
-<select name="type">
-<option value="">タイヤ / ホイール</option>
-<option value="">キャタピラ / クローラ</option>
-<option value="">バッテリー</option>
-<option value="">エンジン</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+mydropdown_taxsonomy('bt_usage_cat');
+?>
 </div>
 </div>
 <div class="search-selection">
 
 <div>
 <span class="disp_f">種類で探す</span>
-<select name="category">
-<option value="">高所作業車</option>
-<option value="">仮設材</option>
-<option value="">その他</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+mydropdown_taxsonomy('bt_goods_cat');
+?>
 </div>
 <div>
 <span class="disp_f">状態で探す</span>
-<select name="status">
-<option value="">N:新品</option>
-<option value="">S:未使用品</option>
-<option value="">A:美品(使用感小)</option>
-<option value="">B:使用感中</option>
-<option value="">C:使用感大</option>
-<option value="">D:難あり</option>
-<option value="">すべて選択</option>
-</select>
+<?php
+mydropdown_taxsonomy('status_cat');
+?>
 </div>
 </div>
-<div class="search-button"><div id="search-hits" class="strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn lift disp_f"><i class="fas fa-search"></i> 高所作業車/他を探す</button></div>
+
+
+
+
+
+
+
+
+
+
+
+<?php
+$args = query_for_taxonomy('bts', array('bt_height_cat', 'bt_usage_cat', 'bt_goods_cat','pref_cat','shop_sales_area_cat','shop_pref_area_cat','status_cat'),array());
+$wp_query = new WP_query();
+$wp_query->query($args);
+?>
+  <div class="search-button"><div id="search-hits" class="strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn lift disp_f"><i class="fas fa-search"></i> 高所作業車/他を探す</button></div>
 </form>
 </div>
 </section>
 <section id="key-visual" class="lift">
 <div class="content">
-<form id="keyword-search-box" class="flex">
+<form id="keyword-search-box" class="flex" method="get" action="<?php echo home_url(); ?>">
 <div id="search-title" class="disp_f text_c">サイト内検索</div>
-<input type="text" />
-<button type="submit" name="submit"><i class="fas fa-search"></i></button>
+<input type="hidden" name="post_type" id="post_type" value="bts">
+<input type="text" value="" name="s" id="s" />
+<button type="submit"><i class="fas fa-search"></i></button>
 </form>
 <h1 class="disp_f text_c shadow">高所作業車と様々なアイテムを取り扱っております。</h1>
 <p class="disp_f text_c shadow">豊富なラインナップをご覧ください。</p>
@@ -134,142 +133,56 @@ Template Name: btproducts
 <div class="content">
 <h2 class="disp_f text_l"><i class="fas fa-thumbs-up"></i> お勧め商品</h2>
 <div id="products-list" class="clearfix">
+<?php
+$query = new WP_Query(array(
+  'post_type' => 'bts',
+  'post_per_page' => 5,
+  'orderby' => 'date',
+  'order' => 'DESC'
+));
+while($query->have_posts()) : $query->the_post();
+?>
 <div class="products float_l">
 <a href="bt-products">
 <div class="product_list_title flex">
-<div class="product_list_catch strong_f">スムーズな乗降<br>長寿命バッテリー</div>
+<?php
+$terms = get_the_terms($post->ID, 'mark_label_cat');
+$tags = [];
+if($terms) foreach($terms as $term)array_push($tags, $term->slug);
+if(in_array("goodone",$tags)) print '<div class="product_list_sign orange strong_f">美品</div>';
+?>
+  <div class="product_list_catch strong_f"><?php the_field('comment'); ?></div>
 </div>
 <img src="/images/lift.jpg" class="product_list_img" alt="商品">
 <div class="product_list_detail">
-<div class="product_list_name strong_f">高所作業車／Ｋテーブル 4mポスト型</div>
+<div class="product_list_name strong_f"><?php the_title(); ?></div>
 <div class="product_list_info flex">
 <div class="product_list_info_sub">地上床高</div>
-<div class="product_list_info_data">3.8m</div>
+<div class="product_list_info_data"><?php the_field('height'); ?>m</div>
 </div>
 <div class="product_list_info flex">
 <div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">RM04CNS</div>
+<div class="product_list_info_data"><?php the_field('code'); ?></div>
 </div>
 <div class="product_list_info flex">
 <div class="product_list_info_lift">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
+<div class="product_list_info_price text_r num"><?php the_field('price'); ?><span class="yen">万円</span></div>
 </div>
 <div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
+<?php
+$terms = get_the_terms($post->ID, 'mark_label_cat');
+$tags = [];
+if($terms) foreach($terms as $term)array_push($tags, $term->slug);
+if(in_array("newone",$tags))print '<div class="product_list_sign red strong_f">NEW</div>';
+if(in_array("recommend",$tags))print '<div class="product_list_sign orange strong_f">おすすめ</div>';
+if(in_array("condition",$tags))print '<div class="product_list_sign blue strong_f">快適</div>';
+?>
 </div>
 </div>
 </a>
 </div>
-<div class="products float_l">
-<a href="bt-products">
-<div class="product_list_title flex">
-<div class="product_list_catch strong_f">スムーズな乗降<br>長寿命バッテリー</div>
-</div>
-<img src="/images/lift.jpg" class="product_list_img" alt="商品">
-<div class="product_list_detail">
-<div class="product_list_name strong_f">高所作業車／Ｋテーブル 4mポスト型</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">地上床高</div>
-<div class="product_list_info_data">3.8m</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">RM04CNS</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_lift">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
-</div>
-<div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
-</div>
-</div>
-</a>
-</div>
-<div class="products float_l">
-<a href="bt-products">
-<div class="product_list_title flex">
-<div class="product_list_catch strong_f">スムーズな乗降<br>長寿命バッテリー</div>
-</div>
-<img src="/images/lift.jpg" class="product_list_img" alt="商品">
-<div class="product_list_detail">
-<div class="product_list_name strong_f">高所作業車／Ｋテーブル 4mポスト型</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">地上床高</div>
-<div class="product_list_info_data">3.8m</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">RM04CNS</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_lift">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
-</div>
-<div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
-</div>
-</div>
-</a>
-</div>
-<div class="products float_l">
-<a href="bt-products">
-<div class="product_list_title flex">
-<div class="product_list_catch strong_f">スムーズな乗降<br>長寿命バッテリー</div>
-</div>
-<img src="/images/lift.jpg" class="product_list_img" alt="商品">
-<div class="product_list_detail">
-<div class="product_list_name strong_f">高所作業車／Ｋテーブル 4mポスト型</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">地上床高</div>
-<div class="product_list_info_data">3.8m</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">RM04CNS</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_lift">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
-</div>
-<div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
-<div class="product_list_sign blue strong_f">快適</div>
-</div>
-</div>
-</a>
-</div>
-<div class="products float_l">
-<a href="bt-products">
-<div class="product_list_title flex">
-<div class="product_list_catch strong_f">スムーズな乗降<br>長寿命バッテリー</div>
-</div>
-<img src="/images/lift.jpg" class="product_list_img" alt="商品">
-<div class="product_list_detail">
-<div class="product_list_name strong_f">高所作業車／Ｋテーブル 4mポスト型</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">地上床高</div>
-<div class="product_list_info_data">3.8m</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_sub">商品番号</div>
-<div class="product_list_info_data">RM04CNS</div>
-</div>
-<div class="product_list_info flex">
-<div class="product_list_info_lift">価格</div>
-<div class="product_list_info_price text_r num">198.5<span class="yen">万円</span></div>
-</div>
-<div class="product_list_tags flex">
-<div class="product_list_sign red strong_f">NEW</div>
-<div class="product_list_sign orange strong_f">おすすめ</div>
-</div>
-</div>
-</a>
-</div>
+<?php endwhile; ?>
+
 </div>
 </div>
 </section>

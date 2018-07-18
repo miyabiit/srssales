@@ -167,7 +167,7 @@ if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f
 </div>
 </div>
 <div class="product_contact flex">
-<div class="contact_info"><span class="contact strong_f">お問い合わせ</span><i class="fas fa-phone-square"></i><span class="num"><a href="tel:0120-345-6789"><?php the_field('tel'); ?></a></span><i class="fas fa-user"></i>担当者：<?php if(get_field('staff')){$user = get_field('staff'); echo $user['nickname']; } ?></div>
+<div class="contact_info"><span class="contact strong_f">お問い合わせ</span><i class="fas fa-phone-square"></i><span class="num"><a href="tel:<?php the_field('tel'); ?>"><?php the_field('tel'); ?></a></span><i class="fas fa-user"></i>担当者：<?php if(get_field('staff')){$user = get_field('staff'); echo $user['nickname']; } ?></div>
 <div class="product_see_more unit"><a href="un-products" class="btn strong_f"><a href="<?php echo get_permalink($post->ID );?>" title="<?php echo get_the_title($post->ID);?>">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
 </div>
 </section>
@@ -182,7 +182,7 @@ if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f
 
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more atch"><a href="pm-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
+<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more atch"><a href="/pm-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
 <!-- div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>

@@ -192,7 +192,7 @@ foreach($terms as $term){
 }
 ?>
 </ul>
-<div class="strong_f show_menu_links">用途で探す</div>
+<div class="strong_f show_menu_links">種類で探す</div>
 <ul class="menu_links">
 <?php
 $mytax = 'bt_usage_cat';
@@ -202,7 +202,7 @@ foreach($terms as $term){
 }
 ?>
 </ul>
-<div class="strong_f show_menu_links">種類で探す</div>
+<div class="strong_f show_menu_links">分類で探す</div>
 <ul class="menu_links">
 <?php
 $mytax = 'bt_goods_cat';

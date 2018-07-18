@@ -1,11 +1,5 @@
-<?php
-/*
-Template Name: bt-products 
-*/
-?>
 <?php get_header(); ?>
 <body>
-
 <section id="head">
 <div id="head_info" class="no-sp">
 <div class="content">
@@ -22,9 +16,9 @@ Template Name: bt-products
 <nav>
 <ul id="nav_menu" class="clearfix">
 <li id="logo"><a href="/">ホーム</a></li>
-<li class="text_c unit"><a href="unitproducts" class="disp_f">ユニットハウス</a></li>
-<li class="text_c atch"><a href="pmproducts" class="disp_f">アタッチメント</a></li>
-<li class="text_c lift"><a href="btproducts" class="disp_f">高所作業車 他</a></li>
+<li class="text_c unit"><a href="/unitproducts" class="disp_f">ユニットハウス</a></li>
+<li class="text_c atch"><a href="/pmproducts" class="disp_f">アタッチメント</a></li>
+<li class="text_c lift"><a href="/btproducts" class="disp_f">高所作業車 他</a></li>
 <li class="text_c srsi"><a href="/srs/_about.html" class="disp_f">エスアールエスのご紹介</a></li>
 </ul>
 </nav>
@@ -37,32 +31,33 @@ Template Name: bt-products
 <div id="sub_title" class="no-pc strong_f">アタッチメント</div>
 <nav>
 <ul id="sub_menu" class="clearfix">
-<li id="back" class="no-sp"><a href="/" class="disp_f">ホームに戻る</a></li>
-<li class="text_c"><a href="bt-search" class="disp_f">商品検索</a></li>
-<li class="text_c"><a href="/" class="disp_f">ご利用ガイド</a></li>
-<li class="text_c"><a href="/" class="disp_f">ご案内</a></li>
-<li class="text_c"><a href="/" class="disp_f">お問い合わせ</a></li>
+<li id="back" class="no-sp"><a href="/btproducts" class="disp_f">ホームに戻る</a></li>
+<li class="text_c"><a href="/bt-search" class="disp_f">商品検索</a></li>
+<li class="text_c"><a href="/srs/_bt-guide-top.html" class="disp_f">ご利用ガイド</a></li>
+<li class="text_c"><a href="/srs/_bt-info-top.html" class="disp_f">ご案内</a></li>
+<li class="text_c"><a href="/srs/_contact.html" class="disp_f">お問い合わせ</a></li>
 </ul>
 </nav>
 </div>
 </section>
 
+<?php if(have_posts()): while(have_posts()):the_post(); ?>
 <section id="breadcrumb">
 <div class="content">
 <ul class="breadcrumb clearfix">
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="ホームのＵＲＬ" itemprop="url">
+<a href="/" itemprop="url">
 <span itemprop="title">ホーム</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="btproducts" itemprop="url">
+<a href="/btproducts" itemprop="url">
 <span itemprop="title">高所作業車 他</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="bt-products" itemprop="url">
-<span itemprop="title">高所作業車 Ｋテーブル 4mポスト型 バッテリー RM04CNS-S</span>
+<a href="/bt-products" itemprop="url">
+<span itemprop="title"><?php the_title(); ?></span>
 </a>
 </li>
 </ul>
@@ -71,26 +66,38 @@ Template Name: bt-products
 
 <section id="product-detail" class="lift_detail">
 <div id="product-title" class="content">
-<h1 class="txt">高所作業車 Ｋテーブル 4mポスト型 バッテリー RM04CNS-S<div id="icons"><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span></div></h1>
-<p>補水不要で手間もコストも削減、しかも長寿命のバッテリー</p>
+<h1 class="txt"><?php the_title(); ?>
+<?php
+$terms = get_the_terms($post->ID, 'mark_label_cat');
+$tags = [];
+if($terms) foreach($terms as $term)array_push($tags, $term->slug);
+if(in_array("newone",$tags)) print '<span class="product_list_sign red strong_f">NEW</span>';
+if(in_array("recommend",$tags)) print '<span class="product_list_sign orange strong_f">おすすめ</span>';
+if(in_array("goodone",$tags)) print '<span class="product_list_sign blue strong_f">美品</span>';
+if(in_array("nowship",$tags)) print '<span class="product_list_sign green strong_f">即出荷</span>';
+if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f">商談中</span>';
+?>
+</div>
+</h1>
+<p><?php the_field('comment'); ?></p>
 </div>
 <div id="product-border" class="border"></div>
 <div class="content flex clearfix">
 <div class="product_detail_price">
 <div class="product_detail_price_box border strong_f big clearfix">
 <span class="title">本体価格</span>
-<span class="price"><span class="num">000</span><span class="yen">万円（税抜）</span></span>
+<span class="price"><span class="num"><?php the_field('price'); ?></span><span class="yen">万円（税抜）</span></span>
 </div>
 <span class="misc sml">別途、設置費用（運賃込み）が発生致します。</span>
 </div>
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">用途</dt>
-<dd class="product_detail_content">高所作業車</dd>
+<dd class="product_detail_content"><?php $term = get_field('usage');echo $term->name; ?></dd>
 <dt class="product_detail_title box">メーカー</dt>
-<dd class="product_detail_content">株式会社アイチコーポレーション</dd>
+<dd class="product_detail_content"><?php the_field('maker'); ?></dd>
 <dt class="product_detail_title box">メーカー形式</dt>
-<dd class="product_detail_content">RM04CNS</dd>
+<dd class="product_detail_content"><?php the_field('maker_type'); ?></dd>
 </dl>
 </div>
 </div>
@@ -122,23 +129,23 @@ Template Name: bt-products
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">作業床高さ</dt>
-<dd class="product_detail_content">3.8m</dd>
+<dd class="product_detail_content"><?php the_field('height'); ?></dd>
 <dt class="product_detail_title box">積載荷量</dt>
-<dd class="product_detail_content">200kg</dd>
+<dd class="product_detail_content"><?php the_field('load_weight'); ?>kg</dd>
 <dt class="product_detail_title box">車両重量</dt>
-<dd class="product_detail_content">580kg</dd>
+<dd class="product_detail_content"><?php the_field('weight'); ?>kg</dd>
 <dt class="product_detail_title box">状態</dt>
-<dd class="product_detail_content">良好</dd>
+<dd class="product_detail_content"><?php $term = get_field('status'); echo $term->name; ?></dd>
 </dl>
 </div>
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">寸法</dt>
-<dd class="product_detail_content">0.77m x 1.62m x 1.25m</dd>
+<dd class="product_detail_content"><?php the_field('lwh'); ?></dd>
 <dt class="product_detail_title box">駆動方法</dt>
-<dd class="product_detail_content">バッテリー</dd>
+<dd class="product_detail_content"><?php the_field('method'); ?></dd>
 <dt class="product_detail_title box">年式</dt>
-<dd class="product_detail_content">--</dd>
+<dd class="product_detail_content"><?php the_field('y_type'); ?></dd>
 </dl>
 </div>
 </div>
@@ -149,14 +156,14 @@ Template Name: bt-products
 <div class="product_detail_price">
 <div class="product_detail_price_box border strong_f big clearfix">
 <span class="title">本体価格</span>
-<span class="price"><span class="num">000</span><span class="yen">万円（税抜）</span></span>
+<span class="price"><span class="num"><?php the_field('price'); ?></span><span class="yen">万円（税抜）</span></span>
 </div>
 <span class="misc sml">別途、設置費用（運賃込み）が発生致します。</span>
 </div>
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">コメント</dt>
-<dd class="product_detail_content">高所作業車の運転（高所作業）には以下の資格が必要です。<br>・作業床の最大高さが2m以上10m未満のものは、高所作業車運転のための「特別教育修了者」または「技能講習修了者」。<br>・作業床の最大高さが10m以上のものは、高所作業車運転のための「技能講習修了者」。</dd>
+<dd class="product_detail_content"><?php the_field('staff_comment'); ?></dd>
 </dl>
 </div>
 </div>
@@ -167,23 +174,31 @@ Template Name: bt-products
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">保有場所</dt>
-<dd class="product_detail_content">プロマックス事業部</dd>
+<dd class="product_detail_content"><?php $term = get_field('stock_point'); echo $term->post_title; ?></dd>
 <dt class="product_detail_title box">お問い合わせ先</dt>
-<dd class="product_detail_content">事業部本社</dd>
+<dd class="product_detail_content"><?php $term = get_field('req'); echo $term->post_title; ?></dd>
 </dl>
 </div>
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">電話番号</dt>
-<dd class="product_detail_content num tel"><a href="tel:03-3517-3355">03-3517-3355</a></dd>
+<dd class="product_detail_content num tel"><a href="tel:<?php the_field('tel'); ?>"><?php the_field('tel'); ?></a></dd>
 <dt class="product_detail_title box">担当者</dt>
-<dd class="product_detail_content">朝日</dd>
+<dd class="product_detail_content">
+<?php
+if(get_field('staff')){
+  $user = get_field('staff');
+  echo $user['nickname'];
+}
+?>
+</dd>
 </dl>
 </div>
 </div>
 </div>
 </div>
 </section>
+<?php endwhile; endif; ?>
 
 
 <section id="footer" class="srsd">

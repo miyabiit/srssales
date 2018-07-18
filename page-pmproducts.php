@@ -148,9 +148,7 @@ while($query->have_posts()) : $query->the_post();
 <?php
 $terms = get_the_terms($post->ID, 'mark_label_cat');
 $tags = [];
-if($terms){
-  foreach($terms as $term)array_push($tags, $term->slug);
-}
+if($terms) foreach($terms as $term)array_push($tags, $term->slug);
 if(in_array("goodone",$tags)) print '<div class="product_list_sign orange strong_f">美品</div>';
 ?>
   <div class="product_list_catch strong_f"><?php the_field('comment'); ?></div>
@@ -174,9 +172,7 @@ if(in_array("goodone",$tags)) print '<div class="product_list_sign orange strong
 <?php
 $terms = get_the_terms($post->ID, 'mark_label_cat');
 $tags = [];
-if($terms){
-  foreach($terms as $term)array_push($tags, $term->slug);
-}
+if($terms) foreach($terms as $term)array_push($tags, $term->slug);
 if(in_array("newone",$tags))print '<div class="product_list_sign red strong_f">NEW</div>';
 if(in_array("recommend",$tags))print '<div class="product_list_sign orange strong_f">おすすめ</div>';
 if(in_array("condition",$tags))print '<div class="product_list_sign blue strong_f">快適</div>';

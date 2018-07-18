@@ -22,9 +22,9 @@ Template Name: bt-search
 <nav>
 <ul id="nav_menu" class="clearfix">
 <li id="logo"><a href="/">ホーム</a></li>
-<li class="text_c unit"><a href="unitproducts" class="disp_f">ユニットハウス</a></li>
-<li class="text_c atch"><a href="pmproducts" class="disp_f">アタッチメント</a></li>
-<li class="text_c lift"><a href="btproducts" class="disp_f">高所作業車 他</a></li>
+<li class="text_c unit"><a href="/unitproducts" class="disp_f">ユニットハウス</a></li>
+<li class="text_c atch"><a href="/pmproducts" class="disp_f">アタッチメント</a></li>
+<li class="text_c lift"><a href="/btproducts" class="disp_f">高所作業車 他</a></li>
 <li class="text_c srsi"><a href="/srs/_about.html" class="disp_f">エスアールエスのご紹介</a></li>
 </ul>
 </nav>
@@ -37,8 +37,8 @@ Template Name: bt-search
 <div id="sub_title" class="no-pc strong_f">高所作業車 他</div>
 <nav>
 <ul id="sub_menu" class="clearfix">
-<li id="back" class="no-sp"><a href="/" class="disp_f">ホームに戻る</a></li>
-<li class="text_c"><a href="bt-search" class="disp_f active">商品検索</a></li>
+<li id="back" class="no-sp"><a href="/btproducts" class="disp_f">ホームに戻る</a></li>
+<li class="text_c"><a href="/bt-search" class="disp_f active">商品検索</a></li>
 <li class="text_c"><a href="/srs/_bt-guide-top.html" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="/srs/_bt-info-top.html" class="disp_f">ご案内</a></li>
 <li class="text_c"><a href="/" class="disp_f">お問い合わせ</a></li>
@@ -56,12 +56,12 @@ Template Name: bt-search
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="btproducts" itemprop="url">
+<a href="/btproducts" itemprop="url">
 <span itemprop="title">高所作業車 他</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="bt-search" itemprop="url">
+<a href="/bt-search" itemprop="url">
 <span itemprop="title">商品検索メニュー</span>
 </a>
 </li>
@@ -71,10 +71,12 @@ Template Name: bt-search
 
 <section>
 <div class="content">
-<form id="keyword-search-box" class="flex">
+
+<form id="keyword-search-box" class="flex" method="get" action="<?php echo home_url(); ?>">
 <div id="search-title" class="disp_f text_c">サイト内検索</div>
-<input type="text" />
-<button type="submit" name="submit"><i class="fas fa-search"></i></button>
+<input type="hidden" name="post_type" id="post_type" value="bts">
+<input type="text" value="" name="s" id="s" />
+<button type="submit"><i class="fas fa-search"></i></button>
 </form>
 
 </div>
@@ -82,15 +84,20 @@ Template Name: bt-search
 
 <section id="search-check-box">
 <div class="content">
-<form class="clearfix">
+<form class="clearfix" role="search" method="get" action="/bt-result">
 
+<?php
+  $args = query_for_taxonomy('bts', array('bt_height_cat', 'bt_usage_cat', 'bt_goods_cat','status_cat'),array());
+  $wp_query = new WP_query();
+  $wp_query->query($args);
+?>
 <div id="search-head-num">
-<div class="search-hits strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn lift disp_f"><i class="fas fa-search"></i></button>
+<div class="search-hits strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i></button>
 </div>
 
 <div class="search-check-selection clearfix">
 <div class="check-selections clearfix">
-<div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn lift disp_f"><i class="fas fa-search"></i> 高所作業者/他 を探す</button></div>
+<div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn lift disp_f"><i class="fas fa-search"></i> 高所作業車/他 を探す</button></div>
 </div>
 </div>
 
@@ -99,14 +106,10 @@ Template Name: bt-search
 <div class="check-selections clearfix">
 <ul>
     <li>
-        <input type='checkbox' id="height_all" /> <label for="height_all" class="lift_t strong_f big mdl">すべて選択</label>
-        <ul class="choices clearfix">
-            <li><input type='checkbox' name="height[]" id="height_1" value="〜4m" /> <label for="height_1">〜4m</label></li>
-            <li><input type='checkbox' name="height[]" id="height_2" value="〜6m" /> <label for="height_2">〜6m</label></li>
-            <li><input type='checkbox' name="height[]" id="height_3" value="〜8m" /> <label for="height_3">〜8m</label></li>
-            <li><input type='checkbox' name="height[]" id="height_4" value="〜10m" /> <label for="height_4">〜10m</label></li>
-            <li><input type='checkbox' name="height[]" id="height_5" value="10m以上" /> <label for="height_5">10m以上</label></li>
-        </ul>
+<?php
+  wp_reset_query();
+  my_checkbox_list_taxonomy('bt_height_cat');
+?>
     </li>
 </ul>
 <button type="submit" class="btn btn_s lift strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
@@ -114,17 +117,14 @@ Template Name: bt-search
 </div>
 
 <div class="search-check-selection clearfix">
-<span class="lift strong_f selection_title">用途で探す</span>
+<span class="lift strong_f selection_title">分類で探す</span>
 <div class="check-selections clearfix">
 <ul>
     <li>
-        <input type='checkbox' id="type_all" /> <label for="type_all" class="lift_t strong_f big mdl">すべて選択</label>
-        <ul class="choices clearfix">
-            <li><input type='checkbox' name="type[]" id="type_1" value="タイヤ/ホイール" /> <label for="type_1">タイヤ/ホイール</label></li>
-            <li><input type='checkbox' name="type[]" id="type_2" value="キャタピラ/クローラ" /> <label for="type_2">キャタピラ/クローラ</label></li>
-            <li><input type='checkbox' name="type[]" id="type_3" value="バッテリー" /> <label for="type_3">バッテリー</label></li>
-            <li><input type='checkbox' name="type[]" id="type_4" value="エンジン" /> <label for="type_4">エンジン</label></li>
-        </ul>
+<?php
+  wp_reset_query();
+  my_checkbox_list_taxonomy('bt_usage_cat');
+?>
     </li>
 </ul>
 <button type="submit" class="btn btn_s lift strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
@@ -136,12 +136,10 @@ Template Name: bt-search
 <div class="check-selections clearfix">
 <ul>
     <li>
-        <input type='checkbox' id="category_all" /> <label for="category_all" class="lift_t strong_f big mdl">すべて選択</label>
-        <ul class="choices clearfix">
-            <li><input type='checkbox' name="category[]" id="category_1" value="高所作業車" /> <label for="category_1">高所作業車</label></li>
-            <li><input type='checkbox' name="category[]" id="category_2" value="仮設材" /> <label for="category_2">仮設材</label></li>
-            <li><input type='checkbox' name="category[]" id="category_3" value="その他" /> <label for="category_3">その他</label></li>
-        </ul>
+<?php
+  wp_reset_query();
+  my_checkbox_list_taxonomy('bt_goods_cat');
+?>
     </li>
 </ul>
 <button type="submit" class="btn btn_s lift strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
@@ -153,24 +151,24 @@ Template Name: bt-search
 <div class="check-selections clearfix">
 <ul>
     <li>
-        <input type='checkbox' id="condition_all" /> <label for="condition_all" class="lift_t strong_f big mdl">すべて選択</label>
-        <ul class="choices clearfix">
-            <li><input type='checkbox' name="condition[]" id="condition_1" value="N" /> <label for="condition_1">N:新品</label></li>
-            <li><input type='checkbox' name="condition[]" id="condition_2" value="S" /> <label for="condition_2">S:未使用品</label></li>
-            <li><input type='checkbox' name="condition[]" id="condition_3" value="A" /> <label for="condition_3">A:美品(使用感 小)</label></li>
-            <li><input type='checkbox' name="condition[]" id="condition_4" value="B" /> <label for="condition_4">B:使用感 中</label></li>
-            <li><input type='checkbox' name="condition[]" id="condition_5" value="C" /> <label for="condition_5">C:使用感 大</label></li>
-            <li><input type='checkbox' name="condition[]" id="condition_6" value="D" /> <label for="condition_6">D:難あり</label></li>
-        </ul>
+<?php
+  wp_reset_query();
+  my_checkbox_list_taxonomy('status_cat');
+?>
     </li>
 </ul>
 <button type="submit" class="btn btn_s lift strong_f float_r"><i class="fas fa-search"></i> この条件で探す</button>
 </div>
 </div>
 
+<?php
+  $args = query_for_taxonomy('bts', array('bt_height_cat', 'bt_usage_cat', 'bt_goods_cat','status_cat'),array());
+  $wp_query = new WP_query();
+  $wp_query->query($args);
+?>
 <div class="search-check-selection clearfix">
 <div class="check-selections clearfix">
-<div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num">0005</span> 件</div><button type="submit" id="search-all" class="btn lift disp_f"><i class="fas fa-search"></i> 高所作業者/他 を探す</button></div>
+<div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn lift disp_f"><i class="fas fa-search"></i> 高所作業者/他 を探す</button></div>
 </div>
 </div>
 

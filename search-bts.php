@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: bt-result 
+pms サイト内検索結果
 */
 ?>
 <?php get_header(); ?>
@@ -22,9 +22,9 @@ Template Name: bt-result
 <nav>
 <ul id="nav_menu" class="clearfix">
 <li id="logo"><a href="/">ホーム</a></li>
-<li class="text_c unit"><a href="unitproducts" class="disp_f">ユニットハウス</a></li>
-<li class="text_c atch"><a href="pmproducts" class="disp_f">アタッチメント</a></li>
-<li class="text_c lift"><a href="btproducts" class="disp_f">高所作業車 他</a></li>
+<li class="text_c unit"><a href="/unitproducts" class="disp_f">ユニットハウス</a></li>
+<li class="text_c atch"><a href="/pmproducts" class="disp_f">アタッチメント</a></li>
+<li class="text_c lift"><a href="/btproducts" class="disp_f">高所作業車 他</a></li>
 <li class="text_c srsi"><a href="/srs/_about.html" class="disp_f">エスアールエスのご紹介</a></li>
 </ul>
 </nav>
@@ -38,10 +38,10 @@ Template Name: bt-result
 <nav>
 <ul id="sub_menu" class="clearfix">
 <li id="back" class="no-sp"><a href="/" class="disp_f">ホームに戻る</a></li>
-<li class="text_c"><a href="bt-search" class="disp_f active">商品検索</a></li>
+<li class="text_c"><a href="/bt-search" class="disp_f active">商品検索</a></li>
 <li class="text_c"><a href="/srs/_bt-guide-top.html" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="/srs/_bt-info-top.html" class="disp_f">ご案内</a></li>
-<li class="text_c"><a href="/" class="disp_f">お問い合わせ</a></li>
+<li class="text_c"><a href="/srs/_contact.html" class="disp_f">お問い合わせ</a></li>
 </ul>
 </nav>
 </div>
@@ -56,58 +56,85 @@ Template Name: bt-result
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="btproducts" itemprop="url">
+<a href="/btproducts" itemprop="url">
 <span itemprop="title">高所作業車 他</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="bt-search" itemprop="url">
+<a href="/bt-search" itemprop="url">
 <span itemprop="title">商品検索メニュー</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="bt-result" itemprop="url">
+<a href="/bt-result" itemprop="url">
 <span itemprop="title">検索結果</span>
 </a>
 </li>
 </ul>
 </div>
 </section>
+<?php
 
 
+
+?>
+
+<?php
+    $big = 9999999999;
+    $arg = array(
+        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'current' => max( 1, get_query_var('paged') ),
+        'total'   => $wp_query->max_num_pages
+    );
+    echo paginate_links($arg);
+?>
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f"><span class="num">006</span>  件 ヒットしました<span class="more lift"><a href="bt-search"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
-<div class="pagination">
+<div class="hits flex strong_f">[<?php echo get_search_query(); ?>]での検索結果: <span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more lift"><a href="/bt-search"><i class="fas fa-filter"></i>絞り込む</a></span></div>
+<!-- div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>
 <a href="" class="active">2</a>
 <a href="">3</a>
 <a href="" class="prev"><i class="fas fa-angle-double-right"></i></a>
-</div>
+</div -->
 </div>
 </section>
 
 <section id="search-results">
 <div class="content">
 
+<?php
+while( $wp_query->have_posts()) : $wp_query->the_post();
+?>
+  <h2><?php the_title(); ?></h2>
 
 <section class="searched-product product_data_lift">
-<h2><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span><span class="product_name">高所作業車 Ｋテーブル 4mポスト型 バッテリー RM04CNS-S</span></h2>
-<p>補水不要で手間もコストも削減、しかも長寿命のバッテリー</p>
+<h2>
+<?php
+$terms = get_the_terms($post->ID, 'mark_label_cat');
+$tags = [];
+if($terms) foreach($terms as $term)array_push($tags, $term->slug);
+if(in_array("newone",$tags)) print '<span class="product_list_sign red strong_f">NEW</span>';
+if(in_array("recommend",$tags)) print '<span class="product_list_sign orange strong_f">おすすめ</span>';
+if(in_array("goodone",$tags)) print '<span class="product_list_sign blue strong_f">美品</span>';
+if(in_array("nowship",$tags)) print '<span class="product_list_sign green strong_f">即出荷</span>';
+if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f">商談中</span>';
+?>
+<p><?php the_field('comment'); ?></p>
 <div class="searched_product_data flex">
 <div class="product_image"><img src="/images/lift.jpg"></div>
 <div class="product_data">
 <div class="product_detail flex clearfix">
 <dl>
 <dt class="product_data_title">メーカー</dt>
-<dd class="product_data_content">株式会社アイチコーポレーション</dd>
+<dd class="product_data_content"><?php the_field('maker'); ?></dd>
 </dl>
 <dl>
 <dt class="product_data_title">メーカー形式</dt>
-<dd class="product_data_content">RM04CNS</dd>
+<dd class="product_data_content"><?php the_field('maker_type'); ?></dd>
 <dt class="product_data_title">本体価格</dt>
-<dd class="product_data_content"><span class="num">56</span>万円（税抜）</dd>
+<dd class="product_data_content"><span class="num"><?php the_field('price'); ?></span>万円（税抜）</dd>
 </dl>
 </div>
 <h3><i class="fas fa-square"></i> 仕様</h3>
@@ -115,143 +142,50 @@ Template Name: bt-result
 <div class="product_detail flex clearfix">
 <dl>
 <dt class="product_data_title">作業床高さ</dt>
-<dd class="product_data_content">3.8m</dd>
+<dd class="product_data_content"><?php the_field('height'); ?>m</dd>
 <dt class="product_data_title">積載荷量</dt>
-<dd class="product_data_content">200kg</dd>
+<dd class="product_data_content"><?php the_field('load_weight'); ?>kg</dd>
 <dt class="product_data_title">車両重量</dt>
-<dd class="product_data_content">580kg</dd>
+<dd class="product_data_content"><?php the_field('weight'); ?>kg</dd>
 <dt class="product_data_title">状態</dt>
-<dd class="product_data_content">良好</dd>
+<dd class="product_data_content"><?php $term = get_field('status'); echo $term->name; ?></dd>
 </dl>
 <dl>
 <dt class="product_data_title">寸法</dt>
-<dd class="product_data_content">0.77m x 1.62m x 1.25m</dd>
+<dd class="product_data_content"><?php the_field('lwh'); ?></dd>
 <dt class="product_data_title">駆動方法</dt>
-<dd class="product_data_content">バッテリー</dd>
+<dd class="product_data_content"><?php the_field('method'); ?></dd>
 <dt class="product_data_title">年式</dt>
-<dd class="product_data_content">--</dd>
+<dd class="product_data_content"><?php the_field('y_type'); ?></dd>
 </dl>
 </div>
 </div>
 </div>
 </div>
 <div class="product_contact flex">
-<div class="contact_info"><span class="contact strong_f">お問い合わせ</span><i class="fas fa-phone-square"></i><span class="num"><a href="tel:0120-345-6789">0120-345-6789</a></span><i class="fas fa-user"></i>担当者：山田</div>
-<div class="product_see_more lift"><a href="bt-products" class="btn strong_f">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
+<div class="contact_info"><span class="contact strong_f">お問い合わせ</span><i class="fas fa-phone-square"></i><span class="num"><a href="tel:<?php the_field('tel'); ?>"><?php the_field('tel');?></a></span><i class="fas fa-user"></i>担当者：<?php if(get_field('staff')){$user = get_field('staff'); echo $user['nickname']; } ?></div>
+<div class="product_see_more lift"><a href="/bt-products" class="btn strong_f"><a href="<?php echo get_permalink($post->ID );?>" title="<?php echo get_the_title($post->ID);?>">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
 </div>
 </section>
 
-<section class="searched-product product_data_lift">
-<h2><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span><span class="product_name">高所作業車 Ｋテーブル 4mポスト型 バッテリー RM04CNS-S</span></h2>
-<p>補水不要で手間もコストも削減、しかも長寿命のバッテリー</p>
-<div class="searched_product_data flex">
-<div class="product_image"><img src="/images/lift.jpg"></div>
-<div class="product_data">
-<div class="product_detail flex clearfix">
-<dl>
-<dt class="product_data_title">メーカー</dt>
-<dd class="product_data_content">株式会社アイチコーポレーション</dd>
-</dl>
-<dl>
-<dt class="product_data_title">メーカー形式</dt>
-<dd class="product_data_content">RM04CNS</dd>
-<dt class="product_data_title">本体価格</dt>
-<dd class="product_data_content"><span class="num">56</span>万円（税抜）</dd>
-</dl>
-</div>
-<h3><i class="fas fa-square"></i> 仕様</h3>
-<div class="product_spec">
-<div class="product_detail flex clearfix">
-<dl>
-<dt class="product_data_title">作業床高さ</dt>
-<dd class="product_data_content">3.8m</dd>
-<dt class="product_data_title">積載荷量</dt>
-<dd class="product_data_content">200kg</dd>
-<dt class="product_data_title">車両重量</dt>
-<dd class="product_data_content">580kg</dd>
-<dt class="product_data_title">状態</dt>
-<dd class="product_data_content">良好</dd>
-</dl>
-<dl>
-<dt class="product_data_title">寸法</dt>
-<dd class="product_data_content">0.77m x 1.62m x 1.25m</dd>
-<dt class="product_data_title">駆動方法</dt>
-<dd class="product_data_content">バッテリー</dd>
-<dt class="product_data_title">年式</dt>
-<dd class="product_data_content">--</dd>
-</dl>
-</div>
-</div>
-</div>
-</div>
-<div class="product_contact flex">
-<div class="contact_info"><span class="contact strong_f">お問い合わせ</span><i class="fas fa-phone-square"></i><span class="num"><a href="tel:0120-345-6789">0120-345-6789</a></span><i class="fas fa-user"></i>担当者：山田</div>
-<div class="product_see_more lift"><a href="bt-products" class="btn strong_f">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
-</div>
-</section>
-
-<section class="searched-product product_data_lift">
-<h2><span class="product_list_sign red strong_f">NEW</span><span class="product_list_sign orange strong_f">おすすめ</span><span class="product_list_sign blue strong_f">美品</span><span class="product_list_sign green strong_f">即出荷</span><span class="product_list_sign gray strong_f">商談中</span><span class="product_name">高所作業車 Ｋテーブル 4mポスト型 バッテリー RM04CNS-S</span></h2>
-<p>補水不要で手間もコストも削減、しかも長寿命のバッテリー</p>
-<div class="searched_product_data flex">
-<div class="product_image"><img src="/images/lift.jpg"></div>
-<div class="product_data">
-<div class="product_detail flex clearfix">
-<dl>
-<dt class="product_data_title">メーカー</dt>
-<dd class="product_data_content">株式会社アイチコーポレーション</dd>
-</dl>
-<dl>
-<dt class="product_data_title">メーカー形式</dt>
-<dd class="product_data_content">RM04CNS</dd>
-<dt class="product_data_title">本体価格</dt>
-<dd class="product_data_content"><span class="num">56</span>万円（税抜）</dd>
-</dl>
-</div>
-<h3><i class="fas fa-square"></i> 仕様</h3>
-<div class="product_spec">
-<div class="product_detail flex clearfix">
-<dl>
-<dt class="product_data_title">作業床高さ</dt>
-<dd class="product_data_content">3.8m</dd>
-<dt class="product_data_title">積載荷量</dt>
-<dd class="product_data_content">200kg</dd>
-<dt class="product_data_title">車両重量</dt>
-<dd class="product_data_content">580kg</dd>
-<dt class="product_data_title">状態</dt>
-<dd class="product_data_content">良好</dd>
-</dl>
-<dl>
-<dt class="product_data_title">寸法</dt>
-<dd class="product_data_content">0.77m x 1.62m x 1.25m</dd>
-<dt class="product_data_title">駆動方法</dt>
-<dd class="product_data_content">バッテリー</dd>
-<dt class="product_data_title">年式</dt>
-<dd class="product_data_content">--</dd>
-</dl>
-</div>
-</div>
-</div>
-</div>
-<div class="product_contact flex">
-<div class="contact_info"><span class="contact strong_f">お問い合わせ</span><i class="fas fa-phone-square"></i><span class="num"><a href="tel:0120-345-6789">0120-345-6789</a></span><i class="fas fa-user"></i>担当者：山田</div>
-<div class="product_see_more lift"><a href="bt-products" class="btn strong_f">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
-</div>
-</section>
+<?php endwhile; ?>
+<div><?php previous_posts_link('&laguo;前'); ?></div>
+<div><?php next_posts_link('&laguo;次'); ?></div>
+<?php wp_reset_postdata(); ?>
 
 </div>
 </section>
 
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f"><span class="num">006</span>  件 ヒットしました<span class="more lift"><a href="bt-search"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
-<div class="pagination">
+<div class="hits flex strong_f">[<?php echo get_search_query(); ?>]での検索結果: <span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more lift"><a href="/bt-search"><i class="fas fa-filter"></i>絞り込む</a></span></div>
+<!-- div class="pagination">
 <a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
 <a href="">1</a>
 <a href="" class="active">2</a>
 <a href="">3</a>
 <a href="" class="prev"><i class="fas fa-angle-double-right"></i></a>
-</div>
+</div -->
 </div>
 </section>
 
