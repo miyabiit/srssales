@@ -35,6 +35,34 @@ add_action('init', function(){
       'taxonomies'  => array('products_cat')
     )
   );
+  // post events
+  register_post_type('events',
+    array(
+      'labels'  => array(
+        'name'  => 'イベント情報',
+        'name_admin_bar'  => 'イベント情報',
+        'singular_name'   => 'イベント情報',
+			  'add_new' => '新規追加',
+			  'add_new_item' => '新規追加',
+			  'edit_item' => '情報を編集する',
+			  'new_item' => '新規データ',
+			  'all_items' => '一覧',
+			  'view_item' => 'プレビューを見る',
+			  'search_items' => '検索する',
+			  'not_found' => 'データが見つかりませんでした。',
+			  'not_found_in_trash' => 'ゴミ箱内にデータが見つかりませんでした。'
+      ),
+      'public'  => true,
+      'has_archive' => true,
+      'hierarchical'  => false,
+      'capability_type' => 'post',
+      'map_meta_cap'  => true,
+      'delete_with_user'  => true, 
+      'menu_position' => 3,
+      'supports' => array( 'title', 'editor'),
+      'taxonomies'  => array('products_cat')
+    )
+  );
   //post 販売店
   register_post_type('shops',
     array(
@@ -149,7 +177,7 @@ add_action('init', function(){
     )
   );
   //taxonomy 事業分類
-  register_taxonomy('products_cat', array('news'),
+  register_taxonomy('products_cat', array('news','events'),
     array(
       'labels' => array(
         'name' => '事業分類',

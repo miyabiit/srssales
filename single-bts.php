@@ -56,7 +56,7 @@
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="/bt-products" itemprop="url">
+<a href="/btproducts" itemprop="url">
 <span itemprop="title"><?php the_title(); ?></span>
 </a>
 </li>

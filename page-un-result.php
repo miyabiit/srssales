@@ -168,7 +168,7 @@ if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f
 </div>
 <div class="product_contact flex">
 <div class="contact_info"><span class="contact strong_f">お問い合わせ</span><i class="fas fa-phone-square"></i><span class="num"><a href="tel:<?php the_field('tel'); ?>"><?php the_field('tel');?></a></span><i class="fas fa-user"></i>担当者：<?php if(get_field('staff')){$user = get_field('staff'); echo $user['nickname']; } ?></div>
-<div class="product_see_more unit"><a href="un-products" class="btn strong_f"><a href="<?php echo get_permalink($post->ID );?>" title="<?php echo get_the_title($post->ID);?>">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
+<div class="product_see_more unit"><a href="/unitproducts" class="btn strong_f"><a href="<?php echo get_permalink($post->ID );?>" title="<?php echo get_the_title($post->ID);?>">詳細を見る <i class="fas fa-angle-double-right"></i></a></div>
 </div>
 </section>
 

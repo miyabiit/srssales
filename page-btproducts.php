@@ -143,7 +143,7 @@ $query = new WP_Query(array(
 while($query->have_posts()) : $query->the_post();
 ?>
 <div class="products float_l">
-<a href="bt-products">
+<a href="/btproducts">
 <div class="product_list_title flex">
 <?php
 $terms = get_the_terms($post->ID, 'mark_label_cat');
