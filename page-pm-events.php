@@ -1,5 +1,6 @@
 <?php
 /*
+Template Name: pm-events
 */
 ?>
 <?php get_header(); ?>
@@ -31,22 +32,21 @@
 </div>
 </section>
 
-<section id="sub-menu" class="srsi">
+<section id="sub-menu" class="atch">
 <div class="content clearfix">
 <div id="sub_title" class="no-pc strong_f">ユニットハウス</div>
 <nav>
 <ul id="sub_menu" class="clearfix">
 <li id="back" class="no-sp"><a href="/" class="disp_f">ホームに戻る</a></li>
-<li class="text_c"><a href="/un-search" class="disp_f">商品検索</a></li>
-<li class="text_c"><a href="/srs/_un-guide-top.html" class="disp_f">ご利用ガイド</a></li>
-<li class="text_c"><a href="/srs/_un-info-top.html" class="disp_f active">ご案内</a></li>
-<li class="text_c"><a href="/srs/_un-contact.html" class="disp_f">お問い合わせ</a></li>
+<li class="text_c"><a href="/pm-search" class="disp_f">商品検索</a></li>
+<li class="text_c"><a href="/srs/_pm-guide-top.html" class="disp_f">ご利用ガイド</a></li>
+<li class="text_c"><a href="/srs/_pm-info-top.html" class="disp_f active">ご案内</a></li>
+<li class="text_c"><a href="/srs/_pm-contact.html" class="disp_f">お問い合わせ</a></li>
 </ul>
 </nav>
 </div>
 </section>
 
-<?php if(have_posts()): while(have_posts()):the_post(); ?>
 <section id="breadcrumb">
 <div class="content">
 <ul class="breadcrumb clearfix">
@@ -56,30 +56,53 @@
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="/unitproducts" itemprop="url">
-<span itemprop="title">ユニットハウス</span>
+<a href="/pmproducts" itemprop="url">
+<span itemprop="title">アタッチメント</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="/srs/_un-info-top.html" itemprop="url">
+<a href="/srs/_pm-info-top.html" itemprop="url">
 <span itemprop="title">ご案内</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="/events" itemprop="url">
+<a href="/pm-events" itemprop="url">
 <span itemprop="title">イベント情報</span>
 </a>
 </li>
 </ul>
 </div>
 </section>
-
-
-
-
 <section id="event" class="unit_detail">
 <div class="content">
 <h1 class="disp_f text_l"><i class="far fa-calendar-alt"></i> イベント情報</h1>
+<?php
+$query = new WP_Query(array(
+  'post_type' => 'events',
+  'post_per_page' => 5,
+  'tax_query' => array(
+    array(
+      'taxonomy' => 'products_cat',
+      'field' => 'slug',
+      'terms' => 'products_pms'
+    )
+  ),
+  'orderby' => 'date_start',
+  'order' => 'DESC'
+));
+?>
+<?php
+    $big = 9999999999;
+    $arg = array(
+        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'current' => max( 1, get_query_var('paged') ),
+        'total'   => $wp_query->max_num_pages
+    );
+    echo paginate_links($arg);
+?>
+<?php
+while( $query->have_posts()) : $query->the_post();
+?>
 
 <section class="event event_unit">
 <h2><span class="event_title"><?php the_title(); ?></span></h2>
@@ -114,12 +137,12 @@ if(get_field('staff')){
 
 
 
-<?php endwhile; endif; ?>
+<?php endwhile; ?>
 <section id="contact">
 <div class="content">
 <h2 class="disp_f text_l"><i class="fas fa-phone-square"></i> お問い合わせ</h2>
 <div id="contact-box">
-<p id="contact-text">中古ユニットハウスに関するご質問・ご相談は最寄りの営業所までお問い合わせください。</p>
+<p id="contact-text">アタッチメントに関するご質問・ご相談は最寄りの営業所までお問い合わせください。</p>
 <p id="contact-tel" class="text_r disp_f">受付時間 8:30～17:00（日・祝日を除く）<span class="tel num"><img src="/images/freedial_g.png" class="freedial" alt="フリーダイアル">0120-590-907</span></p>
 </div>
 </div>

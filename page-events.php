@@ -1,5 +1,6 @@
 <?php
 /*
+Template Name: events
 */
 ?>
 <?php get_header(); ?>
@@ -46,7 +47,6 @@
 </div>
 </section>
 
-<?php if(have_posts()): while(have_posts()):the_post(); ?>
 <section id="breadcrumb">
 <div class="content">
 <ul class="breadcrumb clearfix">
@@ -66,20 +66,43 @@
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="/events" itemprop="url">
+<a href="/un-events" itemprop="url">
 <span itemprop="title">イベント情報</span>
 </a>
 </li>
 </ul>
 </div>
 </section>
-
-
-
-
 <section id="event" class="unit_detail">
 <div class="content">
 <h1 class="disp_f text_l"><i class="far fa-calendar-alt"></i> イベント情報</h1>
+<?php
+$query = new WP_Query(array(
+  'post_type' => 'events',
+  'post_per_page' => 5,
+  'tax_query' => array(
+    array(
+      'taxonomy' => 'products_cat',
+      'field' => 'slug',
+      'terms' => 'products_all'
+    )
+  ),
+  'orderby' => 'date_start',
+  'order' => 'DESC'
+));
+?>
+<?php
+    $big = 9999999999;
+    $arg = array(
+        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'current' => max( 1, get_query_var('paged') ),
+        'total'   => $wp_query->max_num_pages
+    );
+    echo paginate_links($arg);
+?>
+<?php
+while( $query->have_posts()) : $query->the_post();
+?>
 
 <section class="event event_unit">
 <h2><span class="event_title"><?php the_title(); ?></span></h2>
@@ -114,7 +137,7 @@ if(get_field('staff')){
 
 
 
-<?php endwhile; endif; ?>
+<?php endwhile; ?>
 <section id="contact">
 <div class="content">
 <h2 class="disp_f text_l"><i class="fas fa-phone-square"></i> お問い合わせ</h2>

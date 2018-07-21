@@ -432,7 +432,6 @@ function query_for_taxonomy($mypost_type,$mytaxlist,$mymetalist){
     }
   }
   $args['tax_query'] = $tax_args;
-  //$mymetalist = array('req');
   $meta_args = array(
     'relation' => 'AND',
   );

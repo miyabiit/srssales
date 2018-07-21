@@ -76,37 +76,8 @@
 <div id="misc-border" class="border"></div>
 
 <div class="content">
-
 <div id="news-publish-date" class="text_r"><i class="fa fa-clock"></i><?php the_time('Y-m-d');?></div>
-<div id="news-image" class="text_c"><img src="/images/about-unit1.jpg"></div>
-
 <?php the_content(); ?>
-<p>&nbsp;</p>
-<p>2018年6月開催のプロマックス事業部各地区での展示即売会をご案内致します。</p>
-<p>多種多様な商品をご用意しておりますので、是非、各展示会場までお越しください。</p>
-<p>&nbsp;</p>
-<p>【関東地区】<br>
-2018/6/16（土）～17（日）　<span style="text-decoration: underline;"><a href="http://www.srscorp.co.jp/fieldoffice/pm045/" target="_blank">水戸ハウスヤード</a></span><br>
-　※目玉商品多数出品！特典もあります！是非ご来場ください</p>
-<p>&nbsp;</p>
-<p>【九州地区】<br>
-2018/6/1（金）～3（日）　<span style="text-decoration: underline;"><a href="http://www.srscorp.co.jp/showroom/pm-t008/" target="_blank">鹿屋展示場</a></span><br>
-　※目玉商品多数出品！その他特価品もあります！是非ご来場ください</p>
-<p>&nbsp;</p>
-<p>2018/6/9（土）～10（日）　<span style="text-decoration: underline;"><a href="http://www.srscorp.co.jp/fieldoffice/pm032/" target="_blank">中間ハウスヤード</a></span><br>
-　※目玉商品・特価品も多数ご用意しております！是非ご来場ください</p>
-<p>&nbsp;</p>
-<p>※各拠点名をクリックしていただくと拠点地図にジャンプ致します。</p>
-<p>&nbsp;</p>
-
-<h2 class="txt"><i class="fas fa-download"></i> ファイルダウンロード</h2>
-<p><a href=""><i class="fas fa-file-pdf"></i> プロマックス事業部各地区での展示即売会開催について (PDF / 120kb)</a></p>
-
-
-<h2 class="txt"><i class="fas fa-link"></i> リンク先</h2>
-<p><a href="http://www.srscorp.co.jp/" target="_blank"><i class="fas fa-arrow-circle-right"></i> エスアールエス株式会社</a></p>
-
-
 </div>
 </div>
 </section>
