@@ -41,7 +41,7 @@ Template Name: bt-events
 <li class="text_c"><a href="/bt-search" class="disp_f">商品検索</a></li>
 <li class="text_c"><a href="/srs/_bt-guide-top.html" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="/srs/_bt-info-top.html" class="disp_f active">ご案内</a></li>
-<li class="text_c"><a href="/srs/_bt-contact.html" class="disp_f">お問い合わせ</a></li>
+<li class="text_c"><a href="/bt-contact" class="disp_f">お問い合わせ</a></li>
 </ul>
 </nav>
 </div>

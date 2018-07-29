@@ -1,5 +1,6 @@
 <?php
 /*
+Template Name: bt-contact 
 */
 ?>
 <?php get_header(); ?>
@@ -24,29 +25,28 @@
 <li class="text_c unit"><a href="/unitproducts" class="disp_f">ユニットハウス</a></li>
 <li class="text_c atch"><a href="/pmproducts" class="disp_f">アタッチメント</a></li>
 <li class="text_c lift"><a href="/btproducts" class="disp_f">高所作業車 他</a></li>
-<li class="text_c srsi"><a href="/srs/_about.html" class="disp_f">エスアールエスのご紹介</a></li>
+<li class="text_c srsi"><a href="/srs/_about" class="disp_f">エスアールエスのご紹介</a></li>
 </ul>
 </nav>
 </header>
 </div>
 </section>
 
-<section id="sub-menu" class="srsi">
+<section id="sub-menu" class="lift">
 <div class="content clearfix">
-<div id="sub_title" class="no-pc strong_f">ユニットハウス</div>
+<div id="sub_title" class="no-pc strong_f">高所作業車 他</div>
 <nav>
 <ul id="sub_menu" class="clearfix">
 <li id="back" class="no-sp"><a href="/" class="disp_f">ホームに戻る</a></li>
-<li class="text_c"><a href="/un-search" class="disp_f">商品検索</a></li>
-<li class="text_c"><a href="/srs/_un-guide-top.html" class="disp_f">ご利用ガイド</a></li>
-<li class="text_c"><a href="/srs/_un-info-top.html" class="disp_f active">ご案内</a></li>
-<li class="text_c"><a href="/un-contact" class="disp_f">お問い合わせ</a></li>
+<li class="text_c"><a href="/bt-search" class="disp_f">商品検索</a></li>
+<li class="text_c"><a href="bt-guide-top" class="disp_f">ご利用ガイド</a></li>
+<li class="text_c"><a href="bt-info-top" class="disp_f">ご案内</a></li>
+<li class="text_c"><a href="/srs/_bt-contact" class="disp_f active">お問い合わせ</a></li>
 </ul>
 </nav>
 </div>
 </section>
 
-<?php if(have_posts()): while(have_posts()):the_post(); ?>
 <section id="breadcrumb">
 <div class="content">
 <ul class="breadcrumb clearfix">
@@ -56,70 +56,41 @@
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="/unitproducts" itemprop="url">
-<span itemprop="title">ユニットハウス</span>
+<a href="/btproducts" itemprop="url">
+<span itemprop="title">高所作業車 他</span>
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="/srs/_un-info-top.html" itemprop="url">
-<span itemprop="title">ご案内</span>
-</a> >
-</li>
-<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="/events" itemprop="url">
-<span itemprop="title">イベント情報</span>
+<a href="/srs/_bt-contact" itemprop="url">
+<span itemprop="title">お問い合わせ</span>
 </a>
 </li>
 </ul>
 </div>
 </section>
 
-
-
-
-<section id="event" class="unit_detail">
-<div class="content">
-<h1 class="disp_f text_l"><i class="far fa-calendar-alt"></i> イベント情報</h1>
-
-<section class="event event_unit">
-<h2><span class="event_title"><?php the_title(); ?></span></h2>
-<p class="desc"><?php the_content(); ?></p>
-<div class="event_data clearfix">
-<dl>
-<dt class="event_data_title">エリア</dt>
-<dd class="event_data_content"><?php the_field('area'); ?></dd>
-<dt class="event_data_title">開催日時</dt>
-<dd class="event_data_content"><?php the_field('when'); ?></dd>
-<dt class="event_data_title">開催場所</dt>
-<dd class="event_data_content"><?php the_field('where'); ?><a href=""><i class="fas fa-map-marker fa-fw"></i>地図を見る</a></dd>
-<dt class="event_data_title">チラシ</dt>
-<dd class="event_data_content"><a href=""><i class="far fa-file-pdf fa-fw"></i><?php the_field('pamphlet'); ?></a></dd>
-<dt class="event_data_title">お問い合わせ</dt>
-<dd class="event_data_content"><?php $term = get_field('req'); echo $term->post_title; ?></dd>
-<dt class="event_data_title">電話番号</dt>
-<dd class="event_data_content"><a href="tel:<?php the_field('tel'); ?>"><i class="fas fa-phone-square fa-fw"></i><?php the_field('tel'); ?></a></dd>
-<dt class="event_data_title">担当者</dt>
-<dd class="event_data_content">
-<?php
-if(get_field('staff')){
-  $user = get_field('staff');
-  echo $user['nickname'];
-}
-?>
-</dd>
-</dl>
+<section id="misc" class="lift_detail">
+<div id="misc-title" class="content">
+<h1 class="txt">お問い合わせ</h1>
 </div>
-<p><?php the_field('last_comment'); ?></p>
+<div id="misc-border" class="border"></div>
+
+<div class="content">
+
+<p>以下のフォームに必要事項をご記入のうえ、下の「確認」ボタンを押してください。お問い合わせ頂きました内容を確認後、担当よりご連絡させて頂きます。<br>
+このページはお客様の個人情報を安全に送受信するためにSSL(暗号化通信プロトコル)を使用しております。<br>
+個人情報の取り扱いにつきましては、<a href="/srs/_privacy">プライバシーポリシー</a>を参照してください。<br>
+<span class="red_t">※は必須項目です。必ず入力して下さい。</span></p>
+<?php echo do_shortcode('[contact-form-7 id="420" title="Contact form bt"]'); ?>
+
+</div>
 </section>
 
-
-
-<?php endwhile; endif; ?>
 <section id="contact">
 <div class="content">
 <h2 class="disp_f text_l"><i class="fas fa-phone-square"></i> お問い合わせ</h2>
 <div id="contact-box">
-<p id="contact-text">中古ユニットハウスに関するご質問・ご相談は最寄りの営業所までお問い合わせください。</p>
+<p id="contact-text">商品に関するご質問・ご相談は最寄りの営業所までお問い合わせください。</p>
 <p id="contact-tel" class="text_r disp_f">受付時間 8:30～17:00（日・祝日を除く）<span class="tel num"><img src="/images/freedial_g.png" class="freedial" alt="フリーダイアル">0120-590-907</span></p>
 </div>
 </div>
@@ -132,7 +103,7 @@ if(get_field('staff')){
 <p id="company" class="flex"><img src="/images/srs.png"><span>高所作業車、特殊作業車、アタッチメント、ユニットハウスのことなら<span id="company-name">エスアールエス株式会社</span></span></p>
 </div>
 <div>
-<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy.html">プライバシーポリシー</a> | <br><a href="commerce.html">特定商取引に関する表示</a> | <a href="sitemap.html">サイトマップ</a></p>
+<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
 <p id="copy" class="xs">Copyright &copy; 2018 SRS Corporation. <br>All Rights Reserved.</p>
 </div>
 <div id="pagetop" class="srsd"><i class="fas fa-chevron-circle-up"></i> 上へ戻る</div>
@@ -140,8 +111,19 @@ if(get_field('staff')){
 </div>
 
 </section>
+
 <link rel="stylesheet" href="/css/main.css">
+
 <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="/js/jquery.debouncedresize.min.js"></script>
 <script src="/js/common.js"></script>
+<script>
+
+$(".responsive").slick({dots:!1,infinite:!1,speed:300,slidesToShow:4,slidesToScroll:1,responsive:[{breakpoint:700,settings:{slidesToShow:2,slidesToScroll:2,infinite:!1,dots:!0,arrows:!1}}]});
+$("[data-fancybox]").fancybox({buttons:["close"]});
+$(".panorama").panorama_viewer({repeat:!0,direction:"horizontal",animationTime:700,easing:"ease-out",overlay:!0});
+
+</script>
+
+
 <?php get_footer(); ?>

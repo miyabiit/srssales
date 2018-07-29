@@ -41,7 +41,7 @@ Template Name: pm-search
 <li class="text_c"><a href="/pm-search" class="disp_f active">商品検索</a></li>
 <li class="text_c"><a href="/" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="/srs/_pm-info-top.html" class="disp_f">ご案内</a></li>
-<li class="text_c"><a href="/srs/_pm-contact.html" class="disp_f">お問い合わせ</a></li>
+<li class="text_c"><a href="/pm-contact" class="disp_f">お問い合わせ</a></li>
 </ul>
 </nav>
 </div>

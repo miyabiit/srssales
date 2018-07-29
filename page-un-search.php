@@ -41,7 +41,7 @@ Template Name: un-search
 <li class="text_c"><a href="/un-search" class="disp_f active">商品検索</a></li>
 <li class="text_c"><a href="/srs/_un-guide-top.html" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="/srs/_un-info-top.html" class="disp_f">ご案内</a></li>
-<li class="text_c"><a href="/srs/_un-contact.html" class="disp_f">お問い合わせ</a></li>
+<li class="text_c"><a href="/un-contact" class="disp_f">お問い合わせ</a></li>
 </ul>
 </nav>
 </div>

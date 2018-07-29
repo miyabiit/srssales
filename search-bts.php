@@ -41,7 +41,7 @@ pms サイト内検索結果
 <li class="text_c"><a href="/bt-search" class="disp_f active">商品検索</a></li>
 <li class="text_c"><a href="/srs/_bt-guide-top.html" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="/srs/_bt-info-top.html" class="disp_f">ご案内</a></li>
-<li class="text_c"><a href="/srs/_contact.html" class="disp_f">お問い合わせ</a></li>
+<li class="text_c"><a href="/contact" class="disp_f">お問い合わせ</a></li>
 </ul>
 </nav>
 </div>
