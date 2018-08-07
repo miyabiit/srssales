@@ -41,7 +41,7 @@ Template Name: contact
 <li class="text_c"><a href="feature" class="disp_f">特徴</a></li>
 <li class="text_c"><a href="/srs/_office" class="disp_f">店舗情報</a></li>
 <li class="text_c"><a href="/srs/_corporate" class="disp_f">会社案内</a></li>
-<li class="text_c"><a href="/srs/_contact" class="disp_f active">お問い合わせ</a></li>
+<li class="text_c"><a href="/contact" class="disp_f active">お問い合わせ</a></li>
 </ul>
 </nav>
 </div>
