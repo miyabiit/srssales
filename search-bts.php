@@ -123,7 +123,10 @@ if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f
 ?>
 <p><?php the_field('comment'); ?></p>
 <div class="searched_product_data flex">
-<div class="product_image"><img src="/images/lift.jpg"></div>
+<?php
+$img = get_field('photo');
+if(!empty($img)) echo '<div class="product_image"><img src="' . $img['url'] . '"></div>';
+?>
 <div class="product_data">
 <div class="product_detail flex clearfix">
 <dl>

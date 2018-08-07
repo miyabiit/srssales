@@ -143,7 +143,7 @@ $query = new WP_Query(array(
 while($query->have_posts()) : $query->the_post();
 ?>
 <div class="products float_l">
-<a href="/btproducts">
+<a href="<?php the_permalink(); ?>">
 <div class="product_list_title flex">
 <?php
 $terms = get_the_terms($post->ID, 'mark_label_cat');
@@ -153,7 +153,10 @@ if(in_array("goodone",$tags)) print '<div class="product_list_sign orange strong
 ?>
   <div class="product_list_catch strong_f"><?php the_field('comment'); ?></div>
 </div>
-<img src="/images/lift.jpg" class="product_list_img" alt="商品">
+<?php
+$img = get_field('photo');
+if(!empty($img)) echo '<img src="' . $img['url'] . '" class="product_list_img" alt="商品">';
+?>
 <div class="product_list_detail">
 <div class="product_list_name strong_f"><?php the_title(); ?></div>
 <div class="product_list_info flex">
