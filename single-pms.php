@@ -10,13 +10,13 @@
 </div>
 </div>
 </div>
-<a href="index" class="no-pc"><img src="/images/home_sp.png" id="sp-logo" alt="エスアールエス ホームへ"></a>
+<a href="/" class="no-pc"><img src="/images/home_sp.png" id="sp-logo" alt="エスアールエス ホームへ"></a>
 <div class="content clearfix">
 <header>
 <div id="btn_menu"><a href="#" class="noscroll"><span class="box"><span></span><span></span><span></span></span></a></div>
 <nav>
 <ul id="nav_menu" class="clearfix">
-<li id="logo"><a href="index">ホーム</a></li>
+<li id="logo"><a href="/">ホーム</a></li>
 <li class="text_c unit"><a href="/unitproducts" class="disp_f">ユニットハウス</a></li>
 <li class="text_c atch"><a href="/pmproducts" class="disp_f">アタッチメント</a></li>
 <li class="text_c lift"><a href="/btproducts" class="disp_f">高所作業車 他</a></li>
@@ -32,7 +32,7 @@
 <div id="sub_title" class="no-pc strong_f">アタッチメント</div>
 <nav>
 <ul id="sub_menu" class="clearfix">
-<li id="back" class="no-sp"><a href="index" class="disp_f">ホームに戻る</a></li>
+<li id="back" class="no-sp"><a href="/" class="disp_f">ホームに戻る</a></li>
 <li class="text_c"><a href="/pm-search" class="disp_f">商品検索</a></li>
 <li class="text_c"><a href="/srs/_pm-guide-top.html" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="/srs/_pm-info-top.html" class="disp_f">ご案内</a></li>
@@ -241,7 +241,7 @@ if(get_field('staff')){
 <p id="company" class="flex"><img src="/images/srs.png"><span>高所作業車、特殊作業車、アタッチメント、ユニットハウスのことなら<span id="company-name">エスアールエス株式会社</span></span></p>
 </div>
 <div>
-<p id="links" class=""><a href="index">HOME</a> | <a href="privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+<p id="links" class=""><a href="/">HOME</a> | <a href="privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
 <p id="copy" class="xs">Copyright &copy; 2018 SRS Corporation. <br>All Rights Reserved.</p>
 </div>
 <div id="pagetop" class="srsd"><i class="fas fa-chevron-circle-up"></i> 上へ戻る</div>
