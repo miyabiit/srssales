@@ -180,7 +180,7 @@ if(get_field('youtube')){
 <dt class="product_detail_title box">年式</dt>
 <dd class="product_detail_content"><?php the_field('y_type'); ?></dd>
 <dt class="product_detail_title box">在庫台数</dt>
-<dd class="product_detail_content"><?php the_field('qty'); ?></dd>
+<dd class="product_detail_content"><?php the_field('amount'); ?></dd>
 </dl>
 </div>
 </div>
