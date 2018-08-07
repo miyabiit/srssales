@@ -449,9 +449,27 @@ function query_for_taxonomy($mypost_type,$mytaxlist,$mymetalist){
   $args['meta_query'] = $meta_args;
   return $args;
 }
-//
+//req変数の追加
 function add_query_vars_filter( $vars ){
   $vars[] = "req";
   return $vars;
 }
 add_filter( 'query_vars', 'add_query_vars_filter' );
+//
+//詳細ページの画像サムネイル表示
+function view_thumbnail( $img_field_name, $true_or_false){
+  $view = '';
+  $img = get_field($img_field_name);
+  if(!empty($img)){
+    $url = $img['url'];
+    $caption = $img['caption'];
+    $size   = 'thumbnail';
+    $thumb  = $img['sizes'][$size];
+    $width  = $img['sizes'][$size . '-width' ];
+    $height = $img['sizes'][$size . '-height' ];
+    $class_tag = 'swap_img';
+    if($true_or_false) $class_tag = 'swap_img active';
+    $view = '<div><a href="' . $url . '" data-caption="' . $caption . '" class="' . $class_tag . '"><img src="' . $thumb . '"></a></div>';
+  }
+  return $view;
+}
