@@ -156,7 +156,7 @@ if(in_array("goodone",$tags)) print '<div class="product_list_sign orange strong
 <div class="product_list_catch strong_f"><?php echo get_post_meta($post->ID, 'comment', true); ?></div>
 </div>
 <?php
-$img = get_field('photo');
+$img = get_field('img1');
 if(!empty($img)) echo '<img src="' . $img['url'] . '" class="product_list_img" alt="商品">';
 ?>
 <div class="product_list_detail">

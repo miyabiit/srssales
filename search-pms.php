@@ -126,7 +126,7 @@ if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f
 <p><?php echo get_post_meta($post->ID, 'comment', true); ?></p>
 <div class="searched_product_data flex">
 <?php
-$img = get_field('photo');
+$img = get_field('img1');
 if(!empty($img)) echo '<div class="product_image"><img src="' . $img['url'] . '"></div>';
 ?>
 <div class="product_data">
