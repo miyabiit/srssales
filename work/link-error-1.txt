@@ -1,0 +1,18 @@
+./index.php:<li><a href="" class="info_banner" id="info_banner_2"><span class="shadow disp_f text_c">買い取り情報</span></a></li>
+./index.php:<li><a href="" class="info_banner" id="info_banner_3"><span class="shadow disp_f text_c">展示販売協力会社募集</span></a></li>
+./page-bt-events.php:<dd class="event_data_content"><?php the_field('where'); ?><a href=""><i class="fas fa-map-marker fa-fw"></i>地図を見る</a></dd>
+./page-bt-events.php:<dd class="event_data_content"><a href=""><i class="far fa-file-pdf fa-fw"></i><?php the_field('pamphlet'); ?></a></dd>
+./page-btproducts.php:<li><a href="" class="info_banner" id="info_banner_2"><span class="shadow disp_f text_c">買い取り情報</span></a></li>
+./page-events.php:<dd class="event_data_content"><?php the_field('where'); ?><a href=""><i class="fas fa-map-marker fa-fw"></i>地図を見る</a></dd>
+./page-events.php:<dd class="event_data_content"><a href=""><i class="far fa-file-pdf fa-fw"></i><?php the_field('pamphlet'); ?></a></dd>
+./page-pm-events.php:<dd class="event_data_content"><?php the_field('where'); ?><a href=""><i class="fas fa-map-marker fa-fw"></i>地図を見る</a></dd>
+./page-pm-events.php:<dd class="event_data_content"><a href=""><i class="far fa-file-pdf fa-fw"></i><?php the_field('pamphlet'); ?></a></dd>
+./page-pmproducts.php:<li><a href="" class="info_banner" id="info_banner_2"><span class="shadow disp_f text_c">買い取り情報</span></a></li>
+./page-un-events.php:<dd class="event_data_content"><?php the_field('where'); ?><a href=""><i class="fas fa-map-marker fa-fw"></i>地図を見る</a></dd>
+./page-un-events.php:<dd class="event_data_content"><a href=""><i class="far fa-file-pdf fa-fw"></i><?php the_field('pamphlet'); ?></a></dd>
+./page-unitproducts.php:<li><a href="" class="info_banner" id="info_banner_2"><span class="shadow disp_f text_c">買い取り情報</span></a></li>
+./single-bts.php:<a href="" class="btn lift"><i class="fas fa-print"></i> 印刷する</a>
+./single-events.php:<dd class="event_data_content"><?php the_field('where'); ?><a href=""><i class="fas fa-map-marker fa-fw"></i>地図を見る</a></dd>
+./single-events.php:<dd class="event_data_content"><a href=""><i class="far fa-file-pdf fa-fw"></i><?php the_field('pamphlet'); ?></a></dd>
+./single-pms.php:<a href="" class="btn atch"><i class="fas fa-print"></i> 印刷する</a>
+./single-units.php:<a href="" class="btn unit"><i class="fas fa-print"></i> 印刷する</a>

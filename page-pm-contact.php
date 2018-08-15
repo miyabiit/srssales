@@ -37,11 +37,11 @@ Template Name: pm-contact
 <div id="sub_title" class="no-pc strong_f">アタッチメント</div>
 <nav>
 <ul id="sub_menu" class="clearfix">
-<li id="back" class="no-sp"><a href="/" class="disp_f">ホームに戻る</a></li>
+<li id="back" class="no-sp"><a href="/pmproducts" class="disp_f">ホームに戻る</a></li>
 <li class="text_c"><a href="/pm-search" class="disp_f">商品検索</a></li>
-<li class="text_c"><a href="/srs/_pm-guide-top" class="disp_f">ご利用ガイド</a></li>
-<li class="text_c"><a href="/srs/_pm-info-top" class="disp_f">ご案内</a></li>
-<li class="text_c"><a href="/srs/_pm-contact" class="disp_f active">お問い合わせ</a></li>
+<li class="text_c"><a href="/srs/_pm-guide-top.html" class="disp_f">ご利用ガイド</a></li>
+<li class="text_c"><a href="/srs/_pm-info-top.html" class="disp_f">ご案内</a></li>
+<li class="text_c"><a href="/pm-contact" class="disp_f active">お問い合わせ</a></li>
 </ul>
 </nav>
 </div>
@@ -61,7 +61,7 @@ Template Name: pm-contact
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="/srs/_pm-contact" itemprop="url">
+<a href="/pm-contact" itemprop="url">
 <span itemprop="title">お問い合わせ</span>
 </a>
 </li>

@@ -1,0 +1,21 @@
+./functions.php:    $view = '<div><a href="' . $url . '" data-caption="' . $caption . '" class="' . $class_tag . '"><img src="' . $thumb . '"></a></div>';
+./page-bt-contact.php:<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+./page-btproducts.php:<li><a href="bt-events" class="info_banner" id="info_banner_1"><span class="shadow disp_f text_c">イベント情報</span></a></li>
+./page-btproducts.php:<li class="guide"><section class="guidance"><h3 class="guide_title">初めての方へ</h3><p>初めてご利用される方のために、このウェブサイトについて、わかりやすくご説明いたします。</p><a href="bt-biginner.html" class="disp_f sml">詳細を見る</a></section></li>
+./page-btproducts.php:<li class="guide"><section class="guidance"><h3 class="guide_title">トラブルサポート</h3><p>商品が正しく動かない！？ そんな時はまずこちらのページをご確認ください。お客さまのヒントになる情報が掲載されているかもしれません。</p><a href="bt-faq.html" class="disp_f sml">詳細を見る</a></section></li>
+./page-contact.php:<li class="text_c"><a href="feature" class="disp_f">特徴</a></li>
+./page-contact.php:<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+./page-newsarch.php:<li class="text_c"><a href="feature" class="disp_f">特徴</a></li>
+./page-newsarch.php:<a href="newsarch" itemprop="url">
+./page-newsarch.php:<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+./page-pm-contact.php:<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+./page-pmproducts.php:<li class="guide"><section class="guidance"><h3 class="guide_title">初めての方へ</h3><p>初めてご利用される方のために、このウェブサイトについて、わかりやすくご説明いたします。</p><a href="pm-biginner.html" class="disp_f sml">詳細を見る</a></section></li>
+./page-un-contact.php:<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+./single-bts.php:<a href="bt-products" itemprop="url">
+./single-bts.php:<p id="links" class=""><a href="/">HOME</a> | <a href="privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+./single-news.php:<li class="text_c"><a href="feature" class="disp_f">特徴</a></li>
+./single-news.php:<a href="news" itemprop="url">
+./single-news.php:<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+./single-pms.php:<a href="pmproducts" itemprop="url">
+./single-pms.php:<p id="links" class=""><a href="/">HOME</a> | <a href="privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+./single-units.php:<p id="links" class=""><a href="/">HOME</a> | <a href="privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>

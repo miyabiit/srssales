@@ -1,0 +1,23 @@
+./page-bt-contact.php:<li class="text_c srsi"><a href="/srs/_about" class="disp_f">エスアールエスのご紹介</a></li>
+./page-bt-contact.php:個人情報の取り扱いにつきましては、<a href="/srs/_privacy">プライバシーポリシー</a>を参照してください。<br>
+./page-bt-contact.php:<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+./page-contact.php:<li class="text_c srsi"><a href="/srs/_about" class="disp_f">エスアールエスのご紹介</a></li>
+./page-contact.php:<li class="text_c"><a href="/srs/_office" class="disp_f">店舗情報</a></li>
+./page-contact.php:<li class="text_c"><a href="/srs/_corporate" class="disp_f">会社案内</a></li>
+./page-contact.php:個人情報の取り扱いにつきましては、<a href="/srs/_privacy">プライバシーポリシー</a>を参照してください。<br>
+./page-contact.php:<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+./page-newsarch.php:<li class="text_c srsi"><a href="/srs/_about" class="disp_f">エスアールエスのご紹介</a></li>
+./page-newsarch.php:<li class="text_c"><a href="/srs/_office" class="disp_f">店舗情報</a></li>
+./page-newsarch.php:<li class="text_c"><a href="/srs/_corporate" class="disp_f">会社案内</a></li>
+./page-newsarch.php:<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+./page-pm-contact.php:<li class="text_c srsi"><a href="/srs/_about" class="disp_f">エスアールエスのご紹介</a></li>
+./page-pm-contact.php:個人情報の取り扱いにつきましては、<a href="/srs/_privacy">プライバシーポリシー</a>を参照してください。<br>
+./page-pm-contact.php:<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+./page-pmproducts.php:<li><a href="/srs/pm-events" class="info_banner" id="info_banner_1"><span class="shadow disp_f text_c">イベント情報</span></a></li>
+./page-un-contact.php:<li class="text_c srsi"><a href="/srs/_about" class="disp_f">エスアールエスのご紹介</a></li>
+./page-un-contact.php:個人情報の取り扱いにつきましては、<a href="/srs/_privacy">プライバシーポリシー</a>を参照してください。<br>
+./page-un-contact.php:<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+./single-news.php:<li class="text_c srsi"><a href="/srs/_about" class="disp_f">エスアールエスのご紹介</a></li>
+./single-news.php:<li class="text_c"><a href="/srs/_office" class="disp_f">店舗情報</a></li>
+./single-news.php:<li class="text_c"><a href="/srs/_corporate" class="disp_f">会社案内</a></li>
+./single-news.php:<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>

@@ -39,9 +39,9 @@ Template Name: bt-contact
 <ul id="sub_menu" class="clearfix">
 <li id="back" class="no-sp"><a href="/" class="disp_f">ホームに戻る</a></li>
 <li class="text_c"><a href="/bt-search" class="disp_f">商品検索</a></li>
-<li class="text_c"><a href="bt-guide-top" class="disp_f">ご利用ガイド</a></li>
-<li class="text_c"><a href="bt-info-top" class="disp_f">ご案内</a></li>
-<li class="text_c"><a href="/srs/_bt-contact" class="disp_f active">お問い合わせ</a></li>
+<li class="text_c"><a href="/srs/_bt-guide-top.html" class="disp_f">ご利用ガイド</a></li>
+<li class="text_c"><a href="/srs/_bt-info-top.html" class="disp_f">ご案内</a></li>
+<li class="text_c"><a href="/bt-contact" class="disp_f active">お問い合わせ</a></li>
 </ul>
 </nav>
 </div>
@@ -61,7 +61,7 @@ Template Name: bt-contact
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="/srs/_bt-contact" itemprop="url">
+<a href="/bt-contact" itemprop="url">
 <span itemprop="title">お問い合わせ</span>
 </a>
 </li>

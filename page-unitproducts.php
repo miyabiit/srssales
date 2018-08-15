@@ -239,7 +239,7 @@ while($query->have_posts()) : $query->the_post();
 <li class="guide"><section class="guidance"><h3 class="guide_title">ユニットハウスとは</h3><p>ユニットハウスって何？プレハブとの違いは何？ユニットハウスについてわかりやすくご説明いたします。</p><a href="/srs/_unitproducts-about.html" class="disp_f sml">詳細を見る</a></section></li>
 <li class="guide"><section class="guidance"><h3 class="guide_title">ご購入の流れ</h3><p>ご購入やお支払の流れを、4つのステップに分けて詳しくご説明します。</p><a href="/srs/_un-purchase-flow.html" class="disp_f sml">詳細を見る</a></section></li>
 <li class="guide"><section class="guidance"><h3 class="guide_title">納品・施工の流れ</h3><p>ご購入やお支払の流れを、４つのステップに分けて詳しくご説明します。</p><a href="/srs/_construction-flow.html" class="disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title">商品の選び方</h3><p>お客様にとって最適なユニットハウスをお選びいただけるように、商品の選び方のポイントをご紹介しています。</p><a href="un-select.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">商品の選び方</h3><p>お客様にとって最適なユニットハウスをお選びいただけるように、商品の選び方のポイントをご紹介しています。</p><a href="/srs/_un-select.html" class="disp_f sml">詳細を見る</a></section></li>
 <li class="guide"><section class="guidance"><h3 class="guide_title">設置ガイド</h3><p>ここではユニットハウスの設置についてご説明させていただきます。ユニットハウスご購入の際の参考になさってください。</p><a href="/srs/_installation.html" class="disp_f sml">詳細を見る</a></section></li>
 <li class="guide"><section class="guidance"><h3 class="guide_title">法律に関して</h3><p>ユニットハウスに関係する法令上の制限をご説明いたします。</p><a href="/srs/_un-law.html" class="disp_f sml">詳細を見る</a></section></li>
 <li class="guide"><section class="guidance"><h3 class="guide_title">リフォーム・カスタム</h3><p>リフォームやカスタマイズをご希望のお客様へ快適な空間づくりをサポートいたします。</p><a href="/srs/_customize.html" class="disp_f sml">詳細を見る</a></section></li>
@@ -266,7 +266,7 @@ while($query->have_posts()) : $query->the_post();
 <p id="company" class="flex"><img src="/images/srs.png"><span>高所作業車、特殊作業車、アタッチメント、ユニットハウスのことなら<span id="company-name">エスアールエス株式会社</span></span></p>
 </div>
 <div>
-<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy.html">プライバシーポリシー</a> | <br><a href="commerce.html">特定商取引に関する表示</a> | <a href="sitemap.html">サイトマップ</a></p>
+<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy.html">プライバシーポリシー</a> | <br><a href="/srs/_commerce.html">特定商取引に関する表示</a> | <a href="/srs/_sitemap.html">サイトマップ</a></p>
 <p id="copy" class="xs">Copyright &copy; 2018 SRS Corporation. <br>All Rights Reserved.</p>
 </div>
 <div id="pagetop" class="srsd"><i class="fas fa-chevron-circle-up"></i> 上へ戻る</div>
