@@ -79,25 +79,22 @@ pms サイト内検索結果
 
 ?>
 
+<section class="search-results-pagination">
+<div class="content flex">
+<div class="hits flex strong_f">[<?php echo get_search_query(); ?>]での検索結果: <span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more lift"><a href="/bt-search"><i class="fas fa-filter"></i>絞り込む</a></span></div>
+<div class="pagination">
 <?php
     $big = 9999999999;
     $arg = array(
         'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
         'current' => max( 1, get_query_var('paged') ),
-        'total'   => $wp_query->max_num_pages
+        'total'   => $wp_query->max_num_pages,
+        'prev_text' => __('<i class="fas fa-angle-double-left"></i>'),
+        'next_text' => __('<i class="fas fa-angle-double-right"></i>')
     );
     echo paginate_links($arg);
 ?>
-<section class="search-results-pagination">
-<div class="content flex">
-<div class="hits flex strong_f">[<?php echo get_search_query(); ?>]での検索結果: <span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more lift"><a href="/bt-search"><i class="fas fa-filter"></i>絞り込む</a></span></div>
-<!-- div class="pagination">
-<a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
-<a href="">1</a>
-<a href="" class="active">2</a>
-<a href="">3</a>
-<a href="" class="prev"><i class="fas fa-angle-double-right"></i></a>
-</div -->
+</div>
 </div>
 </section>
 
@@ -172,8 +169,6 @@ if(!empty($img)) echo '<div class="product_image"><img src="' . $img['url'] . '"
 </section>
 
 <?php endwhile; ?>
-<div><?php previous_posts_link('&laguo;前'); ?></div>
-<div><?php next_posts_link('&laguo;次'); ?></div>
 <?php wp_reset_postdata(); ?>
 
 </div>
@@ -182,13 +177,19 @@ if(!empty($img)) echo '<div class="product_image"><img src="' . $img['url'] . '"
 <section class="search-results-pagination">
 <div class="content flex">
 <div class="hits flex strong_f">[<?php echo get_search_query(); ?>]での検索結果: <span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more lift"><a href="/bt-search"><i class="fas fa-filter"></i>絞り込む</a></span></div>
-<!-- div class="pagination">
-<a href="" class="next"><i class="fas fa-angle-double-left"></i></a>
-<a href="">1</a>
-<a href="" class="active">2</a>
-<a href="">3</a>
-<a href="" class="prev"><i class="fas fa-angle-double-right"></i></a>
-</div -->
+<div class="pagination">
+<?php
+    $big = 9999999999;
+    $arg = array(
+        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'current' => max( 1, get_query_var('paged') ),
+        'total'   => $wp_query->max_num_pages,
+        'prev_text' => __('<i class="fas fa-angle-double-left"></i>'),
+        'next_text' => __('<i class="fas fa-angle-double-right"></i>')
+    );
+    echo paginate_links($arg);
+?>
+</div>
 </div>
 </section>
 

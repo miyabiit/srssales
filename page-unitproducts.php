@@ -136,7 +136,7 @@ $wp_query->query($args);
 <?php
 $query = new WP_Query(array(
   'post_type' => 'units',
-  'post_per_page' => 5,
+  'posts_per_page' => 5,
   'orderby' => 'date',
   'order' => 'DESC'
 ));
@@ -201,7 +201,7 @@ if(in_array("condition",$tags))print '<div class="product_list_sign blue strong_
 <?php
 $query = new WP_Query(array(
   'post_type' => 'news',
-  'post_per_page' => 5,
+  'posts_per_page' => 5,
   'tax_query' => array(
     array(
       'taxonomy' => 'products_cat',

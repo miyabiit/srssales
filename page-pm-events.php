@@ -79,7 +79,7 @@ Template Name: pm-events
 <?php
 $query = new WP_Query(array(
   'post_type' => 'events',
-  'post_per_page' => 5,
+  'posts_per_page' => 5,
   'tax_query' => array(
     array(
       'taxonomy' => 'products_cat',

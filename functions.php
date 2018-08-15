@@ -416,6 +416,9 @@ function query_for_taxonomy($mypost_type,$mytaxlist,$mymetalist){
   $args = array(
     'post_type' => $mypost_type,
     'post_status' => 'publish',
+    'posts_per_page' => 5,
+    'paged' => get_query_var('paged'),
+    'orderby' => 'date'
   );
   $tax_args = array(
     'relation' => 'AND',

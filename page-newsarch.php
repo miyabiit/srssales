@@ -75,7 +75,7 @@ Template Name: newsarch
 <?php 
 $query = new WP_Query(array(
   'post_type' => 'news',
-  'post_per_page' => 10,
+  'posts_per_page' => 10,
   'tax_query' => array(
     array(
       'taxonomy' => 'products_cat',

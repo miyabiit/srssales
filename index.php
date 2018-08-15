@@ -231,7 +231,7 @@ foreach($terms as $term){
 
 
 
-<section id="search-box">
+<!-- section id="search-box">
 <div class="content">
 <form id="keyword-search-box" class="flex">
 <div id="search-title" class="disp_f text_c">サイト内検索</div>
@@ -239,7 +239,7 @@ foreach($terms as $term){
 <button type="submit" name="submit"><i class="fas fa-search"></i></button>
 </form>
 </div>
-</section>
+</section -->
 
 <section id="info">
 <div class="content">
@@ -259,7 +259,7 @@ foreach($terms as $term){
 <?php
 $query = new WP_Query(array(
   'post_type' => 'news',
-  'post_per_page' => 5,
+  'posts_per_page' => 5,
   'tax_query' => array(
     array(
       'taxonomy' => 'products_cat',
