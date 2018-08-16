@@ -41,7 +41,7 @@ Template Name: un-result
 <li class="text_c"><a href="/un-search" class="disp_f active">商品検索</a></li>
 <li class="text_c"><a href="/srs/_un-guide-top.html" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="/srs/_un-info-top.html" class="disp_f">ご案内</a></li>
-<li class="text_c"><a href="/contact" class="disp_f">お問い合わせ</a></li>
+<li class="text_c"><a href="/un-contact" class="disp_f">お問い合わせ</a></li>
 </ul>
 </nav>
 </div>
@@ -81,7 +81,7 @@ Template Name: un-result
 
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="un-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
+<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="/un-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
 <div class="pagination">
 <?php
     $big = 9999999999;
@@ -180,7 +180,7 @@ if(!empty($img)) echo '<div class="product_image"><img src="' . $img['url'] . '"
 
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="un-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
+<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more unit"><a href="/un-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
 <div class="pagination">
 <?php
     $big = 9999999999;

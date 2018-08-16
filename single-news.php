@@ -24,7 +24,7 @@
 <li class="text_c unit"><a href="/unitproducts" class="disp_f">ユニットハウス</a></li>
 <li class="text_c atch"><a href="/pmproducts" class="disp_f">アタッチメント</a></li>
 <li class="text_c lift"><a href="/btproducts" class="disp_f">高所作業車 他</a></li>
-<li class="text_c srsi"><a href="/srs/_about" class="disp_f">エスアールエスのご紹介</a></li>
+<li class="text_c srsi"><a href="/srs/_about.html" class="disp_f">エスアールエスのご紹介</a></li>
 </ul>
 </nav>
 </header>
@@ -37,9 +37,9 @@
 <nav>
 <ul id="sub_menu" class="clearfix">
 <li id="back" class="no-sp"><a href="/" class="disp_f">ホームに戻る</a></li>
-<li class="text_c"><a href="feature" class="disp_f">特徴</a></li>
-<li class="text_c"><a href="/srs/_office" class="disp_f">店舗情報</a></li>
-<li class="text_c"><a href="/srs/_corporate" class="disp_f">会社案内</a></li>
+<li class="text_c"><a href="/srs/_feature.html" class="disp_f">特徴</a></li>
+<li class="text_c"><a href="/srs/_office.html" class="disp_f">店舗情報</a></li>
+<li class="text_c"><a href="/srs/_corporate.html" class="disp_f">会社案内</a></li>
 <li class="text_c"><a href="/contact" class="disp_f">お問い合わせ</a></li>
 </ul>
 </nav>
@@ -61,7 +61,7 @@
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="news" itemprop="url">
+<a href="/news" itemprop="url">
 <span itemprop="title"><?php the_title(); ?></span>
 </a>
 </li>
@@ -89,7 +89,7 @@
 <p id="company" class="flex"><img src="/images/srs.png"><span>高所作業車、特殊作業車、アタッチメント、ユニットハウスのことなら<span id="company-name">エスアールエス株式会社</span></span></p>
 </div>
 <div>
-<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy">プライバシーポリシー</a> | <br><a href="commerce">特定商取引に関する表示</a> | <a href="sitemap">サイトマップ</a></p>
+<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy.html">プライバシーポリシー</a> | <br><a href="/srs/_commerce.html">特定商取引に関する表示</a> | <a href="/srs/_sitemap.html">サイトマップ</a></p>
 <p id="copy" class="xs">Copyright &copy; 2018 SRS Corporation. <br>All Rights Reserved.</p>
 </div>
 <div id="pagetop" class="srsd"><i class="fas fa-chevron-circle-up"></i> 上へ戻る</div>

@@ -1,7 +1,4 @@
 ./page-contact.php:<li class="text_c"><a href="/contact" class="disp_f active">お問い合わせ</a></li>
 ./page-contact.php:<a href="/contact" itemprop="url">
 ./page-newsarch.php:<li class="text_c"><a href="/contact" class="disp_f">お問い合わせ</a></li>
-./page-pm-result.php:<li class="text_c"><a href="/contact" class="disp_f">お問い合わせ</a></li>
-./page-un-result.php:<li class="text_c"><a href="/contact" class="disp_f">お問い合わせ</a></li>
-./search-bts.php:<li class="text_c"><a href="/contact" class="disp_f">お問い合わせ</a></li>
 ./single-news.php:<li class="text_c"><a href="/contact" class="disp_f">お問い合わせ</a></li>

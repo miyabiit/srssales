@@ -42,9 +42,9 @@ grep -l '"un-search.html"' ./*php | xargs sed -i.bak -e 's/\"un-search.html\"/\"
 grep -l '"pm-search.html"' ./*php | xargs sed -i.bak -e 's/\"pm-search.html\"/\"\/pm-search\"/g'
 grep -l '"bt-search.html"' ./*php | xargs sed -i.bak -e 's/\"bt-search.html\"/\"\/bt-search\"/g'
 #
-grep -l '"feature.html"' ./*php | xargs sed -i.bak -e 's/\"feature.html\"/\"\/srs\/_feature.html\"/g'
-grep -l '"sitemap.html"' ./*php | xargs sed -i.bak -e 's/\"sitemap.html\"/\"\/srs\/_sitemap.html\"/g'
-grep -l '"commerce.html"' ./*php | xargs sed -i.bak -e 's/\"commerce.html\"/\"\/srs\/_commerce.html\"/g'
+grep -l '"feature"' ./*php | xargs sed -i.bak -e 's/\"feature\"/\"\/srs\/_feature.html\"/g'
+grep -l '"sitemap"' ./*php | xargs sed -i.bak -e 's/\"sitemap\"/\"\/srs\/_sitemap.html\"/g'
+grep -l '"commerce"' ./*php | xargs sed -i.bak -e 's/\"commerce\"/\"\/srs\/_commerce.html\"/g'
 grep -l '"bt-purchase-service.html"' ./*php | xargs sed -i.bak -e 's/\"bt-purchase-service.html\"/\"\/srs\/_bt-purchase-service.html\"/g'
 grep -l '"pm-purchase-service.html"' ./*php | xargs sed -i.bak -e 's/\"pm-purchase-service.html\"/\"\/srs\/_pm-purchase-service.html\"/g'
 grep -l '"un-purchase-service.html"' ./*php | xargs sed -i.bak -e 's/\"un-purchase-service.html\"/\"\/srs\/_un-purchase-service.html\"/g'
