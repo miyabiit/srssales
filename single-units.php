@@ -19,7 +19,7 @@
 <li id="logo"><a href="/">ホーム</a></li>
 <li class="text_c unit"><a href="/unitproducts" class="disp_f">ユニットハウス</a></li>
 <li class="text_c atch"><a href="/pmproducts" class="disp_f">アタッチメント</a></li>
-<li class="text_c lift"><a href="/btproducts" class="disp_f">高所作業車 他</a></li>
+<li class="text_c lift"><a href="/btproducts" class="disp_f">高所作業車・仮設機材</a></li>
 <li class="text_c srsi"><a href="/srs/_about.html" class="disp_f">エスアールエスのご紹介</a></li>
 </ul>
 </nav>
@@ -94,7 +94,7 @@ if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">用途</dt>
-<dd class="product_detail_content"><?php $term = get_field('usage'); echo $term->name; ?></dd>
+<dd class="product_detail_content w100"><?php $term = get_field('usage'); echo $term->name; ?></dd>
 <dt class="product_detail_title box">寸法(mm) : WxDxH</dt>
 <dd class="product_detail_content"><?php the_field('lwh'); ?></dd>
 <dt class="product_detail_title box">面積</dt>
@@ -109,7 +109,9 @@ if(!empty($img1)){
   $url1 = $img1['url'];
   $caption1 = $img1['caption'];
 ?>
-  <img id="product-image" src="<?php echo $url1; ?>">
+  <a id="product-image-link" data-fancybox="gallery" href="<?php echo $url1; ?>" data-image-caption="<?php echo $caption1; ?>">
+    <img id="product-image" src="<?php echo $url1; ?>">
+  </a>
   <div id="product-image-caption" class="sml"><?php echo $caption1; ?></div>
 <?php
 }
@@ -214,6 +216,7 @@ if(get_field('youtube')){
 <dl>
 <dt class="product_detail_title box">電話番号</dt>
 <dd class="product_detail_content num tel"><a href="tel:<?php the_field('tel'); ?>"><?php the_field('tel'); ?></a></dd>
+<!--
 <dt class="product_detail_title box">担当者</dt>
 <dd class="product_detail_content">
 <?php
@@ -223,6 +226,7 @@ if(get_field('staff')){
 }
 ?>
 </dd>
+-->
 </dl>
 </div>
 </div>
@@ -241,7 +245,7 @@ if(get_field('staff')){
 <p id="company" class="flex"><img src="/images/srs.png"><span>高所作業車、特殊作業車、アタッチメント、ユニットハウスのことなら<span id="company-name">エスアールエス株式会社</span></span></p>
 </div>
 <div>
-<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy.html">プライバシーポリシー</a> | <br><a href="/srs/_commerce.html">特定商取引に関する表示</a> | <a href="/srs/_sitemap.html">サイトマップ</a></p>
+<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy.html">プライバシーポリシー</a> |  <a href="/srs/_sitemap.html">サイトマップ</a></p>
 <p id="copy" class="xs">Copyright &copy; 2018 SRS Corporation. <br>All Rights Reserved.</p>
 </div>
 <div id="pagetop" class="srsd"><i class="fas fa-chevron-circle-up"></i> 上へ戻る</div>
@@ -259,18 +263,22 @@ if(get_field('staff')){
 <script src="/js/jquery.debouncedresize.min.js"></script>
 <script src="/js/imagesloaded.pkgd.min.js"></script>
 <script src="/js/jquery.panorama_viewer.js"></script>
+<script src="/js/jquery.fancybox.min.js"></script>
 <script src="/js/common.js"></script>
 <script>
 
 $(".panorama").panorama_viewer({repeat:!0,direction:"horizontal",animationTime:700,easing:"ease-out",overlay:!0});
 $('.swap_img').on('click',function(){
 	var t = $(this);
+	var img = $('#product-image');
 	var url = t.attr('href');
-	var cap = t.attr('data-caption');
-	$('.swap_img').removeClass('active');
+	var cap = t.attr('data-image-caption');
+	$('.swap_img').removeClass('active').attr('data-fancybox','gallery');
 	t.addClass('active');
+	t.attr('data-fancybox','');
 	$('#product-image').attr('src',url);
 	$('#product-image-caption').text(cap);
+	$('#product-image-link').attr('href',url).attr('data-image-caption',cap);
 	return false;
 });
 </script>

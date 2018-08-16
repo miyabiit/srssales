@@ -21,7 +21,7 @@
 <li id="logo"><a href="/">ホーム</a></li>
 <li class="text_c unit"><a href="/unitproducts" class="disp_f">ユニットハウス</a></li>
 <li class="text_c atch"><a href="/pmproducts" class="disp_f">アタッチメント</a></li>
-<li class="text_c lift"><a href="/btproducts" class="disp_f">高所作業車 他</a></li>
+<li class="text_c lift"><a href="/btproducts" class="disp_f">高所作業車・仮設機材</a></li>
 <li class="text_c srsi"><a href="/srs/_about.html" class="disp_f">エスアールエスのご紹介</a></li>
 </ul>
 </nav>
@@ -245,9 +245,9 @@ foreach($terms as $term){
 <div class="content">
 <h2 class="disp_f text_l"><i class="fas fa-info-circle"></i> ご案内</h2>
 <ul id="information-banners" class="flex">
-<li><a href="/events" class="info_banner" id="info_banner_1"><span class="shadow disp_f text_c">イベント情報</span></a></li>
-<li><a href="" class="info_banner" id="info_banner_2"><span class="shadow disp_f text_c">買い取り情報</span></a></li>
-<li><a href="" class="info_banner" id="info_banner_3"><span class="shadow disp_f text_c">展示販売協力会社募集</span></a></li>
+<li><a href="/srs/_feature.html" class="info_banner" id="info_banner_1"><span class="shadow disp_f text_c">エスアールエスの特徴</span></a></li>
+<li><a href="/srs/_office.html" class="info_banner" id="info_banner_2"><span class="shadow disp_f text_c">店舗情報</span></a></li>
+<li><a href="/srs/_corporate.html" class="info_banner" id="info_banner_3"><span class="shadow disp_f text_c">会社案内</span></a></li>
 </ul>
 </div>
 </section>
@@ -295,7 +295,7 @@ while($query->have_posts()) : $query->the_post();
 <p id="company" class="flex"><img src="/images/srs.png"><span>高所作業車、特殊作業車、アタッチメント、ユニットハウスのことなら<span id="company-name">エスアールエス株式会社</span></span></p>
 </div>
 <div>
-<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy.html">プライバシーポリシー</a> | <br><a href="/srs/_commerce.html">特定商取引に関する表示</a> | <a href="/srs/_sitemap.html">サイトマップ</a></p>
+<p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy.html">プライバシーポリシー</a> |  <a href="/srs/_sitemap.html">サイトマップ</a></p>
 <p id="copy" class="xs">Copyright &copy; 2018 SRS Corporation. <br>All Rights Reserved.</p>
 </div>
 <div id="pagetop" class="srsd"><i class="fas fa-chevron-circle-up"></i> 上へ戻る</div>

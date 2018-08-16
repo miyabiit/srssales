@@ -52,3 +52,6 @@ grep -l '"un-purchase-service.html"' ./*php | xargs sed -i.bak -e 's/\"un-purcha
 grep -l '"/srs/_un-contact.html"' ./*php | xargs sed -i.bak -e 's/\"\/srs\/_un-contact.html\"/\"\/un-contact\"/g'
 grep -l '"/srs/_pm-contact.html"' ./*php | xargs sed -i.bak -e 's/\"\/srs\/_pm-contact.html\"/\"\/pm-contact\"/g'
 grep -l '"/srs/_bt-contact.html"' ./*php | xargs sed -i.bak -e 's/\"\/srs\/_bt-contact.html\"/\"\/bt-contact\"/g'
+#
+grep -l '高所作業車 他' ./*php | xargs sed -i.bak -e 's/高所作業車 他/高所作業車・仮設機材/g'
+grep -l '<br><a href="/srs/_commerce.html">特定商取引に関する表示</a> |' ./*php | xargs sed -i.bak -e 's/<br><a href=\"\/srs\/_commerce.html\">特定商取引に関する表示<\/a> |//g'

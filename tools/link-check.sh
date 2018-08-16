@@ -7,3 +7,4 @@
   grep _pm-contact ./*.* >> work/link-error-4.txt
   grep 'href="/contact"' ./*.* >> work/link-error-4.txt
   grep -E "href=\"[un|bt|pm]" ./*.*  | grep -v 'href="tel' > work/link-error-5.txt
+  grep -E "href=\"\/srs\/[a-z]" ./*.*  > work/link-error-6.txt

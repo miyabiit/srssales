@@ -1,1 +1,4 @@
-./functions.php:    $view = '<div><a href="' . $url . '" data-caption="' . $caption . '" class="' . $class_tag . '"><img src="' . $thumb . '"></a></div>';
+./functions.php:    $view = '<div><a href="' . $url . '" data-fancybox="' . $fancy_tag . '" data-image-caption="' . $caption . '" class="' . $class_tag . '"><img src="' . $thumb . '"></a></div>';
+./single-bts.php:  <a id="product-image-link" data-fancybox="gallery" href="<?php echo $url1; ?>" data-image-caption="<?php echo $caption1; ?>">
+./single-pms.php:  <a id="product-image-link" data-fancybox="gallery" href="<?php echo $url1; ?>" data-image-caption="<?php echo $caption1; ?>">
+./single-units.php:  <a id="product-image-link" data-fancybox="gallery" href="<?php echo $url1; ?>" data-image-caption="<?php echo $caption1; ?>">
