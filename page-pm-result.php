@@ -81,7 +81,7 @@ Template Name: pm-result
 
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more atch"><a href="/pm-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
+<div class="hits flex strong_f"><!-- <span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました --><span class="more atch"><a href="/pm-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
 <div class="pagination">
 <?php
     $big = 9999999999;
@@ -180,7 +180,7 @@ if(!empty($img)) echo '<div class="product_image"><img src="' . $img['url'] . '"
 
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f"><span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more atch"><a href="/pm-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
+<div class="hits flex strong_f"><!-- <span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました --><span class="more atch"><a href="/pm-search/?<?php echo http_build_query($_GET); ?>"><i class="fas fa-filter"></i>もっと絞り込む</a></span></div>
 <div class="pagination">
 <?php
     $big = 9999999999;

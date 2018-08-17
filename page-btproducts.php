@@ -112,7 +112,7 @@ $args = query_for_taxonomy('bts', array('bt_height_cat', 'bt_usage_cat', 'bt_goo
 $wp_query = new WP_query();
 $wp_query->query($args);
 ?>
-  <div class="search-button"><div id="search-hits" class="strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn lift disp_f"><i class="fas fa-search"></i> 高所作業車/他を探す</button></div>
+  <div class="search-button"><!-- <div id="search-hits" class="strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div> --><button type="submit" id="search-all" class="btn lift disp_f"><i class="fas fa-search"></i> 高所作業車/他を探す</button></div>
 </form>
 </div>
 </section>
@@ -230,11 +230,11 @@ while($query->have_posts()) : $query->the_post();
 <div class="content">
 <h2 class="disp_f text_l"><i class="fas fa-compass"></i> ご利用ガイド</h2>
 <ul id="lift-guide" class="clearfix">
-<li class="guide"><section class="guidance"><h3 class="guide_title">初めての方へ</h3><p>初めてご利用される方のために、このウェブサイトについて、わかりやすくご説明いたします。</p><a href="/srs/_bt-biginner.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">初めての方へ</h3><p>初めてご利用される方のために、このウェブサイトについて、わかりやすくご説明いたします。</p><a href="/srs/_bt-beginner.html" class="disp_f sml">詳細を見る</a></section></li>
 <li class="guide"><section class="guidance"><h3 class="guide_title">ご購入の流れ</h3><p>ご購入やお支払の流れを、4つのステップに分けて詳しくご説明します。</p><a href="/srs/_bt-purchase-flow.html" class="disp_f sml">詳細を見る</a></section></li>
 <li class="guide"><section class="guidance"><h3 class="guide_title">商品の選び方</h3><p>お客様にとって最適な高所作業車をお選びいただけるように、商品の選び方のポイントをご紹介しています。</p><a href="/srs/_bt-select.html" class="disp_f sml">詳細を見る</a></section></li>
 <li class="guide"><section class="guidance"><h3 class="guide_title">法律に関して</h3><p>高所作業車に関係する法令上の制限をご説明いたします。</p><a href="/srs/_bt-law.html" class="disp_f sml">詳細を見る</a></section></li>
-<li class="guide"><section class="guidance"><h3 class="guide_title">トラブルサポート</h3><p>商品が正しく動かない！？ そんな時はまずこちらのページをご確認ください。お客さまのヒントになる情報が掲載されているかもしれません。</p><a href="/srs/_bt-faq.html" class="disp_f sml">詳細を見る</a></section></li>
+<li class="guide"><section class="guidance"><h3 class="guide_title">トラブルサポート</h3><p>商品が正しく動かない！？ そんな時はまずこちらのページをご確認ください。お客さまのヒントになる情報が掲載されているかもしれません。</p><a href="/srs/_bt-trouble-support.html" class="disp_f sml">詳細を見る</a></section></li>
 </ul>
 </div>
 </section>

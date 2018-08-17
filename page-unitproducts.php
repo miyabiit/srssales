@@ -112,7 +112,7 @@ $args = query_for_taxonomy('units', array('un_tubo_cat', 'un_usage_cat', 'un_pri
 $wp_query = new WP_query();
 $wp_query->query($args);
 ?>
-  <div class="search-button"><div id="search-hits" class="strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i> ユニットハウスを探す</button></div>
+  <div class="search-button"><!-- <div id="search-hits" class="strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div> --><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i> ユニットハウスを探す</button></div>
 </form>
 </div>
 </section>

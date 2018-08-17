@@ -112,7 +112,7 @@ $args = query_for_taxonomy('pms', array('pm_usage_cat', 'pm_class_cat', 'pm_pric
 $wp_query = new WP_query();
 $wp_query->query($args);
 ?>
-  <div class="search-button"><div id="search-hits" class="strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn atch disp_f"><i class="fas fa-search"></i> アタッチメントを探す</button></div>
+  <div class="search-button"><!-- <div id="search-hits" class="strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div> --><button type="submit" id="search-all" class="btn atch disp_f"><i class="fas fa-search"></i> アタッチメントを探す</button></div>
 </form>
 </div>
 </section>

@@ -91,13 +91,14 @@ Template Name: pm-search
   $wp_query = new WP_query();
   $wp_query->query($args);
 ?>
+<!--
 <div id="search-head-num">
 <div class="search-hits strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn unit disp_f"><i class="fas fa-search"></i></button>
 </div>
-
+-->
 <div class="search-check-selection clearfix">
 <div class="check-selections clearfix">
-<div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn atch disp_f"><i class="fas fa-search"></i> アタッチメントを探す</button></div>
+<div class="search-button"><!-- <div class="search-hits strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div> --><button type="submit" id="search-all" class="btn atch disp_f"><i class="fas fa-search"></i> アタッチメントを探す</button></div>
 </div>
 </div>
 
@@ -282,7 +283,7 @@ Template Name: pm-search
 ?>
 <div class="search-check-selection clearfix">
 <div class="check-selections clearfix">
-<div class="search-button"><div class="search-hits strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div><button type="submit" id="search-all" class="btn atch disp_f"><i class="fas fa-search"></i> アタッチメントを探す</button></div>
+<div class="search-button"><!-- <div class="search-hits strong_f">該当件数 <span class="num"><?php echo $wp_query->found_posts; ?></span> 件</div> --><button type="submit" id="search-all" class="btn atch disp_f"><i class="fas fa-search"></i> アタッチメントを探す</button></div>
 </div>
 </div>
 
