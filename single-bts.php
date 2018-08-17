@@ -133,6 +133,20 @@ if(!empty($img1)){
 <?php echo view_thumbnail('img8', false); ?> 
 <?php echo view_thumbnail('img9', false); ?> 
 <?php echo view_thumbnail('img10', false); ?> 
+<?php echo view_thumbnail('img11', false); ?> 
+<?php echo view_thumbnail('img12', false); ?> 
+<?php echo view_thumbnail('img13', false); ?> 
+<?php echo view_thumbnail('img14', false); ?> 
+<?php echo view_thumbnail('img15', false); ?> 
+<?php echo view_thumbnail('img16', false); ?> 
+<?php echo view_thumbnail('img17', false); ?> 
+<?php echo view_thumbnail('img18', false); ?> 
+<?php echo view_thumbnail('img19', false); ?> 
+<?php echo view_thumbnail('img20', false); ?> 
+<?php echo view_thumbnail('img21', false); ?> 
+<?php echo view_thumbnail('img22', false); ?> 
+<?php echo view_thumbnail('img23', false); ?> 
+<?php echo view_thumbnail('img24', false); ?> 
 </div>
 </div>
 <div class="content">

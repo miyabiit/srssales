@@ -1,4 +1,5 @@
 <?php
+//include
 //管理者メニュー
 function remove_menus(){
   global $menu;
