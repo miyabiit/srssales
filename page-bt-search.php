@@ -75,6 +75,7 @@ Template Name: bt-search
 <form id="keyword-search-box" class="flex" method="get" action="<?php echo home_url(); ?>">
 <div id="search-title" class="disp_f text_c">サイト内検索</div>
 <input type="hidden" name="post_type" id="post_type" value="bts">
+<input type="hidden" name="posts_per_page" id="posts_per_page" value="5">
 <input type="text" value="" name="s" id="s" />
 <button type="submit"><i class="fas fa-search"></i></button>
 </form>

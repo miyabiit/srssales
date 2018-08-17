@@ -77,7 +77,6 @@ if(in_array("goodone",$tags)) print '<span class="product_list_sign blue strong_
 if(in_array("nowship",$tags)) print '<span class="product_list_sign green strong_f">即出荷</span>';
 if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f">商談中</span>';
 ?>
-</div>
 </h1>
 <p><?php the_field('comment'); ?></p>
 </div>
@@ -94,7 +93,7 @@ if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">用途</dt>
-<dd class="product_detail_content w100"><?php $term = get_field('usage'); echo $term->name; ?></dd>
+<dd class="product_detail_content"><?php $term = get_field('usage'); echo $term->name; ?></dd>
 <dt class="product_detail_title box">寸法(mm) : WxDxH</dt>
 <dd class="product_detail_content"><?php the_field('lwh'); ?></dd>
 <dt class="product_detail_title box">面積</dt>

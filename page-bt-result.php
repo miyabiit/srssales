@@ -104,10 +104,9 @@ Template Name: bt-result
 <?php
 while( $wp_query->have_posts()) : $wp_query->the_post();
 ?>
-  <h2><?php the_title(); ?></h2>
-
 <section class="searched-product product_data_atch">
 <h2>
+<span class="product_name"><?php the_title(); ?></span>
 <?php
 $terms = get_the_terms($post->ID, 'mark_label_cat');
 $tags = [];
@@ -118,7 +117,6 @@ if(in_array("goodone",$tags)) print '<span class="product_list_sign blue strong_
 if(in_array("nowship",$tags)) print '<span class="product_list_sign green strong_f">即出荷</span>';
 if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f">商談中</span>';
 ?>
-<span class="product_name"><?php the_title(); ?></span>
 </h2>
 <p><?php echo get_post_meta($post->ID, 'comment', true); ?></p>
 <div class="searched_product_data flex">

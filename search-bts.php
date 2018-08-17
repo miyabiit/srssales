@@ -32,7 +32,7 @@ pms サイト内検索結果
 </div>
 </section>
 
-<section id="sub-menu" class="unit">
+<section id="sub-menu" class="lift">
 <div class="content clearfix">
 <div id="sub_title" class="no-pc strong_f">ユニットハウス</div>
 <nav>
@@ -81,7 +81,7 @@ pms サイト内検索結果
 
 <section class="search-results-pagination">
 <div class="content flex">
-<div class="hits flex strong_f">[<?php echo get_search_query(); ?>]での検索結果: <span class="num"><?php echo $wp_query->found_posts; ?></span>  件 ヒットしました<span class="more lift"><a href="/bt-search"><i class="fas fa-filter"></i>絞り込む</a></span></div>
+<div class="hits flex strong_f">[<?php echo get_search_query(); ?>]での検索結果: <span class="num"><?php echo $wp_query->found_posts; ?></span>件 ヒットしました<span class="more lift"><a href="/bt-search"><i class="fas fa-filter"></i>絞り込む</a></span></div>
 <div class="pagination">
 <?php
     $big = 9999999999;
@@ -97,17 +97,16 @@ pms サイト内検索結果
 </div>
 </div>
 </section>
-
 <section id="search-results">
 <div class="content">
 
 <?php
 while( $wp_query->have_posts()) : $wp_query->the_post();
 ?>
-  <h2><?php the_title(); ?></h2>
 
 <section class="searched-product product_data_lift">
 <h2>
+<span class="product_name"><?php the_title(); ?></span>
 <?php
 $terms = get_the_terms($post->ID, 'mark_label_cat');
 $tags = [];
@@ -118,6 +117,7 @@ if(in_array("goodone",$tags)) print '<span class="product_list_sign blue strong_
 if(in_array("nowship",$tags)) print '<span class="product_list_sign green strong_f">即出荷</span>';
 if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f">商談中</span>';
 ?>
+</h2>
 <p><?php the_field('comment'); ?></p>
 <div class="searched_product_data flex">
 <?php

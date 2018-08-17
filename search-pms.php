@@ -104,10 +104,10 @@ pms サイト内検索結果
 <?php
 while( $wp_query->have_posts()) : $wp_query->the_post();
 ?>
-  <h2><?php the_title(); ?></h2>
 
 <section class="searched-product product_data_atch">
 <h2>
+<span class="product_name"><?php the_title(); ?></span>
 <?php
 $terms = get_the_terms($post->ID, 'mark_label_cat');
 $tags = [];
