@@ -64,6 +64,12 @@
 </div>
 </section>
 
+<section id="print-header">
+<div id="print-header-company-info">
+<p id="print-header-company"><img src="images/srs.png"><span>高所作業車、特殊作業車、アタッチメント、ユニットハウスのことなら<span id="print-header-company-name">エスアールエス株式会社</span></span></p>
+</div>
+</section>
+
 <section id="product-detail" class="lift_detail">
 <div id="product-title" class="content">
 <h1 class="txt"><?php the_title(); ?>
@@ -148,7 +154,7 @@ if(!empty($img1)){
 <?php echo view_thumbnail('img24', false); ?> 
 </div>
 </div>
-<div class="content">
+<div id="product-panorama" class="content">
 <?php
 $panorama = get_field('panorama');
 if(!empty($panorama)){
@@ -163,7 +169,7 @@ if(!empty($panorama)){
 <?php
 if(get_field('youtube')){
 ?>
-<div class="content">
+<div id="product-movie" class="content">
 <h3 class="border txt"><i class="fas fa-square"></i> 紹介動画</h3>
 <div class="youtube">
 <iframe width="560" height="315" src="<?php the_field('youtube'); ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -248,8 +254,8 @@ if(get_field('staff')){
 </div>
 </div>
 </div>
-<div class="text_c mgn_btm40">
-<a href="" class="btn lift"><i class="fas fa-print"></i> 印刷する</a>
+<div id="go-print" class="text_c mgn_btm40">
+<a href="#" onclick="window.print(); return false;" class="btn lift"><i class="fas fa-print"></i> 印刷する</a>
 </div>
 </div>
 </section>
