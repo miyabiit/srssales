@@ -81,63 +81,7 @@ Template Name: un-contact
 このページはお客様の個人情報を安全に送受信するためにSSL(暗号化通信プロトコル)を使用しております。<br>
 個人情報の取り扱いにつきましては、<a href="/srs/_privacy.html">プライバシーポリシー</a>を参照してください。<br>
 <span class="red_t">※は必須項目です。必ず入力して下さい。</span></p>
-<form action="" method="post">
-<div id="contact-form" class="table unit_form">
-<div class="row">
-<div class="cell">氏名 <span class="red_t">※</span></div>
-<div class="cell"><input type="text" name="name" placeholder="例) 田中 一郎"></div>
-</div>
-<div class="row">
-<div class="cell">フリガナ <span class="red_t">※</span></div>
-<div class="cell"><input type="text" name="furigana" placeholder="例) タナカ イチロウ"></div>
-</div>
-<div class="row">
-<div class="cell">企業・団体名 <span class="red_t">※</span></div>
-<div class="cell"><input type="text" name="company" placeholder="例) エスアールエス株式会社"></div>
-</div>
-<div class="row">
-<div class="cell">部署・役職名</div>
-<div class="cell"><input type="text" name="position" placeholder="例) 企画営業部"></div>
-</div>
-<div class="row">
-<div class="cell">郵便番号</div>
-<div class="cell">〒 <input class="short" type="text" name="zip" placeholder="例) 123-4567"></div>
-</div>
-<div class="row">
-<div class="cell">住所</div>
-<div class="cell"><input type="text" name="address" placeholder="例) 東京都中央区日本橋3-12-2　朝日ビルヂング8F"></div>
-</div>
-<div class="row">
-<div class="cell">電話番号 <span class="red_t">※</span></div>
-<div class="cell"><input type="text" name="tel" placeholder="例) 03-1234-5678"></div>
-</div>
-<div class="row">
-<div class="cell">FAX</div>
-<div class="cell"><input type="text" name="fax" placeholder="例) 03-1234-5679"></div>
-</div>
-<div class="row">
-<div class="cell">メールアドレス <span class="red_t">※</span></div>
-<div class="cell"><input type="text" name="email" placeholder="例) test@example.com"></div>
-</div>
-<div class="row">
-<div class="cell">メールアドレス（再） <span class="red_t">※</span></div>
-<div class="cell"><input type="text" name="email_conf" placeholder="確認の為、再度メールアドレスをご入力ください"></div>
-</div>
-
-<div class="row">
-<div class="cell">メッセージ <span class="red_t">※</span></div>
-<div class="cell">
-<textarea name="message" placeholder="商品についてのお問い合わせの際は、必ず「名称」「管理番号」を記載願います。"></textarea>
-</div>
-</div>
-</div>
-<div class="text_c mgn_btm40">
-<button type="reset" class="btn gray">キャンセル</button> <button type="submit" class="btn unit"><i class="fas fa-check-circle"></i> 確認する</button>
-</div>
-</form>
-
-
-
+<?php echo do_shortcode('[contact-form-7 id="420" title="Contact form bt"]'); ?>
 
 </div>
 </section>
