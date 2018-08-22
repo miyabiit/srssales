@@ -116,6 +116,7 @@ if(in_array("recommend",$tags)) print '<span class="product_list_sign orange str
 if(in_array("goodone",$tags)) print '<span class="product_list_sign blue strong_f">美品</span>';
 if(in_array("nowship",$tags)) print '<span class="product_list_sign green strong_f">即出荷</span>';
 if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f">商談中</span>';
+if(in_array("condition",$tags)) print '<span class="product_list_sign gray strong_f">快適</span>';
 ?>
 </h2>
 <p><?php echo get_post_meta($post->ID, 'comment', true); ?></p>

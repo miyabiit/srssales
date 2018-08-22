@@ -116,6 +116,7 @@ if(in_array("recommend",$tags)) print '<span class="product_list_sign orange str
 if(in_array("goodone",$tags)) print '<span class="product_list_sign blue strong_f">美品</span>';
 if(in_array("nowship",$tags)) print '<span class="product_list_sign green strong_f">即出荷</span>';
 if(in_array("onsale",$tags)) print '<span class="product_list_sign gray strong_f">商談中</span>';
+if(in_array("condition",$tags)) print '<span class="product_list_sign gray strong_f">快適</span>';
 ?>
 </h2>
 <p><?php echo get_post_meta($post->ID, 'comment', true); ?></p>
@@ -136,7 +137,7 @@ if(!empty($img)) echo '<div class="product_image"><img src="' . $img['url'] . '"
 <dt class="product_data_title">面積</dt>
 <dd class="product_data_content"><?php echo get_post_meta($post->ID, 'm2', true); ?>坪</dd>
 <dt class="product_data_title">本体価格</dt>
-<dd class="product_data_content"><span class="num"><?php get_post_meta($post->ID, 'price', true); ?></span>万円（税抜）</dd>
+<dd class="product_data_content"><span class="num"><?php the_field('price'); ?></span>万円（税抜）</dd>
 </dl>
 </div>
 <h3><i class="fas fa-square"></i> 仕様</h3>
