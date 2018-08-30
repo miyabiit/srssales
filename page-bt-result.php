@@ -142,6 +142,10 @@ if(!empty($img)) echo '<div class="product_image"><img src="' . $img['url'] . '"
 <div class="product_spec">
 <div class="product_detail flex clearfix">
 <dl>
+<?php
+$term = get_field('category');
+if(strcmp($term->slug,'goods01') == 0){
+?>
 <dt class="product_data_title">作業床高さ</dt>
 <dd class="product_data_content"><?php the_field('height'); ?>m</dd>
 <dt class="product_data_title">積載荷量</dt>
@@ -158,8 +162,20 @@ if(!empty($img)) echo '<div class="product_image"><img src="' . $img['url'] . '"
 <dd class="product_data_content"><?php the_field('method'); ?></dd>
 <dt class="product_data_title">年式</dt>
 <dd class="product_data_content"><?php the_field('y_type'); ?></dd>
-
-
+<?php
+}else{
+?>
+<dt class="product_data_title">本体重量</dt>
+<dd class="product_data_content"><?php the_field('weight'); ?>kg</dd>
+<dt class="product_data_title">寸法</dt>
+<dd class="product_data_content"><?php the_field('size'); ?></dd>
+</dl>
+<dl>
+<dt class="product_data_title">状態</dt>
+<dd class="product_data_content"><?php $term = get_field('status'); echo $term->name; ?></dd>
+<?php
+}
+?>
 </dl>
 </div>
 </div>

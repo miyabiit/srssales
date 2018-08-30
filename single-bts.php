@@ -34,7 +34,7 @@
 <ul id="sub_menu" class="clearfix">
 <li id="back" class="no-sp"><a href="/btproducts" class="disp_f">ホームに戻る</a></li>
 <li class="text_c"><a href="/bt-search" class="disp_f">商品検索</a></li>
-<li class="text_c"><a href="/srs/_bt-guide-top.html" class="disp_f active">ご利用ガイド</a></li>
+<li class="text_c"><a href="/srs/_bt-guide-top.html" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="/srs/_bt-info-top.html" class="disp_f">ご案内</a></li>
 <li class="text_c"><a href="/bt-contact" class="disp_f">お問い合わせ</a></li>
 </ul>
@@ -99,6 +99,10 @@ if(in_array("condition",$tags)) print '<span class="product_list_sign gray stron
 </div>
 <div class="product_detail_data">
 <dl>
+<?php
+$term = get_field('category');
+if(strcmp($term->slug,'goods01') == 0){
+?>
 <dt class="product_detail_title box">用途</dt>
 <dd class="product_detail_content"><?php $term = get_field('usage'); echo $term->name; ?></dd>
 <dt class="product_detail_title box">メーカー</dt>
@@ -107,6 +111,18 @@ if(in_array("condition",$tags)) print '<span class="product_list_sign gray stron
 <dd class="product_detail_content"><?php the_field('maker_type'); ?></dd>
 <dt class="product_detail_title box">商品コード</dt>
 <dd class="product_detail_content"><?php the_field('code'); ?></dd>
+<?php
+}else{
+?>
+<dt class="product_detail_title box">用途</dt>
+<dd class="product_detail_content"><?php $term = get_field('usage'); echo $term->name; ?></dd>
+<dt class="product_detail_title box">メーカー</dt>
+<dd class="product_detail_content"><?php the_field('maker'); ?></dd>
+<dt class="product_detail_title box">メーカー形式</dt>
+<dd class="product_detail_content"><?php the_field('maker_type'); ?></dd>
+<?php
+}
+?>
 </dl>
 </div>
 </div>
@@ -183,6 +199,10 @@ if(get_field('youtube')){
 <div class="content flex clearfix">
 <div class="product_detail_data">
 <dl>
+<?php
+$term = get_field('category');
+if(strcmp($term->slug,'goods01') == 0){
+?>
 <dt class="product_detail_title box">作業床高さ(m)</dt>
 <dd class="product_detail_content"><?php the_field('height'); ?></dd>
 <dt class="product_detail_title box">積載荷重(kg)</dt>
@@ -202,7 +222,28 @@ if(get_field('youtube')){
 <dt class="product_detail_title box">年式</dt>
 <dd class="product_detail_content"><?php the_field('y_type'); ?></dd>
 <dt class="product_detail_title box">在庫台数</dt>
-<dd class="product_detail_content"><?php the_field('amount'); ?></dd>
+<dd class="product_detail_content"><?php the_field('amount'); ?>台</dd>
+<?php
+}else{
+?>
+<dt class="product_detail_title box">商品コード</dt>
+<dd class="product_detail_content"><?php the_field('code'); ?></dd>
+<dt class="product_detail_title box">状態</dt>
+<dd class="product_detail_content"><?php $term = get_field('status'); echo $term->name; ?></dd>
+</dl>
+</div>
+<div class="product_detail_data">
+<dl>
+<dt class="product_detail_title box">サイズ</dt>
+<dd class="product_detail_content"><?php the_field('size'); ?></dd>
+<dt class="product_detail_title box">本体重量(kg)</dt>
+<dd class="product_detail_content"><?php the_field('weight'); ?></dd>
+<dt class="product_detail_title box">在庫台数</dt>
+<dd class="product_detail_content"><?php the_field('amount'); ?>台</dd>
+
+<?php
+}
+?>
 </dl>
 </div>
 </div>
