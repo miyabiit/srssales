@@ -281,17 +281,6 @@ if(strcmp($term->slug,'goods01') == 0){
 <dl>
 <dt class="product_detail_title box">電話番号</dt>
 <dd class="product_detail_content num tel"><a href="tel:<?php the_field('tel');?>"><?php the_field('tel'); ?></a></dd>
-<!--
-<dt class="product_detail_title box">担当者</dt>
-<dd class="product_detail_content">
-<?php
-if(get_field('staff')){
-  $user = get_field('staff');
-  echo $user['nickname'];
-}
-?>
-</dd>
--->
 </dl>
 </div>
 </div>

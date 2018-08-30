@@ -98,15 +98,6 @@
 <dd class="event_data_content"><?php $term = get_field('req'); echo $term->post_title; ?></dd>
 <dt class="event_data_title">電話番号</dt>
 <dd class="event_data_content"><a href="tel:<?php the_field('tel'); ?>"><i class="fas fa-phone-square fa-fw"></i><?php the_field('tel'); ?></a></dd>
-<dt class="event_data_title">担当者</dt>
-<dd class="event_data_content">
-<?php
-if(get_field('staff')){
-  $user = get_field('staff');
-  echo $user['nickname'];
-}
-?>
-</dd>
 </dl>
 </div>
 <p><?php the_field('last_comment'); ?></p>
