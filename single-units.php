@@ -36,7 +36,9 @@
 <li class="text_c"><a href="/un-search" class="disp_f">商品検索</a></li>
 <li class="text_c"><a href="/srs/_un-guide-top.html" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="/srs/_un-info-top.html" class="disp_f">ご案内</a></li>
-<li class="text_c"><a href="/un-contact" class="disp_f">お問い合わせ</a></li>
+<li class="text_c">
+<a href="/un-contact?goods_title=<?php the_title();?>&goods_code=<?php the_field('code');?>" class="disp_f">お問い合わせ</a>
+</li>
 </ul>
 </nav>
 </div>
@@ -56,7 +58,7 @@
 </a> >
 </li>
 <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="/un-products" itemprop="url">
+<a href="/un-products/" itemprop="url">
 <span itemprop="title"><?php the_title(); ?></span>
 </a>
 </li>
