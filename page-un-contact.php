@@ -81,7 +81,7 @@ Template Name: un-contact
 このページはお客様の個人情報を安全に送受信するためにSSL(暗号化通信プロトコル)を使用しております。<br>
 個人情報の取り扱いにつきましては、<a href="/srs/_privacy.html">プライバシーポリシー</a>を参照してください。<br>
 <span class="red_t">※は必須項目です。必ず入力して下さい。</span></p>
-<?php echo do_shortcode('[contact-form-7 id="466" title="Contact form units"]'); ?>
+<?php echo do_shortcode('[contact-form-7 id="514" title="Contact form units"]'); ?>
 
 </div>
 </section>
