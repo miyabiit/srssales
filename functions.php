@@ -1,5 +1,4 @@
 <?php
-//include
 //管理者メニュー
 function remove_menus(){
   global $menu;
@@ -485,4 +484,6 @@ function my_acf_google_map_api( $api ){
   return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
-
+//include
+// custom_search
+require_once locate_template('include/custom-search.php', true);

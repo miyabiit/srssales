@@ -216,7 +216,7 @@ if(get_field('youtube')){
 <div class="product_detail_data">
 <dl>
 <dt class="product_detail_title box">コメント</dt>
-<dd class="product_detail_content"><?php the_field('staff_comment'); ?></dd>
+<dd class="product_detail_content w100"><?php the_field('staff_comment'); ?></dd>
 </dl>
 </div>
 </div>
