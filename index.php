@@ -246,7 +246,7 @@ foreach($terms as $term){
 <h2 class="disp_f text_l"><i class="fas fa-info-circle"></i> ご案内</h2>
 <ul id="information-banners" class="flex">
 <li><a href="/srs/_feature.html" class="info_banner" id="info_banner_1"><span class="shadow disp_f text_c">エスアールエスの特徴</span></a></li>
-<li><a href="/srs/_office.html" class="info_banner" id="info_banner_2"><span class="shadow disp_f text_c">店舗情報</span></a></li>
+<li><a href="/office" class="info_banner" id="info_banner_2"><span class="shadow disp_f text_c">店舗情報</span></a></li>
 <li><a href="/srs/_corporate.html" class="info_banner" id="info_banner_3"><span class="shadow disp_f text_c">会社案内</span></a></li>
 </ul>
 </div>

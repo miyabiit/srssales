@@ -24,6 +24,29 @@ function query_for_shoplist($sales_area){
   );
   return $args;
 }
+// check shop list by pref
+//
+function exist_shop_in_pref($slugname, $areatag){
+  $prefs = get_terms(array('taxonomy' => 'pref_cat', 'slug' => $slugname, 'hide_empty' => false));
+  $prefname = $prefs[0]->name;
+  $ret = '<span>'.$prefname.'</span>';
+  $args = array(
+    'post_type' => 'shops',
+    'post_status' => 'publish',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'pref_cat',
+        'field' => 'slug',
+        'terms' => $slugname,
+      )
+    )
+  );
+  $query = new WP_query($args);
+  if($query->have_posts()) : $query->the_post();
+    $ret = '<a href="#'.$areatag.'">'.$prefname.'</a>';
+  endif;
+  return $ret;
+}
 ?>
 
 <section id="head">
@@ -103,83 +126,90 @@ function query_for_shoplist($sales_area){
 <div class="map_links" id="touhoku">
 <a class="area_name strong_f" href="#touhoku-list-title"><i class="fas fa-arrow-circle-right fa-fw"></i> 北海道・東北地方</a>
 <div class="pref_box">
-<a href="#touhoku-list-title">北海道</a>
-<span>青森県</span>
-<a href="#touhoku-list-title">岩手県</a>
-<a href="#touhoku-list-title">宮城県</a><br class="no-sp">
-<span>秋田県</span>
-<span>山形県</span>
-<a href="#touhoku-list-title">福島県</a>
+<?php print(exist_shop_in_pref('hokkaido','touhoku-list-title'));?>
+<?php print(exist_shop_in_pref('iwate','touhoku-list-title'));?>
+<?php print(exist_shop_in_pref('aomori','touhoku-list-title'));?>
+<?php print(exist_shop_in_pref('miyagi','touhoku-list-title'));?>
+<br class="no-sp">
+<?php print(exist_shop_in_pref('akita','touhoku-list-title'));?>
+<?php print(exist_shop_in_pref('yamagata','touhoku-list-title'));?>
+<?php print(exist_shop_in_pref('fukushima','touhoku-list-title'));?>
 </div>
 </div>
 <div class="map_links" id="kanto">
 <a class="area_name strong_f" href="#kanto-list-title"><i class="fas fa-arrow-circle-right fa-fw"></i> 関東地方</a>
 <div class="pref_box">
-<a href="#kanto-list-title">茨城県</a>
-<a href="#kanto-list-title">栃木県</a>
-<span>群馬県</span>
-<a href="#kanto-list-title">埼玉県</a><br class="no-sp">
-<a href="#kanto-list-title">千葉県</a>
-<a href="#kanto-list-title">東京都</a>
-<a href="#kanto-list-title">神奈川県</a>
+<?php print(exist_shop_in_pref('ibaraki','kanto-list-title'));?>
+<?php print(exist_shop_in_pref('tochigi','kanto-list-title'));?>
+<?php print(exist_shop_in_pref('gunma','kanto-list-title'));?>
+<?php print(exist_shop_in_pref('saitama','kanto-list-title'));?>
+<br class="no-sp">
+<?php print(exist_shop_in_pref('chiba','kanto-list-title'));?>
+<?php print(exist_shop_in_pref('tokyo','kanto-list-title'));?>
+<?php print(exist_shop_in_pref('kanagawa','kanto-list-title'));?>
 </div>
 </div>
 <div class="map_links" id="hokuriku">
 <a class="area_name strong_f" href="#hokuriku-list-title"><i class="fas fa-arrow-circle-right fa-fw"></i> 北陸/信越地方</a>
 <div class="pref_box">
-<a href="#hokuriku-list-title">新潟県</a>
-<span>富山県</span>
-<span>石川県</span>
-<span>福井県</span>
+<?php print(exist_shop_in_pref('niigata','hokuriku-list-title'));?>
+<?php print(exist_shop_in_pref('toyama','hokuriku-list-title'));?>
+<?php print(exist_shop_in_pref('ishikawa','hokuriku-list-title'));?>
+<?php print(exist_shop_in_pref('fukui','hokuriku-list-title'));?>
 </div>
 </div>
 <div class="map_links" id="tokai">
 <a class="area_name strong_f" href="#tokai-list-title"><i class="fas fa-arrow-circle-right fa-fw"></i> 東海地方</a>
 <div class="pref_box">
-<a href="#tokai-list-title">山梨県</a>
-<a href="#tokai-list-title">長野県</a>
-<a href="#tokai-list-title">岐阜県</a>
-<a href="#tokai-list-title">静岡県</a>
-<a href="#tokai-list-title">愛知県</a>
+<?php print(exist_shop_in_pref('yamanashi','tokai-list-title'));?>
+<?php print(exist_shop_in_pref('nagano','tokai-list-title'));?>
+<?php print(exist_shop_in_pref('gifu','tokai-list-title'));?>
+<?php print(exist_shop_in_pref('shizuoka','tokai-list-title'));?>
+<?php print(exist_shop_in_pref('aichi','tokai-list-title'));?>
 </div>
 </div>
 <div class="map_links" id="kinki">
 <a class="area_name strong_f" href="#kinki-list-title"><i class="fas fa-arrow-circle-right fa-fw"></i> 近畿地方</a>
 <div class="pref_box">
-<span>三重県</span>
-<a href="#kinki-list-title">滋賀県</a>
-<span>京都府</span>
-<a href="#kinki-list-title">大阪府</a><br class="no-sp">
-<a href="#kinki-list-title">兵庫県</a>
-<a href="#kinki-list-title">奈良県</a>
-<span>和歌山県</span>
+<?php print(exist_shop_in_pref('mie','kinki-list-title'));?>
+<?php print(exist_shop_in_pref('shiga','kinki-list-title'));?>
+<?php print(exist_shop_in_pref('kyoto','kinki-list-title'));?>
+<?php print(exist_shop_in_pref('osaka','kinki-list-title'));?>
+<br class="no-sp">
+<?php print(exist_shop_in_pref('hyogo','kinki-list-title'));?>
+<?php print(exist_shop_in_pref('nara','kinki-list-title'));?>
+<?php print(exist_shop_in_pref('wakayama','kinki-list-title'));?>
+<br class="no-sp">
 </div>
 </div>
 <div class="map_links" id="chugoku">
 <a class="area_name strong_f" href="#chugoku-list-title"><i class="fas fa-arrow-circle-right fa-fw"></i> 中国・四国地方</a>
 <div class="pref_box">
-<span>鳥取県</span>
-<span>島根県</span>
-<span>岡山県</span>
-<a href="#chugoku-list-title">広島県</a>
-<span>山口県</span><br class="no-sp">
-<span>徳島県</span>
-<span>香川県</span>
-<span>高知県</span>
-<span>愛媛県</span>
+<?php print(exist_shop_in_pref('tottori','chugoku-list-title'));?>
+<?php print(exist_shop_in_pref('shimane','chugoku-list-title'));?>
+<?php print(exist_shop_in_pref('okayama','chugoku-list-title'));?>
+<?php print(exist_shop_in_pref('hiroshima','chugoku-list-title'));?>
+<?php print(exist_shop_in_pref('yamaguchi','chugoku-list-title'));?>
+<br class="no-sp">
+<?php print(exist_shop_in_pref('tokushima','chugoku-list-title'));?>
+<?php print(exist_shop_in_pref('kagawa','chugoku-list-title'));?>
+<?php print(exist_shop_in_pref('kochi','chugoku-list-title'));?>
+<?php print(exist_shop_in_pref('ehime','chugoku-list-title'));?>
 </div>
 </div>
 <div class="map_links" id="kyusyu">
 <a class="area_name strong_f" href="#kyusyu-list-title"><i class="fas fa-arrow-circle-right fa-fw"></i> 九州地方</a>
 <div class="pref_box">
-<a href="#kyusyu-list-title">福岡県</a>
-<span>佐賀県</span>
-<span>長崎県</span><br class="no-sp">
-<a href="#kyusyu-list-title">熊本県</a>
-<a href="#kyusyu-list-title">大分県</a>
-<span>宮崎県</span><br class="no-sp">
-<a href="#kyusyu-list-title">鹿児島県</a>
-<span>沖縄県</span>
+<?php print(exist_shop_in_pref('fukuoka','kyusyu-list-title'));?>
+<?php print(exist_shop_in_pref('saga','kyusyu-list-title'));?>
+<?php print(exist_shop_in_pref('nagasaki','kyusyu-list-title'));?>
+<br class="no-sp">
+<?php print(exist_shop_in_pref('kumamoto','kyusyu-list-title'));?>
+<?php print(exist_shop_in_pref('oita','kyusyu-list-title'));?>
+<?php print(exist_shop_in_pref('miyazaki','kyusyu-list-title'));?>
+<br class="no-sp">
+<?php print(exist_shop_in_pref('kagoshima','kyusyu-list-title'));?>
+<?php print(exist_shop_in_pref('okinawa','kyusyu-list-title'));?>
 </div>
 </div>
 </section>
