@@ -238,11 +238,15 @@ foreach($array as $key => $value ):
   while($query->have_posts()) : $query->the_post();
 ?>
 <div class="row">
-<div class="cell"><?php the_title();?></div>
-<div class="cell"><?php the_field('postcode');?> <?php the_field('address'); ?> </div>
-<div class="cell" label="TEL:"><?php the_field('tel'); ?></div>
-<div class="cell" label="FAX:"><?php the_field('fax'); ?></div>
-<div class="cell"><a href="" target="_blank"><i class="fas fa-map-marker-alt fa-fw"></i><span> GoogleMapで見る</span></a></div>
+  <div class="cell"><?php the_title();?></div>
+  <div class="cell"><?php the_field('postcode');?> <?php the_field('address'); ?> </div>
+  <div class="cell" label="TEL:"><?php the_field('tel'); ?></div>
+  <div class="cell" label="FAX:"><?php the_field('fax'); ?></div>
+  <div class="cell">
+    <a class="popup-gmaps" href="https://maps.google.com/maps?q=<?php the_field('address'); ?>">
+      <i class="fas fa-map-marker-alt fa-fw"></i><span> GoogleMapで見る</span>
+    </a>
+  </div>
 </div>
 <?php
   endwhile;
@@ -281,8 +285,22 @@ foreach($array as $key => $value ):
 </section>
 
 <link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/magnific-popup.css">
 <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="/js/jquery.debouncedresize.min.js"></script>
 <script src="/js/common.js"></script>
+<script src="/js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.popup-gmaps').magnificPopup({
+      disableOn: 700,
+      type: 'iframe',
+      mainClass: 'mfp-fade',
+      removalDelay: 160,
+      preloader: false,
+      fixedContentPos: false
+    });
+  });
+</script>
 
 <?php get_footer(); ?>
