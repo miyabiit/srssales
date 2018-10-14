@@ -37,7 +37,7 @@ Template Name: contact
 <div id="sub_title" class="no-pc strong_f">エスアールエスのご紹介</div>
 <nav>
 <ul id="sub_menu" class="clearfix">
-<li id="back" class="no-sp"><a href="/" class="disp_f">ホームに戻る</a></li>
+<li id="back" class="no-sp"><a href="/" class="disp_f">カテゴリトップに戻る</a></li>
 <li class="text_c"><a href="/srs/_feature.html" class="disp_f">特徴</a></li>
 <li class="text_c"><a href="/office" class="disp_f">店舗情報</a></li>
 <li class="text_c"><a href="/srs/_corporate.html" class="disp_f">会社案内</a></li>

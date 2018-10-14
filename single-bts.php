@@ -32,7 +32,7 @@
 <div id="sub_title" class="no-pc strong_f">アタッチメント</div>
 <nav>
 <ul id="sub_menu" class="clearfix">
-<li id="back" class="no-sp"><a href="/btproducts" class="disp_f">ホームに戻る</a></li>
+<li id="back" class="no-sp"><a href="/btproducts" class="disp_f">カテゴリトップに戻る</a></li>
 <li class="text_c"><a href="/bt-search" class="disp_f">商品検索</a></li>
 <li class="text_c"><a href="/srs/_bt-guide-top.html" class="disp_f">ご利用ガイド</a></li>
 <li class="text_c"><a href="/srs/_bt-info-top.html" class="disp_f">ご案内</a></li>
