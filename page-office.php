@@ -243,7 +243,7 @@ foreach($array as $key => $value ):
   <div class="cell" label="TEL:"><?php the_field('tel'); ?></div>
   <div class="cell" label="FAX:"><?php the_field('fax'); ?></div>
   <div class="cell">
-    <a class="popup-gmaps" href="https://maps.google.com/maps?q=<?php the_field('address'); ?>">
+  <a class="popup-gmaps" href="https://maps.google.com/maps?q=test@<?php the_field('longitude'); ?>,<?php the_field('latitude');?>&iwloc=A&hl=ja&z=18">
       <i class="fas fa-map-marker-alt fa-fw"></i><span> GoogleMapで見る</span>
     </a>
   </div>
