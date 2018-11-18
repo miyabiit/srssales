@@ -53,7 +53,7 @@ add_action('init', function(){
       'delete_with_user'  => true, 
       'menu_position' => 3,
       'supports' => array( 'title', 'editor'),
-      'taxonomies'  => array('products_cat')
+      'taxonomies'  => array('events_cat')
     )
   );
   //post 販売店
@@ -170,7 +170,7 @@ add_action('init', function(){
     )
   );
   //taxonomy 事業分類
-  register_taxonomy('products_cat', array('news','events'),
+  register_taxonomy('products_cat', array('news'),
     array(
       'labels' => array(
         'name' => '事業分類',
@@ -178,6 +178,17 @@ add_action('init', function(){
       ),
       'public' => true,
       //'show_ui' => true,
+      'hierarchical' => true
+    )
+  );   
+  //taxonomy イベント分類
+  register_taxonomy('events_cat', array('events'),
+    array(
+      'labels' => array(
+        'name' => 'イベント分類',
+        'singular_name'   => 'イベント分類',
+      ),
+      'public' => true,
       'hierarchical' => true
     )
   );   
