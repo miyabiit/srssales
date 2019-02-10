@@ -32,7 +32,7 @@ Template Name: bt-result
 </div>
 </section>
 
-<section id="sub-menu" class="unit">
+<section id="sub-menu" class="lift">
 <div class="content clearfix">
 <div id="sub_title" class="no-pc strong_f">ユニットハウス</div>
 <nav>
@@ -104,7 +104,7 @@ Template Name: bt-result
 <?php
 while( $wp_query->have_posts()) : $wp_query->the_post();
 ?>
-<section class="searched-product product_data_atch">
+<section class="searched-product product_data_lift">
 <h2>
 <span class="product_name"><?php the_title(); ?></span>
 <?php
