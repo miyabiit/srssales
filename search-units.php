@@ -149,7 +149,7 @@ if(!empty($img)) echo '<div class="product_image"><img src="' . $img['url'] . '"
 <dt class="product_data_title">本体重量</dt>
 <dd class="product_data_content"><?php the_field('weight'); ?></dd>
 <dt class="product_data_title">状態</dt>
-<dd class="product_data_content"><?php $term = get_field('status'); echo $term->name; ?></dd>
+<dd class="product_data_content"><?php $term_id = get_field('status'); $term = get_term($term_id, 'status_cat'); echo $term->name; ?></dd>
 </dl>
 <dl>
 <dt class="product_data_title">管理No.</dt>

@@ -153,7 +153,7 @@ if(strcmp($term->slug,'goods01') == 0){
 <dt class="product_data_title">車両重量</dt>
 <dd class="product_data_content"><?php the_field('weight'); ?>kg</dd>
 <dt class="product_data_title">状態</dt>
-<dd class="product_data_content"><?php $term = get_field('status'); echo $term->name; ?></dd>
+<dd class="product_data_content"><?php $term_id = get_field('status'); $term = get_term($term_id, 'status_cat'); echo $term->name; ?></dd>
 </dl>
 <dl>
 <dt class="product_data_title">寸法</dt>
@@ -172,7 +172,7 @@ if(strcmp($term->slug,'goods01') == 0){
 </dl>
 <dl>
 <dt class="product_data_title">状態</dt>
-<dd class="product_data_content"><?php $term = get_field('status'); echo $term->name; ?></dd>
+<dd class="product_data_content"><?php $term_id = get_field('status'); $term = get_term($term_id, 'status_cat'); echo $term->name; ?></dd>
 <?php
 }
 ?>

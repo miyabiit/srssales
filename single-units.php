@@ -200,7 +200,7 @@ if(get_field('youtube')){
 <dt class="product_detail_title box">本体重量(kg)</dt>
 <dd class="product_detail_content"><?php the_field('weight'); ?></dd>
 <dt class="product_detail_title box">状態</dt>
-<dd class="product_detail_content"><?php $term = get_field('status'); echo $term->name; ?></dd>
+<dd class="product_detail_content"><?php $term_id = get_field('status'); get_term($term_id, 'status_cat'); echo $term->name; ?></dd>
 </dl>
 </div>
 </div>
