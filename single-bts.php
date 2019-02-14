@@ -106,7 +106,7 @@ $term = get_field('category');
 if(strcmp($term->slug,'goods01') == 0){
 ?>
 <dt class="product_detail_title box">用途</dt>
-<dd class="product_detail_content"><?php $term = get_field('usage'); echo $term->name; ?></dd>
+<dd class="product_detail_content"><?php the_field('method'); ?></dd>
 <dt class="product_detail_title box">メーカー</dt>
 <dd class="product_detail_content"><?php the_field('maker'); ?></dd>
 <dt class="product_detail_title box">メーカー形式</dt>
@@ -117,7 +117,7 @@ if(strcmp($term->slug,'goods01') == 0){
 }else{
 ?>
 <dt class="product_detail_title box">用途</dt>
-<dd class="product_detail_content"><?php $term = get_field('usage'); echo $term->name; ?></dd>
+<dd class="product_detail_content"><?php the_field('method'); ?></dd>
 <dt class="product_detail_title box">メーカー</dt>
 <dd class="product_detail_content"><?php the_field('maker'); ?></dd>
 <dt class="product_detail_title box">メーカー形式</dt>
@@ -220,7 +220,7 @@ if(strcmp($term->slug,'goods01') == 0){
 <dt class="product_detail_title box">寸法(mm) : WxDxH</dt>
 <dd class="product_detail_content"><?php the_field('lwh'); ?></dd>
 <dt class="product_detail_title box">駆動方法</dt>
-<dd class="product_detail_content"><?php the_field('method'); ?></dd>
+<dd class="product_detail_content"><?php $term = get_field('usage'); echo $term->name; ?></dd>
 <dt class="product_detail_title box">年式</dt>
 <dd class="product_detail_content"><?php the_field('y_type'); ?></dd>
 <dt class="product_detail_title box">在庫台数</dt>

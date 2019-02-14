@@ -158,7 +158,7 @@ if(strcmp($term->slug,'goods01') == 0){
 <dt class="product_data_title">寸法</dt>
 <dd class="product_data_content"><?php the_field('lwh'); ?></dd>
 <dt class="product_data_title">駆動方法</dt>
-<dd class="product_data_content"><?php the_field('method'); ?></dd>
+<dd class="product_data_content"><?php $term = get_field('usage'); echo $term->name; ?></dd>
 <dt class="product_data_title">年式</dt>
 <dd class="product_data_content"><?php the_field('y_type'); ?></dd>
 <?php
