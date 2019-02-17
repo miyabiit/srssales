@@ -82,9 +82,9 @@ $query = new WP_Query(array(
   'posts_per_page' => 5,
   'tax_query' => array(
     array(
-      'taxonomy' => 'events_cat',
+      'taxonomy' => 'products_cat',
       'field' => 'slug',
-      'terms' => 'events_bts'
+      'terms' => 'products_bts'
     )
   ),
   'orderby' => 'date_start',
