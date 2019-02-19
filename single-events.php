@@ -91,9 +91,22 @@
 <dt class="event_data_title">開催日時</dt>
 <dd class="event_data_content"><?php the_field('when'); ?></dd>
 <dt class="event_data_title">開催場所</dt>
-<dd class="event_data_content"><?php the_field('where'); ?><a href=""><i class="fas fa-map-marker fa-fw"></i>地図を見る</a></dd>
+<dd class="event_data_content">
+<a href="http://maps.google.com/maps?q=<?php echo $location["address"]; ?>" target="_blank"><i class="fas fa-map-marker fa-fw"></i>地図を見る</a>
+</dd>
 <dt class="event_data_title">チラシ</dt>
-<dd class="event_data_content"><a href=""><i class="far fa-file-pdf fa-fw"></i><?php the_field('pamphlet'); ?></a></dd>
+<dd class="event_data_content">
+<?php
+$pamph = get_field('pamphlet');
+if(!empty($pamph)):
+?>
+<a href="<?php the_field('pamphlet'); ?>" target="_blank"><i class="far fa-file-pdf fa-fw"></i>チラシはこちら</a>
+<?php
+else:
+echo("&nbsp;");
+?>
+<?php endif; ?>
+</dd>
 <dt class="event_data_title">お問い合わせ</dt>
 <dd class="event_data_content"><?php $term = get_field('req'); echo $term->post_title; ?></dd>
 <dt class="event_data_title">電話番号</dt>

@@ -129,6 +129,10 @@ $pamph = get_field('pamphlet');
 if(!empty($pamph)):
 ?>
 <a href="<?php the_field('pamphlet'); ?>" target="_blank"><i class="far fa-file-pdf fa-fw"></i>チラシはこちら</a>
+<?php
+else:
+echo("&nbsp;");
+?>
 <?php endif; ?>
 </dd>
 <dt class="event_data_title">お問い合わせ</dt>
