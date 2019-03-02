@@ -24,7 +24,7 @@ add_action('init', function(){
       'map_meta_cap'  => true,
       'delete_with_user'  => true, 
       'menu_position' => 3,
-      'supports' => array( 'title', 'editor'),
+      'supports' => array( 'title', 'editor', 'author'),
       'taxonomies'  => array('products_cat')
     )
   );
@@ -52,7 +52,7 @@ add_action('init', function(){
       'map_meta_cap'  => true,
       'delete_with_user'  => true, 
       'menu_position' => 3,
-      'supports' => array( 'title', 'editor'),
+      'supports' => array( 'title', 'editor', 'author'),
       'taxonomies'  => array('events_cat')
     )
   );
@@ -81,7 +81,7 @@ add_action('init', function(){
       'map_meta_cap'  => true,
       'delete_with_user'  => true, 
       'menu_position' => 3,
-      'supports' => array( 'title'),
+      'supports' => array( 'title', 'author'),
       'taxonomies'  => array('pref_cat')
     )
   );
@@ -109,7 +109,7 @@ add_action('init', function(){
       'map_meta_cap'  => true,
       'delete_with_user'  => true, 
       'menu_position' => 3,
-      'supports' => array( 'title'),
+      'supports' => array( 'title', 'author'),
       'taxonomies'  => array('un_tubo_cat')
     )
   );
@@ -137,7 +137,7 @@ add_action('init', function(){
       'map_meta_cap'  => true,
       'delete_with_user'  => true, 
       'menu_position' => 3,
-      'supports' => array( 'title'),
+      'supports' => array( 'title', 'author'),
       'taxonomies'  => array('pm_usage_cat')
     )
   );
@@ -165,7 +165,7 @@ add_action('init', function(){
       'map_meta_cap'  => true,
       'delete_with_user'  => true, 
       'menu_position' => 3,
-      'supports' => array( 'title'),
+      'supports' => array( 'title', 'author'),
       'taxonomies'  => array()
     )
   );

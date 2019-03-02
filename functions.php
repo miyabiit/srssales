@@ -82,3 +82,20 @@ function profile_delete() { ?>
 }
 add_action( 'show_user_profile', 'profile_delete' );
 
+//非表示 他の人のポストの非表示
+/*
+function exclude_other_posts( $wp_query ) {
+    if ( isset( $_REQUEST['post_type'] ) && post_type_exists( $_REQUEST['post_type'] ) ) {
+        $post_type = get_post_type_object( $_REQUEST['post_type'] );
+        $cap_type = $post_type->cap->edit_other_posts;
+    } else {
+        $cap_type = 'edit_others_posts';
+    }
+
+    if ( is_admin() && $wp_query->is_main_query() && ! $wp_query->get( 'author' ) && ! current_user_can( $cap_type ) ) {
+        $user = wp_get_current_user();
+        $wp_query->set( 'author', $user->ID );
+    }
+}
+add_action( 'pre_get_posts', 'exclude_other_posts' );
+*/
