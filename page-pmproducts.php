@@ -108,7 +108,7 @@ mydropdown_taxsonomy("status_cat");
 </div>
 </div>
 <?php
-$args = query_for_taxonomy('pms', array('pm_usage_cat', 'pm_class_cat', 'pm_price_range_cat','pref_cat','shop_sales_area_cat','shop_pref_area_cat','status_cat'),array('stockpoint'));
+$args = query_for_taxonomy('pms', array('pm_usage_cat', 'pm_class_cat', 'pm_price_range_cat','pref_cat','shop_sales_area_cat','shop_pref_area_cat','status_cat'),array('req'));
 $wp_query = new WP_query();
 $wp_query->query($args);
 ?>
