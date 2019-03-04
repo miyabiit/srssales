@@ -91,8 +91,13 @@
 <dt class="event_data_title">開催日時</dt>
 <dd class="event_data_content"><?php the_field('when'); ?></dd>
 <dt class="event_data_title">開催場所</dt>
-<dd class="event_data_content">
+<dd class="event_data_content"><?php the_field('where'); ?>
+<?php
+$location = get_field('map');
+if(!empty($location)):
+?>
 <a href="http://maps.google.com/maps?q=<?php echo $location["address"]; ?>" target="_blank"><i class="fas fa-map-marker fa-fw"></i>地図を見る</a>
+<?php endif; ?>
 </dd>
 <dt class="event_data_title">チラシ</dt>
 <dd class="event_data_content">
