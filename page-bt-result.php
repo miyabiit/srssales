@@ -135,7 +135,7 @@ if(!empty($img)) echo '<div class="product_image"><img src="' . $img['url'] . '"
 <dt class="product_data_title">メーカー形式</dt>
 <dd class="product_data_content"><?php the_field('maker_type'); ?></dd>
 <dt class="product_data_title">本体価格</dt>
-<dd class="product_data_content"><span class="num"><?php the_field('price'); ?></span>万円（税抜）</dd>
+<dd class="product_data_content"><span class="num"><?php the_field('price'); ?></span>円（税抜）</dd>
 </dl>
 </div>
 <h3><i class="fas fa-square"></i> 仕様</h3>
@@ -162,6 +162,8 @@ if(strcmp($term->slug,'goods01') == 0){
 <dd class="product_data_content"><?php $term = get_field('usage'); echo $term->name; ?></dd>
 <dt class="product_data_title">年式</dt>
 <dd class="product_data_content"><?php the_field('y_type'); ?></dd>
+<dt class="product_data_title">保有場所</dt>
+<dd class="product_data_content"><?php $term = get_field('stock_point'); echo $term->post_title; ?></dd>
 <?php
 }else{
 ?>
@@ -173,6 +175,8 @@ if(strcmp($term->slug,'goods01') == 0){
 <dl>
 <dt class="product_data_title">状態</dt>
 <dd class="product_data_content"><?php $term_id = get_field('status'); $term = get_term($term_id, 'status_cat'); echo $term->name; ?></dd>
+<dt class="product_data_title">保有場所</dt>
+<dd class="product_data_content"><?php $term = get_field('stock_point'); echo $term->post_title; ?></dd>
 <?php
 }
 ?>

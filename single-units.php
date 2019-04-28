@@ -95,7 +95,7 @@ if(in_array("condition",$tags)) print '<span class="product_list_sign gray stron
 <div class="product_detail_price">
 <div class="product_detail_price_box border strong_f big clearfix">
 <span class="title">本体価格</span>
-<span class="price"><span class="num"><?php the_field('price'); ?></span><span class="yen">万円（税抜）</span></span>
+<span class="price"><span class="num"><?php the_field('price'); ?></span><span class="yen">円（税抜）</span></span>
 </div>
 <span class="misc sml">別途、設置費用（運賃込み）が発生致します。</span>
 </div>
@@ -200,7 +200,7 @@ if(get_field('youtube')){
 <dt class="product_detail_title box">本体重量(kg)</dt>
 <dd class="product_detail_content"><?php the_field('weight'); ?></dd>
 <dt class="product_detail_title box">状態</dt>
-<dd class="product_detail_content"><?php $term_id = get_field('status'); $term = get_term($term_id, 'status_cat'); echo $term->name; ?></dd>
+<dd class="product_detail_content"><?php $term_id = get_field('status'); $term = get_term($term_id, 'status_cat'); echo $term->name; ?> ※弊社基準</dd>
 </dl>
 </div>
 </div>
@@ -211,7 +211,7 @@ if(get_field('youtube')){
 <div class="product_detail_price">
 <div class="product_detail_price_box border strong_f big clearfix">
 <span class="title">本体価格</span>
-<span class="price"><span class="num"><?php the_field('price'); ?></span><span class="yen">万円（税抜）</span></span>
+<span class="price"><span class="num"><?php the_field('price'); ?></span><span class="yen">円（税抜）</span></span>
 </div>
 <span class="misc sml">別途、設置費用（運賃込み）が発生致します。</span>
 </div>
