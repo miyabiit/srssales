@@ -124,8 +124,10 @@ $wp_query->query($args);
 <input type="text" value="" name="s" id="s" />
 <button type="submit"><i class="fas fa-search"></i></button>
 </form>
-<h1 class="disp_f text_c shadow">アタッチメント</h1>
-<p class="disp_f text_c shadow">アタッチメントの購入をお考えの皆様へ<br>豊富なラインナップをご覧ください。</p>
+<div class="key-visual-text">
+<h1>アタッチメント</h1>
+<p>アタッチメントの購入をお考えの皆様へ<br>豊富なラインナップをご覧ください。</p>
+</div>
 </div>
 </section>
 
@@ -221,7 +223,7 @@ while($query->have_posts()) : $query->the_post();
 <h2 class="disp_f text_l"><i class="fas fa-info-circle"></i> ご案内</h2>
 <ul id="information-banners" class="flex">
 <li><a href="/pm-events" class="info_banner" id="info_banner_1"><span class="shadow disp_f text_c">イベント情報</span></a></li>
-<li><a href="" class="info_banner" id="info_banner_2"><span class="shadow disp_f text_c">買い取り情報</span></a></li>
+<li><a href="/srs/_pm-purchase-service.html" class="info_banner" id="info_banner_2"><span class="shadow disp_f text_c">買い取り情報</span></a></li>
 </ul>
 </div>
 </section>

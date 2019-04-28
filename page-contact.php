@@ -39,7 +39,7 @@ Template Name: contact
 <ul id="sub_menu" class="clearfix">
 <li id="back" class="no-sp"><a href="/" class="disp_f">カテゴリトップに戻る</a></li>
 <li class="text_c"><a href="/srs/_feature.html" class="disp_f">特徴</a></li>
-<li class="text_c"><a href="/office" class="disp_f">店舗情報</a></li>
+<li class="text_c"><a href="/srs/_office.html" class="disp_f">店舗情報</a></li>
 <li class="text_c"><a href="/srs/_corporate.html" class="disp_f">会社案内</a></li>
 <li class="text_c"><a href="/contact" class="disp_f active">お問い合わせ</a></li>
 </ul>

@@ -43,7 +43,7 @@
 
 <div class="pulldown_menu">
 <div class="menu_box unit">
-<h2 class="strong_f unit_t">ユニット</h2>
+<h2 class="strong_f unit_t">ユニットハウス</h2>
 <img src="/images/menu_img_unit.png" class="menu_img">
 <div class="menu_lists">
 <div class="strong_f show_menu_links">坪数で探す</div>
@@ -246,7 +246,7 @@ foreach($terms as $term){
 <h2 class="disp_f text_l"><i class="fas fa-info-circle"></i> ご案内</h2>
 <ul id="information-banners" class="flex">
 <li><a href="/srs/_feature.html" class="info_banner" id="info_banner_1"><span class="shadow disp_f text_c">エスアールエスの特徴</span></a></li>
-<li><a href="/office" class="info_banner" id="info_banner_2"><span class="shadow disp_f text_c">店舗情報</span></a></li>
+<li><a href="/srs/_office.html" class="info_banner" id="info_banner_2"><span class="shadow disp_f text_c">店舗情報</span></a></li>
 <li><a href="/srs/_corporate.html" class="info_banner" id="info_banner_3"><span class="shadow disp_f text_c">会社案内</span></a></li>
 </ul>
 </div>
@@ -282,7 +282,7 @@ while($query->have_posts()) : $query->the_post();
 <div class="content">
 <h2 class="disp_f text_l"><i class="fas fa-phone-square"></i> お問い合わせ</h2>
 <div id="contact-box">
-<p id="contact-text">中古ユニットハウスに関するご質問・ご相談は最寄りの営業所までお問い合わせください。</p>
+<p id="contact-text">「ユニットハウス」「アタッチメント」「高所作業車」等の販売に関するご質問・ご相談は最寄りの営業所までお問い合わせください。</p>
 <p id="contact-tel" class="text_r disp_f">受付時間 8:30～17:00（日・祝日を除く）<span class="tel num"><img src="/images/freedial_g.png" class="freedial" alt="フリーダイアル">0120-590-907</span></p>
 </div>
 </div>
