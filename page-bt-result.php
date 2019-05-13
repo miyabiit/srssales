@@ -135,7 +135,7 @@ if(!empty($img)) echo '<div class="product_image"><img src="' . $img['url'] . '"
 <dt class="product_data_title">メーカー形式</dt>
 <dd class="product_data_content"><?php the_field('maker_type'); ?></dd>
 <dt class="product_data_title">本体価格</dt>
-<dd class="product_data_content"><span class="num"><?php the_field('price'); ?></span>円（税抜）</dd>
+<dd class="product_data_content"><span class="num"><?php echo number_format((int)get_field('price')); ?></span>円（税抜）</dd>
 </dl>
 </div>
 <h3><i class="fas fa-square"></i> 仕様</h3>

@@ -171,7 +171,7 @@ if(!empty($img)) echo '<img src="' . $img['url'] . '" class="product_list_img" a
 </div>
 <div class="product_list_info flex">
 <div class="product_list_info_unit">価格</div>
-<div class="product_list_info_price text_r num"><?php the_field('price'); ?><span class="yen">円(税抜)</span></div>
+<div class="product_list_info_price text_r num"><?php echo number_format((int)get_field('price')); ?><span class="yen">円(税抜)</span></div>
 </div>
 <div class="product_list_tags flex">
 <?php

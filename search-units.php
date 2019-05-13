@@ -135,7 +135,7 @@ if(!empty($img)) echo '<div class="product_image"><img src="' . $img['url'] . '"
 <dt class="product_data_title">面積</dt>
 <dd class="product_data_content"><?php echo get_post_meta($post->ID, 'm2', true); ?>坪</dd>
 <dt class="product_data_title">本体価格</dt>
-<dd class="product_data_content"><span class="num"><?php get_post_meta($post->ID, 'price', true); ?></span>円（税抜）</dd>
+<dd class="product_data_content"><span class="num"><?php echo number_format((int)get_post_meta($post->ID, 'price', true)); ?></span>円（税抜）</dd>
 </dl>
 </div>
 <h3><i class="fas fa-square"></i> 仕様</h3>
