@@ -231,7 +231,7 @@ if(strcmp($term->slug,'goods01') == 0){
 <dt class="product_detail_title box">商品コード</dt>
 <dd class="product_detail_content"><?php the_field('code'); ?></dd>
 <dt class="product_detail_title box">状態</dt>
-<dd class="product_detail_content"><?php $term_id = get_field('status'); $term = get_term($term_id, 'status_cat'); echo $term->name; ?></dd>
+<dd class="product_detail_content"><?php $term_id = get_field('status'); $term = get_term($term_id, 'status_cat'); echo $term->name; ?>※弊社基準</dd>
 </dl>
 </div>
 <div class="product_detail_data">

@@ -73,7 +73,7 @@ Template Name: pm-events
 </ul>
 </div>
 </section>
-<section id="event" class="unit_detail">
+<section id="event" class="atch_detail">
 <div class="content">
 <h1 class="disp_f text_l"><i class="far fa-calendar-alt"></i> イベント情報</h1>
 <?php
@@ -104,7 +104,7 @@ $query = new WP_Query(array(
 while( $query->have_posts()) : $query->the_post();
 ?>
 
-<section class="event event_unit">
+<section class="event event_atch">
 <h2><span class="event_title"><?php the_title(); ?></span></h2>
 <p class="desc"><?php the_content(); ?></p>
 <div class="event_data clearfix">
