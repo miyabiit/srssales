@@ -157,10 +157,12 @@ if(in_array("goodone",$tags)) print '<div class="product_list_sign orange strong
 ?>
 <div class="product_list_catch strong_f"><?php echo get_post_meta($post->ID, 'comment', true); ?></div>
 </div>
+<div class="product_list_image">
 <?php
 $img = get_field('img1');
 if(!empty($img)) echo '<img src="' . $img['url'] . '" class="product_list_img" alt="商品">';
 ?>
+</div>
 <div class="product_list_detail">
 <div class="product_list_name strong_f"><?php the_title(); ?></div>
 <div class="product_list_info flex">
@@ -171,8 +173,7 @@ if(!empty($img)) echo '<img src="' . $img['url'] . '" class="product_list_img" a
 <div class="product_list_info_sub">商品番号</div>
 <div class="product_list_info_data"><?php echo the_field('code'); ?></div>
 </div>
-<div class="product_list_info flex">
-<div class="product_list_info_unit">価格</div>
+<div class="product_list_info">
 <div class="product_list_info_price text_r num"><?php echo number_format((int)get_field('price')); ?><span class="yen">円(税抜)</span></div>
 </div>
 <div class="product_list_tags flex">

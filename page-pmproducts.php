@@ -155,13 +155,15 @@ if(in_array("goodone",$tags)) print '<div class="product_list_sign orange strong
 ?>
   <div class="product_list_catch strong_f"><?php the_field('comment'); ?></div>
 </div>
+<div class="product_list_image">
 <?php
 $img = get_field('img1');
 if(!empty($img)) echo '<img src="' . $img['url'] . '" class="product_list_img" alt="商品">';
 ?>
+</div>
 <div class="product_list_detail">
 <div class="product_list_name strong_f"><?php the_title(); ?></div>
-<div class="product_list_info flex">
+<div class="product_list_info">
 <div class="product_list_info_sub">メーカー</div>
 <div class="product_list_info_data"><?php the_field('maker'); ?></div>
 </div>
