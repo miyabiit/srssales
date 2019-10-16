@@ -171,8 +171,7 @@ if(!empty($img)) echo '<img src="' . $img['url'] . '" class="product_list_img" a
 <div class="product_list_info_sub">商品番号</div>
 <div class="product_list_info_data"><?php the_field('code'); ?></div>
 </div>
-<div class="product_list_info flex">
-<div class="product_list_info_unit">価格</div>
+<div class="product_list_info">
 <div class="product_list_info_price text_r num"><?php echo number_format((int)get_field('price')); ?><span class="yen">円(税抜)</span></div>
 </div>
 <div class="product_list_tags flex">
@@ -261,7 +260,7 @@ while($query->have_posts()) : $query->the_post();
 </div>
 <div>
 <p id="links" class=""><a href="/">HOME</a> | <a href="/srs/_privacy.html">プライバシーポリシー</a> |  <a href="/srs/_sitemap.html">サイトマップ</a></p>
-<p id="copy" class="xs">Copyright &copy; 2018 SRS Corporation. <br>All Rights Reserved.</p>
+<p id="copy" class="xs">Copyright &copy; 2019 SRS Corporation. <br>All Rights Reserved.</p>
 </div>
 <div id="pagetop" class="srsd"><i class="fas fa-chevron-circle-up"></i> 上へ戻る</div>
 </footer>
