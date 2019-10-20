@@ -285,6 +285,12 @@ while($query->have_posts()) : $query->the_post();
 <p id="contact-text">「ユニットハウス」「アタッチメント」「高所作業車」等の販売に関するご質問・ご相談は最寄りの営業所までお問い合わせください。</p>
 <p id="contact-tel" class="text_r disp_f">受付時間 8:30～17:00（日・祝日を除く）<span class="tel num"><img src="/images/freedial_g.png" class="freedial" alt="フリーダイアル">0120-590-907</span></p>
 </div>
+
+<div id="index-banner">
+<a href="" target="_blank"><img src="/images/akt_auction.png"></a>
+<a href="" target="_blank"><img src="/images/akt_trading.png"></a>
+</div>
+
 </div>
 </section>
 
